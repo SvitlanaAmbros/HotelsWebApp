@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainMenuComponent,
+    ImageSliderComponent
   ],
   imports: [
     BrowserModule
