@@ -16,14 +16,23 @@
 
 .fa-user {
     color: $white;
+    padding: 5px 8px;
+    border: 2px solid $dark-green;
+    border-radius: 5px;
+
+    &:hover {
+        color: $accent;
+        background: $dark-green;
+    }
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
-    list-style-type: none;
     font-size: 18px;
+    list-style-type: none;
     color: $white;
 
     &-row {
@@ -44,6 +53,10 @@
         & a {
             text-decoration: none;
             color: $white;
+
+            &:hover {
+                color: $accent;
+            }
         }
     }
 }
