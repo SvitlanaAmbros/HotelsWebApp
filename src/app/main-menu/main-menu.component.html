@@ -1,14 +1,50 @@
 <section class="menu-section">
   <div class="container">
     <div class="menu-row">
-        <img src="../../assets/img/logo.png" alt="logo image" class="menu__logo">
-        <ul class="menu">
-          <li class="menu__item"><a href="#">Main</a></li>
-          <li class="menu__item"><a href="#">About us</a></li>
-          <li class="menu__item"><a href="#">For tourist</a></li>
-          <li class="menu__item"><a href="#">Contacts</a></li>
-          <li><a href="#"><i class="fa fa-user"></i></a></li>
-        </ul>
+      <!-- logo -->
+      <img src="../../assets/img/logo.png" alt="logo image" class="menu__logo">
+      <!-- EOF logo -->
+      <!-- main menu -->
+      <div class="menu">
+        <div>
+          <input type="radio" id="main" name="main-menu" class="menu-checkbox" hidden>
+          <label for="main" class="menu__item">Main</label>
+        </div>
+        <div>|</div>
+        <div>
+          <input type="radio" id="about-us" name="main-menu" class="menu-checkbox" hidden>
+          <label for="about-us" class="menu__item">About us</label>
+        </div>
+        <div>|</div>
+        <div class="tourists">
+          <input type="radio" id="tourist" name="main-menu" class="menu-checkbox" hidden>
+          <!-- <input type="checkbox" id="tourist" name="main-menu" hidden> -->
+          <label for="tourist" class="menu__item">
+            <!-- 12 -->
+            For tourists
+          </label>
+          <!-- sublist -->
+          <div class="tourists__sublist">
+            <div class="menu__item">
+              Questions and answers
+            </div>
+            <div class="menu__item">
+              Abbreviations
+            </div>
+          </div>
+          <!-- EOF sublist -->
+        </div>
+        <div>|</div>
+        <div>
+          <input type="radio" id="contacts" name="main-menu" class="menu-checkbox" hidden>
+          <label for="contacts" class="menu__item">Contacts</label>
+        </div>
+        <div>
+            <input type="radio" id="login" name="main-menu" class="menu-checkbox" hidden>
+            <label for="login" class="menu__item"><i class="fa fa-user"></i></label>
+        </div>
+      </div>
+      <!-- EOF main menu -->
     </div>  
   </div>
 </section>

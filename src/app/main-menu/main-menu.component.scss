@@ -1,5 +1,15 @@
 @import "../global-styles/variables.scss";
 
+// ul li {
+//     list-style-type: none;
+//     cursor: pointer;
+// }
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
 .menu-section {
     margin: 20px 0;
     background: #00796b;
@@ -32,7 +42,6 @@
     align-items: center;
     width: 80%;
     font-size: 18px;
-    list-style-type: none;
     color: $white;
 
     &-row {
@@ -50,15 +59,82 @@
     }
 
     &__item {
-        & a {
-            text-decoration: none;
-            color: $white;
+        margin: 10px 0;
+        cursor: pointer;
 
-            &:hover {
-                color: $accent;
-            }
+        &:hover {
+            color: $accent;
+        }
+
+        // &:after {
+        //     content: "|";
+        // }
+
+        // &:not(:last-child) {
+        //     background: red;
+        //     // content: "0909";
+        // }
+
+        // & a {
+        //     // text-decoration: none;
+        //     // color: $white;
+
+        //     &:hover {
+        //         color: $accent;
+        //     }
+        // }
+
+        &.tourists {
+            // &:hover  .tourists__sublist{
+            //     display: block;
+            //     margin-top: 4px;
+            //     background: $dark-green;
+            //     padding: 20px;
+            //     z-index: 100;
+            // }
         }
     }
 }
 
+.tourists{
+    &__sublist {
+        display: none;
+        position: absolute;
+    }
+}
+
+#tourist {
+    & + label:after {
+        // icon down
+        content: "\f0d7";
+        font-family: FontAwesome;
+        font-weight: 900;
+        color: $white;
+        padding: 10px;
+    }
+
+    &:checked {
+        & + label :after {
+            // icon up
+            content: "\f0de";
+            font-family: FontAwesome;
+            font-weight: 900;
+            color: $white;
+            padding: 25px 10px 10px;
+        }
+        
+        ~ .tourists__sublist {
+            display: block;
+            margin-top: 4px;
+            background: $dark-green;
+            padding: 20px;
+            z-index: 100;
+        }
+    }
+
+}
+
+.menu-checkbox:checked + label {
+    color: $accent;
+}
 
