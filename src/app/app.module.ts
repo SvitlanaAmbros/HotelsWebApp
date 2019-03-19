@@ -5,7 +5,6 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component';
 
 
 
@@ -13,7 +12,6 @@ import { ImageSliderComponent } from './shared/components/image-slider/image-sli
   declarations: [
     AppComponent,
     MainMenuComponent,
-    ImageSliderComponent
   ],
   imports: [
     BrowserModule,
