@@ -1,39 +1,12 @@
 @import "../global-styles/variables.scss";
 
-// ul li {
-//     list-style-type: none;
-//     cursor: pointer;
-// }
-
-a {
-    text-decoration: none;
-    color: $white;
-}
-
 .menu-section {
     margin: 20px 0;
-    background: #00796b;
+    background: $primary;
     color: $black;
     display: flex;
     align-items: center;
     height: 80px;
-}
-
-.container {
-	width: 960px;
-	margin: auto;
-}
-
-.fa-user {
-    color: $white;
-    padding: 5px 8px;
-    border: 2px solid $dark-green;
-    border-radius: 5px;
-
-    &:hover {
-        color: $accent;
-        background: $dark-green;
-    }
 }
 
 .menu {
@@ -59,82 +32,90 @@ a {
     }
 
     &__item {
-        margin: 10px 0;
+        padding: 12px 0;
         cursor: pointer;
 
         &:hover {
             color: $accent;
         }
-
-        // &:after {
-        //     content: "|";
-        // }
-
-        // &:not(:last-child) {
-        //     background: red;
-        //     // content: "0909";
-        // }
-
-        // & a {
-        //     // text-decoration: none;
-        //     // color: $white;
-
-        //     &:hover {
-        //         color: $accent;
-        //     }
-        // }
-
-        &.tourists {
-            // &:hover  .tourists__sublist{
-            //     display: block;
-            //     margin-top: 4px;
-            //     background: $dark-green;
-            //     padding: 20px;
-            //     z-index: 100;
-            // }
-        }
     }
-}
-
-.tourists{
-    &__sublist {
-        display: none;
-        position: absolute;
-    }
-}
-
-#tourist {
-    & + label:after {
-        // icon down
-        content: "\f0d7";
-        font-family: FontAwesome;
-        font-weight: 900;
-        color: $white;
-        padding: 10px;
-    }
-
-    &:checked {
-        & + label :after {
-            // icon up
-            content: "\f0de";
-            font-family: FontAwesome;
-            font-weight: 900;
-            color: $white;
-            padding: 25px 10px 10px;
-        }
-        
-        ~ .tourists__sublist {
-            display: block;
-            margin-top: 4px;
-            background: $dark-green;
-            padding: 20px;
-            z-index: 100;
-        }
-    }
-
 }
 
 .menu-checkbox:checked + label {
     color: $accent;
 }
+
+.menu__tourists {
+    &:hover {
+        .tourists__sublist{
+            display: block;
+            color: $white;
+            background: $dark-primary;
+            margin-top: 10px;
+            z-index: 100;
+        } 
+    } 
+
+     & label:after {
+        // icon down
+        content: "\f0d7";
+        font-family: FontAwesome;
+        font-weight: 900;
+        color: $white;
+        padding: 25px 10px 10px;
+    }
+}
+
+.tourists__sublist{ 
+    display: none;
+    position: absolute;
+
+    .menu__item {
+        padding: 10px 20px;
+
+        &:hover {
+            background: $strong-dark-green;
+        }
+    }
+}
+
+// #tourists {
+    // & + label:after {
+    //     // icon down
+    //     content: "\f0d7";
+    //     font-family: FontAwesome;
+    //     font-weight: 900;
+    //     color: $white;
+    //     padding: 25px 10px 10px;
+    // }
+
+    // & + label:hover {
+    //     &:after {
+    //         // icon up
+    //         content: "\f0de";
+    //         font-family: FontAwesome;
+    //         font-weight: 900;
+    //         color: $white;
+    //         padding: 25px 10px 10px;
+    //     } 
+    // }
+// }
+
+.fa-user {
+    color: $white;
+    padding: 5px 8px;
+    border: 2px solid $dark-primary;
+    border-radius: 5px;
+
+    &:hover {
+        color: $accent;
+        background: $dark-primary;
+    }
+
+    #login:checked + label & {
+        color: $accent;
+        background: $dark-primary;
+    }
+}
+
 
