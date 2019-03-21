@@ -7,23 +7,30 @@
       <!-- main menu -->
       <div class="menu">
         <div>
-          <input type="radio" id="main" name="main-menu" class="menu-checkbox" hidden>
+          <input type="radio" id="main" name="main-menu" class="menu-checkbox" hidden checked>
           <label for="main" class="menu__item">Main</label>
         </div>
         <div>|</div>
-        <div>
+        <div class="menu__sublist">
           <input type="radio" id="about-us" name="main-menu" class="menu-checkbox" hidden>
           <label for="about-us" class="menu__item">About us</label>
+          <!-- sublist -->
+          <div class="sublist">
+            <div class="menu__item">
+              Why you should choose us
+            </div>
+            <div class="menu__item">
+              Services
+            </div>
+          </div>
+          <!-- EOF sublist -->
         </div>
         <div>|</div>
-        <div class="menu__tourists">
+        <div class="menu__sublist">
           <input type="radio" id="tourists" name="main-menu" class="menu-checkbox" hidden>
-          <!-- <input type="checkbox" id="tourist" name="main-menu" hidden> -->
-          <label for="tourists" class="menu__item">
-            For tourists
-          </label>
+          <label for="tourists" class="menu__item">For tourists</label>
           <!-- sublist -->
-          <div class="tourists__sublist">
+          <div class="sublist">
             <div class="menu__item">
               Questions and answers
             </div>
@@ -38,6 +45,7 @@
           <input type="radio" id="contacts" name="main-menu" class="menu-checkbox" hidden>
           <label for="contacts" class="menu__item">Contacts</label>
         </div>
+        <div>|</div>
         <div>
             <input type="radio" id="login" name="main-menu" class="menu-checkbox" hidden>
             <label for="login" class="menu__item"><i class="fa fa-user"></i></label>

@@ -36,7 +36,7 @@
         cursor: pointer;
 
         &:hover {
-            color: $accent;
+            color: $light-orange;
         }
     }
 }
@@ -45,13 +45,10 @@
     color: $accent;
 }
 
-.menu__tourists {
+.menu__sublist {
     &:hover {
-        .tourists__sublist{
+        .sublist{
             display: block;
-            color: $white;
-            background: $dark-primary;
-            margin-top: 10px;
             z-index: 100;
         } 
     } 
@@ -66,9 +63,12 @@
     }
 }
 
-.tourists__sublist{ 
+.sublist{ 
     display: none;
     position: absolute;
+    margin-top: 10px;
+    color: $white;
+    background: $dark-primary;
 
     .menu__item {
         padding: 10px 20px;
@@ -108,7 +108,7 @@
     border-radius: 5px;
 
     &:hover {
-        color: $accent;
+        color: $light-orange;
         background: $dark-primary;
     }
 
