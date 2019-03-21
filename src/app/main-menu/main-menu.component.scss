@@ -39,6 +39,17 @@
             color: $light-orange;
         }
     }
+
+    &__item-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:after {
+            content: "|";
+            padding: 0 30px;
+        }
+    }
 }
 
 .menu-checkbox:checked + label {
@@ -66,15 +77,16 @@
 .sublist{ 
     display: none;
     position: absolute;
-    margin-top: 10px;
+    margin-top: 55px;
     color: $white;
     background: $dark-primary;
+    z-index: 10;
 
     .menu__item {
         padding: 10px 20px;
 
-        &:hover {
-            background: $strong-dark-green;
+        & label:after {
+            content: none;
         }
     }
 }
