@@ -59,7 +59,7 @@
           <div class="menu__item-wrap" *ngFor="let item of menuList; let ind = index"
                    [ngClass]="(!!item.sublist)? 'menu__sublist' : ''">
             <input type="radio" id="item-{{ind}}" name="main-menu" class="menu-checkbox" hidden>
-            <label for="item-{{ind}}" class="menu__item">{{ item.title }}</label>
+            <label for="item-{{ind}}" class="menu__item" (click)="menuSelected(item.routerLink)">{{ item.title }}</label>
 
             <div *ngIf="!!item.sublist" class="sublist">
                 <div *ngFor="let subItem of item.sublist; let innerInd = index" class="menu__item" >

@@ -12,8 +12,8 @@ import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-det
 import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-detail.component';
 import { AbbreviationsComponent } from './tourists/abbreviations/abbreviations.component';
 import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
-
-
+import { AppRoutingModule } from './app.routing.module';
+import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { TouristsQuestionsComponent } from './tourists/tourists-questions/touris
     MainMenuComponent,
     ChooseUsComponent,
     OurServicesComponent,
+    MainPageDetailComponent,
     AboutUsDetailComponent,
     ContactsDetailComponent,
     TouristsDetailComponent,
@@ -30,7 +31,8 @@ import { TouristsQuestionsComponent } from './tourists/tourists-questions/touris
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
