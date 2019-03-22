@@ -5,6 +5,13 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { ChooseUsComponent } from './about-us/choose-us/choose-us.component';
+import { OurServicesComponent } from './about-us/our-services/our-services.component';
+import { AboutUsDetailComponent } from './about-us/about-us-detail/about-us-detail.component';
+import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
+import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-detail.component';
+import { AbbreviationsComponent } from './tourists/abbreviations/abbreviations.component';
+import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
 
 
 
@@ -12,6 +19,13 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
   declarations: [
     AppComponent,
     MainMenuComponent,
+    ChooseUsComponent,
+    OurServicesComponent,
+    AboutUsDetailComponent,
+    ContactsDetailComponent,
+    TouristsDetailComponent,
+    AbbreviationsComponent,
+    TouristsQuestionsComponent,
   ],
   imports: [
     BrowserModule,
