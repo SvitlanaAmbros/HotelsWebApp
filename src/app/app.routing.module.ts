@@ -29,7 +29,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        component: ContactsDetailComponent
+        component: MainPageDetailComponent
     }
 ];
 
