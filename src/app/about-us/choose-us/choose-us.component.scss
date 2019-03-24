@@ -1,5 +1,9 @@
 @import '../../global-styles/variables.scss';
 
+h2 {
+    color: $strong-dark-green;
+}
+
 .about {
     &-wrap {
         margin-top: -18px;
@@ -24,18 +28,23 @@
 }
 
 .choose-us {
-    margin-top: -20px;
+    // margin-top: -20px;
     padding: 60px 0;
     background:  url('../../../assets/img/travel.jpg')center center;
 }
 
 .advantages {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    margin-top: 30px;
+
+    &-row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
     &__card {
         margin: 10px;
+        padding-right: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
