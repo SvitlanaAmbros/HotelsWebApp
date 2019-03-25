@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-abbreviations',
+  selector: 'abbreviations',
   templateUrl: './abbreviations.component.html',
   styleUrls: ['./abbreviations.component.scss']
 })

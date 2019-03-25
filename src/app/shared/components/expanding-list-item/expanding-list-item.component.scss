@@ -1,5 +1,10 @@
 @import '../../../global-styles/variables.scss';
 
+.highlight {
+    color: $dark-primary;
+    font-weight: bold;
+}
+
 input[type="checkbox"]  {
     & ~ label {
         -webkit-user-select: none;  
