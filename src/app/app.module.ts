@@ -15,6 +15,7 @@ import { TouristsQuestionsComponent } from './tourists/tourists-questions/touris
 import { AppRoutingModule } from './app.routing.module';
 import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-detail.component';
 import { AboutUsModule } from './about-us/about-us.module';
+import { CountriesComponent } from './tourists/countries/countries.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AboutUsModule } from './about-us/about-us.module';
     AboutUsDetailComponent,
     ContactsDetailComponent,
     TouristsDetailComponent,
+    CountriesComponent,
     AbbreviationsComponent,
     TouristsQuestionsComponent,
   ],
