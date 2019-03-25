@@ -1,0 +1,12 @@
+<div class="list__item">
+  <input type="checkbox" id="{{id}}" hidden>
+  <label for="{{id}}"></label>
+  <label for="{{id}}" class="list__item-title">{{ listItem.title }}</label>
+  <!-- sublist -->
+  <ul class="sublist" *ngIf="!!listItem.sublist">
+    <li class="sublist__item" *ngFor="let subitem of listItem.sublist"> 
+    <span class="highlight">{{ subitem.subtitle }}</span><br>
+    {{ subitem.info}}</li>
+    </ul>
+  <!-- EOF sublist -->
+</div>

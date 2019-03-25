@@ -14,6 +14,7 @@ import { AbbreviationsComponent } from './tourists/abbreviations/abbreviations.c
 import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-detail.component';
+import { AboutUsModule } from './about-us/about-us.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-
     BrowserModule,
     AngularFontAwesomeModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AboutUsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

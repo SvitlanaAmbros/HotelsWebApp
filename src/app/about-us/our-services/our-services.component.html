@@ -2,20 +2,24 @@
   <div class="container">
     <div class="services">
       <h2>Services</h2>
-      <div class="services-lists">
+      <div class="services-list">
         
-        <div class="services-lists__item" *ngFor="let item of services; let ind = index">
-            <input type="checkbox" id="{{ind}}" hidden>
+        <expanding-list-item *ngFor="let item of services; let ind = index"
+            [listItem]="item"
+            [id]="ind">
+        </expanding-list-item>
+        <!-- <div class="services-lists__item" *ngFor="let item of services; let ind = index"> -->
+            <!-- <input type="checkbox" id="{{ind}}" hidden>
             <label for="{{ind}}"></label>
-            <label class="services-lists__item-title">{{ item.title }}</label>
+            <label for="{{ind}}" class="services-lists__item-title">{{ item.title }}</label> -->
             <!-- sublist -->
-            <ol class="services-sublist">
+            <!-- <ol class="services-sublist">
               <li class="services-sublist__item" *ngFor="let subitem of item.sublist">
                 <span class="highlight">{{ subitem.subtitle }}</span><br>
                 {{ subitem.info}}</li>
-            </ol>
+            </ol> -->
             <!-- EOF sublist -->
-          </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
