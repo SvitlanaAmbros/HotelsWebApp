@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-detail.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { CountriesComponent } from './tourists/countries/countries.component';
+import { CountryCardComponent } from './tourists/country-card/country-card.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CountriesComponent } from './tourists/countries/countries.component';
     ContactsDetailComponent,
     TouristsDetailComponent,
     CountriesComponent,
+    CountryCardComponent,
     AbbreviationsComponent,
     TouristsQuestionsComponent,
   ],
