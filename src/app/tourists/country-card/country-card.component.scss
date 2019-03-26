@@ -1,0 +1,86 @@
+@import '../../global-styles/variables.scss';
+
+p {
+    margin: 7px;
+}
+
+.country {
+    width: 400px;
+    padding-bottom: 20px;
+    background: $white;
+    border-style: dashed;
+    border-color: $accent;
+    box-shadow: 5px 5px 10px rgba(65, 59, 59, 0.9);
+    cursor: pointer;
+    // pointer-events: none;
+
+    // & .country__info .country__fact {
+    //     transition: all 4s ease;
+    //     display: none;
+    // }
+
+    &:hover {
+        border-style: solid;
+        box-shadow: 8px 8px 10px rgba(65, 59, 59, 0.9);
+    //     position: absolute;
+
+    //     & .country__info  {
+    //         z-index: 1000;
+
+    //         .country__fact {
+    //             // transition: all 6s ease;
+    //             display: block;
+    //             // pointer-events: none;
+    //         }
+    //     }
+        
+    }
+
+    &__image {
+        margin: auto;
+        width: 400px;
+        height: 250px;
+        background: url('../../../assets/img/spain.jpg');
+        background-size: 400px 250px;
+    }
+
+    &__info {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & h3 {
+            color: $strong-dark-green;
+        }
+
+        // & h3:before {
+        //     content: " ";
+        //     display: inline-block;
+        //     height: 50px;
+        //     width: 50px;
+        //     background: url('../../../assets/img/globus.png');
+        //     background-size: 50px 50px;
+        // }
+
+        &-img {
+            margin-right: 10px;
+            height: 50px;
+            width: 50px;
+            background: url('../../../assets/img/globus.png');
+            background-size: 50px 50px;
+        }
+    }
+
+    &__fact {
+        &-title {
+            color: $dark-green;
+            font-weight: bold;
+        }
+        // font-size: 18px;
+    }
+}
