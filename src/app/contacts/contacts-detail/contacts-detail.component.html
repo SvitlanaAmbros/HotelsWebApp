@@ -1,3 +1,14 @@
-<div class="container">
-  <google-map></google-map>
+<div class="contacts-wrap">
+  <div class="container">
+    <div class="contacts">
+      <div class="contacts-row">
+        <div class="contacts__card">
+            <contact-card *ngFor="let contact of contacts"
+            [contact]="contact">
+          </contact-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

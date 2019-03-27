@@ -3,6 +3,7 @@ import { ImageSliderComponent } from "./components/image-slider/image-slider.com
 import { ExpandingListItemComponent } from './components/expanding-list-item/expanding-list-item.component';
 import { CommonModule } from "@angular/common";
 import { GoogleMapComponent } from './google-map/google-map.component';
+import { IdGeneratorService } from "./services/id-generator.service";
 
 @NgModule({
     declarations: [
@@ -14,7 +15,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
         CommonModule
     ],
     providers: [
-
+        IdGeneratorService
     ],
     exports: [
         ImageSliderComponent,

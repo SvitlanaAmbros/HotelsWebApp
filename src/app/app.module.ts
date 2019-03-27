@@ -17,6 +17,7 @@ import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-
 import { AboutUsModule } from './about-us/about-us.module';
 import { CountriesComponent } from './tourists/countries/countries.component';
 import { CountryCardComponent } from './tourists/country-card/country-card.component';
+import { ContactsModule } from './contacts/contacts.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CountryCardComponent } from './tourists/country-card/country-card.compo
     OurServicesComponent,
     MainPageDetailComponent,
     AboutUsDetailComponent,
-    ContactsDetailComponent,
+    // ContactsDetailComponent,
     TouristsDetailComponent,
     CountriesComponent,
     CountryCardComponent,
@@ -38,7 +39,8 @@ import { CountryCardComponent } from './tourists/country-card/country-card.compo
     AngularFontAwesomeModule,
     SharedModule,
     AppRoutingModule,
-    AboutUsModule
+    AboutUsModule,
+    ContactsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
