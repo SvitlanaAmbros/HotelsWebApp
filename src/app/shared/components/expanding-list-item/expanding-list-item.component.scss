@@ -12,6 +12,10 @@ input[type="checkbox"]  {
         -ms-user-select: none;    
         user-select: none;   
         cursor: pointer;
+
+        &:hover {
+            color: $primary;
+        }
     }
 
     & + label {
@@ -41,6 +45,7 @@ input[type="checkbox"]:checked {
     }
 
     & ~ .sublist {
+        cursor: default;
         display: block;
     } 
 }

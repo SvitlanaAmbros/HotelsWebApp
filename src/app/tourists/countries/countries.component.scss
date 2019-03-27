@@ -1,6 +1,17 @@
+@import '../../global-styles/variables.scss';
+
+h2 {
+    color: $strong-dark-green;
+}
+
 .countries {
+    padding: 60px 10px;
+    background: $white;
+    box-shadow: 5px 5px 18px $dark-grey;
+
     &-wrap {
-        padding: 60px 0;
+        padding: 20px 0;
+        background: $light-grey;
     }
 
     
@@ -12,7 +23,7 @@ country-card {
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 40px 0;
 }
