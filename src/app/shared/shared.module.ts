@@ -2,11 +2,13 @@ import { NgModule } from "@angular/core";
 import { ImageSliderComponent } from "./components/image-slider/image-slider.component";
 import { ExpandingListItemComponent } from './components/expanding-list-item/expanding-list-item.component';
 import { CommonModule } from "@angular/common";
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 @NgModule({
     declarations: [
         ImageSliderComponent,
-        ExpandingListItemComponent
+        ExpandingListItemComponent,
+        GoogleMapComponent
     ],
     imports: [
         CommonModule
@@ -16,7 +18,8 @@ import { CommonModule } from "@angular/common";
     ],
     exports: [
         ImageSliderComponent,
-        ExpandingListItemComponent
+        ExpandingListItemComponent,
+        GoogleMapComponent
     ]
 })
 
