@@ -14,16 +14,17 @@ h2 {
         background: $light-grey;
     }
 
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        // justify-content: space-around;
+        // align-items: center;
+        // margin: 40px 0;
+    }
+
     
 }
 
-country-card {
-    // margin: 100px;
-}
 
-.row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 40px 0;
-}
