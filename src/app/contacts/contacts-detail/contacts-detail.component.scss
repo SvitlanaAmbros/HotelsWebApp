@@ -1,11 +1,21 @@
+@import '../../global-styles/variables.scss';
 
+h2 {
+    color: $strong-dark-green;
+}
 
 .contacts {
+    &-wrap {
+        padding: 15px 0;
+    }
+
     &-row {
 
     }
 
     &__card {
+        // margin-bottom: 20px;
         width: 100%;
+        box-shadow: 5px 5px 18px $dark-grey;
     }
 }

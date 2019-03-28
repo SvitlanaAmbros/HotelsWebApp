@@ -1,14 +1,13 @@
 <div class="contacts-wrap">
   <div class="container">
     <div class="contacts">
+      <h2>Our contacts</h2>
       <div class="contacts-row">
-        <div class="contacts__card">
-            <contact-card *ngFor="let contact of contacts"
-            [contact]="contact">
-          </contact-card>
-        </div>
+        <contact-card *ngFor="let contact of contacts" 
+            [contact]="contact" 
+            class="contacts__card">
+        </contact-card>
       </div>
     </div>
   </div>
 </div>
-
