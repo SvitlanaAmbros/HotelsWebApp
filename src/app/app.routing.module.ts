@@ -4,6 +4,11 @@ import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-
 import { AboutUsDetailComponent } from './about-us/about-us-detail/about-us-detail.component';
 import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-detail.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
+import { ChooseUsComponent } from './about-us/choose-us/choose-us.component';
+import { OurServicesComponent } from './about-us/our-services/our-services.component';
+import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
+import { CountriesComponent } from './tourists/countries/countries.component';
+import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component';
 
 const routes: Routes = [
     {
@@ -17,11 +22,31 @@ const routes: Routes = [
     },
     {
         path: 'about-us',
-        component: AboutUsDetailComponent
+        component: AboutUsDetailComponent,
+        children: [
+            {
+                path: 'choose-us',
+                component: ChooseUsComponent
+            },
+            {
+                path: 'services',
+                component: OurServicesComponent
+            }
+        ]
     },
     {
         path: 'for-tourists',
-        component: TouristsDetailComponent
+        component: TouristsDetailComponent,
+        children: [
+            {
+                path: 'questions',
+                component: TouristsDetailComponent
+            },
+            {
+                path: 'countries',
+                component: TouristsDetailComponent
+            }
+        ]
     },
     {
         path: 'contacts',

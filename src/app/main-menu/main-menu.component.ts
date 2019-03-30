@@ -18,10 +18,12 @@ export class MainMenuComponent implements OnInit {
       routerLink: 'about-us',
       sublist: [
         {
-          title: 'Why you should choose us'
+          title: 'Why you should choose us',
+          routerLink: 'choose-us'
         }, 
         {
-          title: 'Services'
+          title: 'Services',
+          routerLink: 'services'
         }
       ]
     },
@@ -30,10 +32,12 @@ export class MainMenuComponent implements OnInit {
       routerLink: 'for-tourists',
       sublist: [
         {
-          title: 'Questions and answers'
+          title: 'Questions and answers',
+          routerLink: 'questions'
         }, 
         {
-          title: 'Abbreviations'
+          title: 'Abbreviations',
+          routerLink: 'countries'
         }
       ]
     },

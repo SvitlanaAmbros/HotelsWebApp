@@ -19,6 +19,7 @@ import { CountriesComponent } from './tourists/countries/countries.component';
 import { CountryCardComponent } from './tourists/country-card/country-card.component';
 import { ContactsModule } from './contacts/contacts.module';
 import { FooterComponent } from './footer/footer.component';
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
+    Ng2PageScrollModule,
     SharedModule,
     AppRoutingModule,
     AboutUsModule,

@@ -65,7 +65,10 @@
                 <div *ngFor="let subItem of item.sublist; let innerInd = index" class="menu__item" >
                     <input type="radio" id="item-{{ind}}__{{innerInd}}" name="main-menu" 
                     class="menu-checkbox" hidden>
-                    <label for="item-{{ind}}__{{innerInd}}" class="menu__item">{{ subItem.title }}</label>
+                    <label for="item-{{ind}}__{{innerInd}}" 
+                    class="menu__item"
+                    (click)="menuSelected(item.routerLink + '/' + subItem.routerLink)">
+                    {{ subItem.title }}</label>
                 </div>
             </div>
           </div> 
