@@ -18,6 +18,7 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { CountriesComponent } from './tourists/countries/countries.component';
 import { CountryCardComponent } from './tourists/country-card/country-card.component';
 import { ContactsModule } from './contacts/contacts.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ContactsModule } from './contacts/contacts.module';
     CountryCardComponent,
     AbbreviationsComponent,
     TouristsQuestionsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
