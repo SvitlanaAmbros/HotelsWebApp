@@ -36,7 +36,7 @@ export class MainMenuComponent implements OnInit {
           routerLink: 'questions'
         }, 
         {
-          title: 'Abbreviations',
+          title: 'Countries',
           routerLink: 'countries'
         }
       ]

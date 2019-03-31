@@ -20,6 +20,7 @@ import { CountryCardComponent } from './tourists/country-card/country-card.compo
 import { ContactsModule } from './contacts/contacts.module';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
+import { ScrollToModule } from 'ng2-scroll-to-el';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll';
     BrowserModule,
     AngularFontAwesomeModule,
     Ng2PageScrollModule,
+    ScrollToModule.forRoot(),
     SharedModule,
     AppRoutingModule,
     AboutUsModule,

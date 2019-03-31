@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router, NavigationEnd } from '@angular/router';
+import { ScrollToService } from 'ng2-scroll-to-el';
 
 @Component({
   selector: 'app-about-us-detail',
@@ -8,13 +9,36 @@ import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router'
 })
 export class AboutUsDetailComponent implements OnInit {
 
-  public url: String;
-  constructor(private router: Router) { }
+  @ViewChild('choose') chooseUs: ElementRef;
+  @ViewChild('services') services: ElementRef;
+
+  constructor(private router: Router, private scrollService: ScrollToService) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        console.log('route changed');
+        let routerUrl = this.router.routerState.snapshot.url.split('/');
+        let url = routerUrl[routerUrl.length - 1];
+        console.log(url);
+
+        switch (url) {
+          case 'choose-us': {
+            this.scrollToHome(this.chooseUs.nativeElement);
+            break;
+          }
+          case 'services': {
+            this.scrollToHome(this.services.nativeElement);
+            break;
+          }
+        }
+      }
+    });
+  }
 
   ngOnInit() {
-    let routerUrl = this.router.routerState.snapshot.url.split('/');
-    this.url = routerUrl[routerUrl.length - 1];
-    console.log(this.url);
+  }
+
+  scrollToHome(element) {
+    this.scrollService.scrollTo(element, 700, 0);
   }
 
 }
