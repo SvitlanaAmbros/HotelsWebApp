@@ -15,10 +15,8 @@ export class AboutUsDetailComponent implements OnInit {
   constructor(private router: Router, private scrollService: ScrollToService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        console.log('route changed');
         let routerUrl = this.router.routerState.snapshot.url.split('/');
         let url = routerUrl[routerUrl.length - 1];
-        console.log(url);
 
         switch (url) {
           case 'choose-us': {
