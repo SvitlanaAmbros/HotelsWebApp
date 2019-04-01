@@ -1,3 +1,29 @@
-<p>
-  hotels works!
-</p>
+<div class="hotels-wrap">
+  <div class="container">
+    <div class="hotels">
+      <div class="hotels__search">
+        <h2>Input search parametres</h2>
+        <form class="hotels__search-row">
+          <div>
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input type="text" id="date" required>
+          </div>
+          <div>
+            <label for="days">Days</label>
+            <input type="text" class="days" required>
+          </div>
+          <div>
+            <button class="hotels__search-btn" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+      <div class="hotels__list">
+          <hotel-card></hotel-card>
+      </div>
+    </div>
+  </div>
+</div>
