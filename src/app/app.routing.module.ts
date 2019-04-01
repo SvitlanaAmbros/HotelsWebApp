@@ -6,9 +6,6 @@ import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-det
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { ChooseUsComponent } from './about-us/choose-us/choose-us.component';
 import { OurServicesComponent } from './about-us/our-services/our-services.component';
-import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
-import { CountriesComponent } from './tourists/countries/countries.component';
-import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component';
 
 const routes: Routes = [
     {

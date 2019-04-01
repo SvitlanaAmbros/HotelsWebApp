@@ -10,7 +10,6 @@ import { OurServicesComponent } from './about-us/our-services/our-services.compo
 import { AboutUsDetailComponent } from './about-us/about-us-detail/about-us-detail.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-detail.component';
-import { AbbreviationsComponent } from './tourists/abbreviations/abbreviations.component';
 import { TouristsQuestionsComponent } from './tourists/tourists-questions/tourists-questions.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-detail.component';
@@ -21,21 +20,13 @@ import { ContactsModule } from './contacts/contacts.module';
 import { FooterComponent } from './footer/footer.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import { ScrollToModule } from 'ng2-scroll-to-el';
+import { MainPageModule } from './main-page/main-page.module';
+import { TouristsModule } from './tourists/tourists.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    ChooseUsComponent,
-    OurServicesComponent,
-    MainPageDetailComponent,
-    AboutUsDetailComponent,
-    // ContactsDetailComponent,
-    TouristsDetailComponent,
-    CountriesComponent,
-    CountryCardComponent,
-    AbbreviationsComponent,
-    TouristsQuestionsComponent,
     FooterComponent
   ],
   imports: [
@@ -45,7 +36,9 @@ import { ScrollToModule } from 'ng2-scroll-to-el';
     ScrollToModule.forRoot(),
     SharedModule,
     AppRoutingModule,
+    MainPageModule,
     AboutUsModule,
+    TouristsModule,
     ContactsModule
   ],
   providers: [],
