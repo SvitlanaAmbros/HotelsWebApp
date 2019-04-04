@@ -97,6 +97,21 @@ label {
         
     }
 
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__number-btn {
+        width: 40px;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+        background: white;
+        border: 2px solid black;
+        cursor: pointer;
+    }
 
 
     

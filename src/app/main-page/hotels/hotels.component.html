@@ -1,6 +1,7 @@
 <div class="hotels-wrap">
   <div class="container">
     <div class="hotels">
+      <!-- start search block -->
       <div class="hotels__search">
         <h2>Input search parametres</h2>
         <form class="hotels__search-row">
@@ -21,9 +22,20 @@
           </div>
         </form>
       </div>
+      <!-- EOF search block -->
+      <!-- start hotels cards -->
       <div class="hotels__list">
-          <hotel-card></hotel-card>
+        <hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></hotel-card>
       </div>
+      <!-- EOF hotels cards -->
+      <!-- start pagination -->
+      <div class="hotels__pagination">
+          <button
+            class="hotels__number-btn"
+            (click)="updateHotels()">
+           </button>
+      </div>
+      <!-- EOF pagination -->
     </div>
   </div>
 </div>

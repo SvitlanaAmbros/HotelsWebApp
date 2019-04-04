@@ -7,13 +7,13 @@
       <!-- <img src="../../assets/img/bookmark.png" alt="mark" class="mark__img"> -->
       <label class="mark__price">800$</label>
     </div>
-    <h3>Naama Bay Resort</h3>
+    <h3>{{ hotel.title }}</h3>
     <div class="hotel-row">
       <!-- <div class="hotel-info__icon"> -->
         <img src="../../../assets/img/bed.png" alt="bed" class="hotel-info__icon">
       <!-- </div>   -->
       <!-- <div class="hotel-info__message"> -->
-        <p>Room:<span class="bold"> Standart </span></p>
+        <p>Room:<span class="bold"> {{hotel.roomType}} </span></p>
       <!-- </div>  -->
     </div>
     <div class="hotel-row">
@@ -21,7 +21,7 @@
         <img src="../../../assets/img/food.png" alt="bed" class="hotel-info__icon">
       <!-- </div>   -->
       <!-- <div class="hotel-info__message"> -->
-        <p>Nutrition:<span class="bold"> AI </span></p>
+        <p>Nutrition:<span class="bold"> {{hotel.nutrition}} </span></p>
       <!-- </div>  -->
     </div>
     <div class="hotel-row">
@@ -29,7 +29,7 @@
         <img src="../../../assets/img/plane.png" alt="bed" class="hotel-info__icon">
       <!-- </div>   -->
       <!-- <div class="hotel-info__message"> -->
-        <p>Flight:<span class="bold highlight"> Included </span></p>
+        <p>Flight:<span class="bold highlight"> {{hotel.flight}} </span></p>
       <!-- </div>  -->
     </div>
     <div class="hotel-row">
@@ -41,7 +41,7 @@
       <!-- </div>  -->
     </div>
     <div  class="hotel-info__btn">
-      <btn-primary [name]="'More detail'"></btn-primary>
+      <btn-primary [name]="'More detail...'"></btn-primary>
     </div>
   </div>
 </div>
