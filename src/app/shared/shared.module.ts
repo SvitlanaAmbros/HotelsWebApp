@@ -4,12 +4,14 @@ import { ExpandingListItemComponent } from './components/expanding-list-item/exp
 import { CommonModule } from "@angular/common";
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { IdGeneratorService } from "./services/id-generator.service";
+import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.component';
 
 @NgModule({
     declarations: [
         ImageSliderComponent,
         ExpandingListItemComponent,
-        GoogleMapComponent
+        GoogleMapComponent,
+        BtnPrimaryComponent
     ],
     imports: [
         CommonModule
@@ -20,6 +22,7 @@ import { IdGeneratorService } from "./services/id-generator.service";
     exports: [
         ImageSliderComponent,
         ExpandingListItemComponent,
+        BtnPrimaryComponent,
         GoogleMapComponent
     ]
 })

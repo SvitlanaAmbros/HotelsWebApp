@@ -3,6 +3,10 @@
 
   </div>
   <div class="hotel-info">
+    <div class="mark">
+      <!-- <img src="../../assets/img/bookmark.png" alt="mark" class="mark__img"> -->
+      <label class="mark__price">800$</label>
+    </div>
     <h3>Naama Bay Resort</h3>
     <div class="hotel-row">
       <!-- <div class="hotel-info__icon"> -->
@@ -25,7 +29,7 @@
         <img src="../../../assets/img/plane.png" alt="bed" class="hotel-info__icon">
       <!-- </div>   -->
       <!-- <div class="hotel-info__message"> -->
-        <p>Flight:<span class="bold"> Included </span></p>
+        <p>Flight:<span class="bold highlight"> Included </span></p>
       <!-- </div>  -->
     </div>
     <div class="hotel-row">
@@ -35,6 +39,9 @@
       <!-- <div class="hotel-info__message"> -->
         <p>7 days</p>
       <!-- </div>  -->
+    </div>
+    <div  class="hotel-info__btn">
+      <btn-primary [name]="'More detail'"></btn-primary>
     </div>
   </div>
 </div>
