@@ -1,5 +1,7 @@
 <div class="hotel">
-  <div class="hotel-image">
+  <div class="hotel-image"
+    [ngStyle]="{'background':'url(../../../assets/img/hotel_' + hotel.id + '.jpg)', 
+    'background-size': '400px 300px'}">
 
   </div>
   <div class="hotel-info">
@@ -41,7 +43,9 @@
       <!-- </div>  -->
     </div>
     <div  class="hotel-info__btn">
-      <btn-primary [name]="'More detail...'"></btn-primary>
+      <btn-primary 
+        [name]="'More detail...'"
+        (click)="loadHotelDetail(hotel.id)"></btn-primary>
     </div>
   </div>
 </div>

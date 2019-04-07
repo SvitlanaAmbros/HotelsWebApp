@@ -19,7 +19,8 @@ import { HotelInfoComponent } from './hotel-info/hotel-info.component';
         HotelInfoComponent
     ],
     exports: [
-        MainPageDetailComponent
+        MainPageDetailComponent,
+        HotelInfoComponent
     ]
 })
 

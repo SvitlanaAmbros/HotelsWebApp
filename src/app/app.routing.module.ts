@@ -6,6 +6,7 @@ import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-det
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
 import { ChooseUsComponent } from './about-us/choose-us/choose-us.component';
 import { OurServicesComponent } from './about-us/our-services/our-services.component';
+import { HotelInfoComponent } from './main-page/hotel-info/hotel-info.component';
 
 const routes: Routes = [
     {
@@ -15,7 +16,17 @@ const routes: Routes = [
     },
     {
         path: 'main-page',
-        component: MainPageDetailComponent
+        component: MainPageDetailComponent,
+        children: [
+            // {
+            //     path: 'hotel',
+            //     component: HotelInfoComponent
+            // }
+        ]
+    },
+    {
+        path: 'main-page/hotel/:id',
+        component: HotelInfoComponent
     },
     {
         path: 'about-us',
@@ -23,11 +34,11 @@ const routes: Routes = [
         children: [
             {
                 path: 'choose-us',
-                component: ChooseUsComponent
+                component: AboutUsDetailComponent
             },
             {
                 path: 'services',
-                component: OurServicesComponent
+                component: AboutUsDetailComponent
             }
         ]
     },

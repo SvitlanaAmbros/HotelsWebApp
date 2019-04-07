@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'hotel-card',
@@ -8,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HotelCardComponent implements OnInit {
 
   @Input() hotel;
+  @Output() showHotelDetail: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  public loadHotelDetail(id: number): void {
+    this.showHotelDetail.emit(id);
+  }
 }

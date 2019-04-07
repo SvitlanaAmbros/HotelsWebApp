@@ -25,7 +25,9 @@
       <!-- EOF search block -->
       <!-- start hotels cards -->
       <div class="hotels__list">
-        <hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></hotel-card>
+        <hotel-card *ngFor="let hotel of hotels" 
+          [hotel]="hotel"
+          (showHotelDetail)="showHotelDetail($event)"></hotel-card>
       </div>
       <!-- EOF hotels cards -->
       <!-- start pagination -->
