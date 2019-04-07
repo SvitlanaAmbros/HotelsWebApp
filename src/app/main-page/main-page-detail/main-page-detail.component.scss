@@ -2,5 +2,9 @@
 // @import "../global-styles/base.scss";
 
 .main-page {
+
+    &__slider {
+        padding: 20px 0 50px;
+    }
     // background: $grey;
 }
