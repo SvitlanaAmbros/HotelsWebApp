@@ -6,13 +6,21 @@
       <input type="radio" name="image-slider" class="slide__checkbox" id="fourth-image" hidden>
       
       <div class="slider__dots">
-          <label class="slider__dot" for="first-image"></label>
-          <label class="slider__dot" for="second-image"></label>
-          <label class="slider__dot" for="third-image"></label>
-          <label class="slider__dot" for="fourth-image"></label>
+          <label class="slider__dot"
+            *ngFor="let dot of images; let ind = index" 
+            [ngClass]="ind==currentImgInd? 'highlight': ''"
+            (click)="updateImage(ind)"></label>
       </div>
-      
-      <div class="slider__image"></div>
+
+      <div class="slider__image" 
+        [ngStyle]="{'background':'url(/assets/img/slider_' + currentImgInd + '.jpg) center no-repeat', 
+        'background-size': '100% 510px',
+        'transition': '.9s'}"
+      ></div>
+
+      <input type="button" value="<" class="slider__btn slider__btn_prev" (click)="prevImage()">
+      <input type="button" value=">" class="slider__btn slider__btn_next" (click)="nextImage()">
+
     </div>
 </div>
 
