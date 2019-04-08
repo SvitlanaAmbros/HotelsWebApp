@@ -25,8 +25,8 @@ export module hotels {
         availableRooms: number;
     }
 
-    export type Stars = '1*'| '2*' | '3*' | '4*' | '5*';
-    export const HOTEL__STARS: Stars[] = ['1*', '2*', '3*', '4*', '5*'];
+    export type Stars = 1| 2 | 3 | 4 | 5;
+    export const HOTEL__STARS: Stars[] = [1, 2, 3, 4, 5];
 
     export type NutritionType = 'OB' | 'BB' | 'HB' | 'FB' | 'AI';
     export const NUTRITION_TYPES: NutritionType[] = ['OB', 'BB', 'HB', 'FB','AI'];
@@ -62,6 +62,7 @@ export module hotels {
 
         //type for additional price in different types rooms or nutrition
         export interface Price {
+            // price in dollars
             basePrice: number;
             nutrition: PriceForNutritionType;
             roomType: PriceForRoomType;

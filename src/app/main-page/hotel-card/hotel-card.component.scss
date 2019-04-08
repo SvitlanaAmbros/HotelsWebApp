@@ -3,6 +3,12 @@
 h3 {
     margin: 0;
     margin: 8px;
+
+    &:after {
+        font-family: FontAwesome;
+        content: '  \f005';
+        color: $accent;
+    }
 }
 
 .hotel {
@@ -26,7 +32,7 @@ h3 {
     }
 
     &-info {
-        margin-left: 35px;
+        margin: -10px 0 0 35px;
 
         &__icon {
             height: 40px;
@@ -44,6 +50,8 @@ h3 {
         display: flex;
         // justify-content: space-between;
         align-items: center;
+        font-size: 14px;
+         
     }
 
 
@@ -54,6 +62,10 @@ h3 {
 
 .bold {
     font-weight: bold;
+
+    &:not(:last-child):after {
+        content: '|';
+    }
 }
 
 .highlight {

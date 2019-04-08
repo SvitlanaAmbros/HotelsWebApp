@@ -24,8 +24,8 @@
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->
-      <div class="hotels__list">
-        <hotel-card *ngFor="let hotel of hotels" 
+      <div class="hotels__list" *ngIf="!!hotelsBaseInfo">
+        <hotel-card *ngFor="let hotel of hotelsBaseInfo.hotels" 
           [hotel]="hotel"
           (showHotelDetail)="showHotelDetail($event)"></hotel-card>
       </div>

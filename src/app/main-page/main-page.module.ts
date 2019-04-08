@@ -5,6 +5,7 @@ import { CommonModule } from "@angular/common";
 import { HotelsComponent } from './hotels/hotels.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelInfoComponent } from './hotel-info/hotel-info.component';
+import { HotelsInfoService } from "./hotels-info.service";
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { HotelInfoComponent } from './hotel-info/hotel-info.component';
     exports: [
         MainPageDetailComponent,
         HotelInfoComponent
+    ],
+    providers: [
+        HotelsInfoService
     ]
 })
 

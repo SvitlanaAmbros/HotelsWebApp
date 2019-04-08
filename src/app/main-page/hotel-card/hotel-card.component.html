@@ -6,33 +6,44 @@
   </div>
   <div class="hotel-info">
     <div class="mark">
-      <!-- <img src="../../assets/img/bookmark.png" alt="mark" class="mark__img"> -->
-      <label class="mark__price">800$</label>
+      <label class="mark__price">{{ hotel.minPricePerDay * hotel.days }}$</label>
     </div>
-    <h3>{{ hotel.title }}</h3>
+    <h3>{{ hotel.title }} {{hotel.stars}}</h3>
     <div class="hotel-row">
-      <!-- <div class="hotel-info__icon"> -->
+        <img src="../../../assets/img/location.png" alt="bed" class="hotel-info__icon">
+        <p> 
+          <span class="bold"> 
+          {{ hotel.country }}, {{ hotel.city }} 
+        </span>
+      </p>
+    </div>
+    <div class="hotel-row">
+        <img src="../../../assets/img/advant.png" alt="bed" class="hotel-info__icon">
+        <p>Rate:
+          <span class="bold"> 
+          {{ hotel.rate }} 
+        </span>
+      </p>
+    </div>
+    <div class="hotel-row">
         <img src="../../../assets/img/bed.png" alt="bed" class="hotel-info__icon">
-      <!-- </div>   -->
-      <!-- <div class="hotel-info__message"> -->
-        <p>Room:<span class="bold"> {{hotel.roomType}} </span></p>
-      <!-- </div>  -->
+        <p>Room:
+          <span class="bold" *ngFor="let room of hotel.rooms"> 
+          {{ room.type }} 
+        </span>
+      </p>
     </div>
     <div class="hotel-row">
-      <!-- <div class="hotel-info__icon"> -->
         <img src="../../../assets/img/food.png" alt="bed" class="hotel-info__icon">
-      <!-- </div>   -->
-      <!-- <div class="hotel-info__message"> -->
-        <p>Nutrition:<span class="bold"> {{hotel.nutrition}} </span></p>
-      <!-- </div>  -->
+        <p>Nutrition:
+          <span class="bold" *ngFor="let nutrition of hotel.nutritionTypes"> 
+            {{ nutrition }} 
+          </span>
+        </p>
     </div>
     <div class="hotel-row">
-      <!-- <div class="hotel-info__icon"> -->
         <img src="../../../assets/img/calendar.png" alt="bed" class="hotel-info__icon">
-      <!-- </div>   -->
-      <!-- <div class="hotel-info__message"> -->
-        <p>7 days</p>
-      <!-- </div>  -->
+        <p>{{ hotel.days }} days</p>
     </div>
     <div  class="hotel-info__btn">
       <btn-primary 
