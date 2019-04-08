@@ -41,3 +41,10 @@
     </div>
   </div>
 </div>
+
+<form-popup *ngIf="hotelPopup.isOpened"
+  [header]="'Hotel'"
+  [buttonCancel]="'Cancel'"
+  [buttonAction]="'Order'"
+  (onClose)="closeHotelPopup()"
+></form-popup>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HotelsInfoService } from '../hotels-info.service';
 import { hotels } from '../types/hotels';
 import { HotelsBaseInfo } from '../models/hotels-base-info';
+import { PopupControls, PopupControlsService } from '../../shared/services/popup-controls.service';
 
 @Component({
   selector: 'hotels',
@@ -11,74 +12,18 @@ import { HotelsBaseInfo } from '../models/hotels-base-info';
 })
 export class HotelsComponent implements OnInit {
 
-  // public hotels = [
-  //   {
-  //     id: 1,
-  //     title: 'Naama Bay Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Sunrise Diamond Beach Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'Coral Sea Sensatory',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 4,
-  //     title: 'Sphinx Aqua Park Beach Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 1,
-  //     title: 'Naama Bay Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Sunrise Diamond Beach Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'Coral Sea Sensatory',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   },
-  //   {
-  //     id: 4,
-  //     title: 'Sphinx Aqua Park Beach Resort',
-  //     roomType: 'Standart',
-  //     nutrition: 'AI',
-  //     flight: 'Included'
-  //   }
-
-  // ];
-
   public hotelsBaseInfo: hotels.HotelsBaseInfo;
   public days: number = 1;
+
+  public hotelPopup: PopupControls;
 
   public pages = [];
   public countHotelPerPage = 1;
 
 
-  constructor(private router: Router, private hotelInfoService: HotelsInfoService) { }
+  constructor(private router: Router, 
+    private hotelInfoService: HotelsInfoService,
+    private popupControlsService: PopupControlsService) { }
 
   ngOnInit() {
     this.hotelInfoService.getHotels().then((res) => {
@@ -86,6 +31,7 @@ export class HotelsComponent implements OnInit {
       console.log('Received hotels', this.hotelsBaseInfo);
     });
     
+    this.initPopup();
 
     // let pagesCount = Math.ceil(this.hotels.length / this.countHotelPerPage);
     
@@ -96,12 +42,24 @@ export class HotelsComponent implements OnInit {
   //   alert();
   // }
 
-  // public showHotelDetail(id) {
-  //   console.log(this.findHotelById(id));
-  //   this.router.navigate(['main-page/hotel', id]);
-  // }
+  public showHotelDetail(id) {
+    this.openHotelPopup();
+    
+  }
 
   // public findHotelById(id: number) {
     // return this.hotels.filter(item => item.id == id)[0];
   // }
+
+  public initPopup():void {
+    this.hotelPopup = this.popupControlsService.create();
+  }
+
+  public openHotelPopup():void {
+    this.hotelPopup.open();
+  }
+
+  public closeHotelPopup():void {
+    this.hotelPopup.close();
+  }
 }
