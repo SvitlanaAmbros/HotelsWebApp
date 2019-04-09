@@ -1,3 +1,5 @@
+import { Services } from "@angular/core/src/view";
+
 export module hotels {
 
     // UI types
@@ -25,6 +27,24 @@ export module hotels {
         availableRooms: number;
     }
 
+    export interface Price {
+        // price in dollars
+        basePrice: number;
+        nutrition: PriceForNutritionType;
+        roomType: PriceForRoomType;
+    }
+
+    
+    //type for additional price in different types rooms or nutrition
+    export type PriceForNutritionType = {
+        [type in NutritionType]: number;
+    };
+
+    export type PriceForRoomType = {
+        [type in RoomType]: number;
+    };
+
+
     export type Stars = 1| 2 | 3 | 4 | 5;
     export const HOTEL__STARS: Stars[] = [1, 2, 3, 4, 5];
 
@@ -33,6 +53,25 @@ export module hotels {
 
     export type RoomType = 'Standart' | 'Lux' | 'Apartment';
     export const ROOM_TYPES: RoomType[] = ['Standart', 'Lux',  'Apartment'];
+
+    export interface CurrentHotelInfo {
+        id: number;
+        title: string;
+        country: string;
+        city: string;
+        mainImg: string;
+        nutritionTypes: NutritionType[];
+        rooms: Room[];
+        stars: Stars;
+        rate: number;
+        price: Price;
+        days: number;
+        images: string[];
+        coordLng: number;
+        coordLat: number;
+        site?: string;
+        description: string;
+    }
 
     //db types
     export module db {
@@ -60,20 +99,35 @@ export module hotels {
             availableRooms: number;
         }
 
-        //type for additional price in different types rooms or nutrition
-        export interface Price {
-            // price in dollars
-            basePrice: number;
-            nutrition: PriceForNutritionType;
-            roomType: PriceForRoomType;
+        // expanded hotel info for hotel popup
+        export interface CurrentHotelInfo {
+            id: number;
+            title: string;
+            country: string;
+            city: string;
+            mainImg: string;
+            nutritionTypes: NutritionType[];
+            rooms: Room[];
+            stars: Stars;
+            rate: number;
+            price: Price;
+            images: string[];
+            coord: Coord;
+            site?: string;
+            description: string;
+            services?: HotelServices;
         }
 
-        export type PriceForNutritionType = {
-            [type in NutritionType]: number;
-        };
+        export interface Coord {
+            lng: number;
+            lat: number;
+        }
 
-        export type PriceForRoomType = {
-            [type in RoomType]: number;
-        };
+        export interface HotelServices {
+            
+        }
+
+
+
     }  
 }

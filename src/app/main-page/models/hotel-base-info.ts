@@ -39,7 +39,7 @@ export class HotelBaseInfo implements hotels.HotelBaseInfo {
         return dbRooms;
     }
 
-    private getMinPricePerDay(dbHotelPrice: hotels.db.Price):number  {
+    private getMinPricePerDay(dbHotelPrice: hotels.Price):number  {
         return dbHotelPrice.basePrice;
     }
 }

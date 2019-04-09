@@ -21,10 +21,9 @@ button {
 }
 
 label {
-    display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: $dark-primary;
+    // color: $dark-primary;
 }
 
 .hotels {
@@ -115,5 +114,96 @@ label {
 
 
     
-} 
+}
 
+.popup-info {
+    &__map {
+        width: 50%;
+    }
+}
+
+.short-info {
+    display: flex;
+    margin: 0 -40px;
+
+    &__image {
+        width: 50%;
+        height: 300px;;
+    }
+
+    &__right {
+        width: 50%;
+        padding: 0 10px;
+        // background: $light-grey;
+        background: url('../../../assets/img/hotel-background.jpg');
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        margin: 10px -10px;
+        padding: 15px 10px;
+        background: $white;
+        color: $primary;
+    }
+
+
+    &__items {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__radio {
+        display: none;
+
+        & + label {
+            padding: 5px;
+            cursor: pointer;
+            // color: $black;
+        }
+
+        &:checked {
+            & + label {
+                background: $white;
+            }
+        }
+    }
+    
+    
+
+    &__subtitle {
+        margin: 0;
+        margin: 8px;
+        color: $dark-primary;
+        font-weight: bold;
+    }
+
+}
+
+.row {
+    margin: 20px 0;
+}
+
+.disabled {
+    color: $dark-grey;
+
+    &-message {
+        width: 100px;
+        margin: 5px 0 0;
+        background: white;
+        text-align: center;
+        padding: 5px 3px;
+        position: absolute;
+        display: none;
+        border-radius: 0 5px 0 5px;
+        color: red;
+        // display: none;
+    }
+    &:hover {
+        & + .disabled-message {
+            display: block;
+        }
+    }
+}

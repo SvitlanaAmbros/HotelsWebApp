@@ -133,6 +133,66 @@ export class HotelsInfoService {
     ]
   }
 
+  private hotel: hotels.db.CurrentHotelInfo = 
+  {
+    id: 1,
+    title: 'Naama Bay',
+    country: 'Egypt',
+    city: 'Sharm-el-Sheikh',
+    mainImg: 'hotel_1',
+    nutritionTypes: [
+      'OB', 'HB', 'AI'
+    ],
+    rooms: [
+      {
+        type: 'Standart',
+        availableRooms: 1
+      },
+      {
+        type: 'Lux',
+        availableRooms: 4
+      },
+      {
+        type: 'Apartment',
+        availableRooms: 0
+      }
+    ],
+    stars: 5,
+    rate: 7.8,
+    price: {
+      basePrice: 100,
+      nutrition: {
+        'OB': 0,
+        'HB': 10,
+        'FB': 20,
+        'BB': 30,
+        'AI': 50
+      },
+      roomType: {
+        'Standart': 0,
+        'Lux': 50,
+        'Apartment': 100
+      }
+    },
+    images: [
+      'room_1',
+      'room_2',
+      'room_3',
+      'room_4'
+    ],
+    coord: {
+      lat: 27.975679,
+      lng: 34.422927
+    },
+    site: 'coralsearesorts.com',
+    description: `The hotel has a beautiful green area, 
+    a convenient sandy entrance to the sea, a large playground. 
+    Recommended for a relaxing family holiday with children. 
+    Opened in 1994, the last renovation was held in 2011.
+     The hotel consists of two 3-storey buildings and one 2-storey 
+     building. 15 km from the airport of Hurghada, 20 km from Hurghada.`
+  }
+
 
   constructor() { }
 
@@ -140,6 +200,12 @@ export class HotelsInfoService {
     return new Promise((res, rej) => {
       res(this.data);
     });
+  }
+
+  public getCurrentHotelInfo(hotelId: number): Promise<hotels.db.CurrentHotelInfo> {
+    return new Promise((res, rej) => {
+      res(this.hotel);
+    }); 
   }
 
 }

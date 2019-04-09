@@ -59,6 +59,12 @@ button {
         &-wrap {
             margin-bottom: 25px;
         }
+
+        &:after {
+            font-family: FontAwesome;
+            content: '  \f005';
+            color: $accent;
+        }
     }
 
     &__close {

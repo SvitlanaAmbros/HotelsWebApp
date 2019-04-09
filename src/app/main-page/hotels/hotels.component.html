@@ -42,9 +42,64 @@
   </div>
 </div>
 
-<form-popup *ngIf="hotelPopup.isOpened"
-  [header]="'Hotel'"
+<!-- popup -->
+<form-popup
+  [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
   [buttonAction]="'Order'"
-  (onClose)="closeHotelPopup()"
-></form-popup>
+  (onClose)="closeHotelPopup()">
+
+  <div class="content">
+    <div class="popup-info">
+      <!-- short info row -->
+      <div class="short-info">
+        <img [src]="'../../../assets/img/' + currentHotelInfo.images[0] + '.jpg'" 
+          class="short-info__image"
+          alt="hotel image">
+        <div class="short-info__right">
+          <p class="short-info__price">Total price: {{ currentHotelInfo.price.basePrice * currentHotelInfo.days }} $</p>
+          <!-- room types  -->
+          <div class="row">
+            <p class="short-info__subtitle">Room type</p>
+            <div class="short-info__items">
+              <div class="short-info__item" *ngFor="let room of currentHotelInfo.rooms; let ind = index">
+                <input type="radio" name="room" 
+                id="room_{{ind}}" 
+                class="short-info__radio" 
+                [disabled]="room.availableRooms == 0"
+                hidden>
+                <label for="room_{{ind}}" 
+                  [ngClass]="room.availableRooms == 0? 'disabled' : ''">{{room.type}}</label>
+                <div *ngIf="room.availableRooms == 0" class="disabled-message">No available places in such type</div>
+              </div>
+            </div>
+          </div>
+          <!-- EOF rooms -->
+
+          <!-- dish type -->
+          <div class="row">
+            <p class="short-info__subtitle">Dish type</p>
+            <div class="short-info__items">
+              <div class="short-info__item" *ngFor="let type of currentHotelInfo.nutritionTypes; let ind = index">
+                <input type="radio" name="dish" id="dish_{{ind}}" class="short-info__radio" hidden>
+                <label for="dish_{{ind}}">{{type}}</label>
+              </div>
+            </div>
+          </div>
+          <!-- EOF dish type -->
+        </div>
+      </div>
+      <!-- EOF short info row -->
+
+      <div class="popup-info__map">
+        <google-map
+          [lng]="currentHotelInfo.coordLng"
+          [lat]="currentHotelInfo.coordLat"
+          [title]="currentHotelInfo.title">
+        </google-map>
+      </div>
+      
+    </div>
+  </div>
+</form-popup>
+<!-- EOF popup -->
