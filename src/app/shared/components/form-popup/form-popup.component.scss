@@ -61,7 +61,17 @@ button {
         }
     }
 
-    &__content {
+    &__close {
+        font-size: 20px;
+        position: absolute;
+        color: $dark-primary;
+        right: 5px;
+        top: 3px;
+        cursor: pointer;
+
+        &:hover {
+            color: $black;
+        }
 
     }
 
