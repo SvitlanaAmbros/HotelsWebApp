@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class BtnPrimaryComponent implements OnInit {
 
   @Input() name: string = 'Button';
-  @Output() click = new EventEmitter();
+  @Output() onClick = new EventEmitter();
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class BtnPrimaryComponent implements OnInit {
   }
 
   public clicked(): void {
-    this.click.emit();
+    this.onClick.emit();
   }
 
 }

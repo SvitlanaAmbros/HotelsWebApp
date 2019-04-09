@@ -43,8 +43,8 @@ export class HotelsComponent implements OnInit {
   // }
 
   public showHotelDetail(id) {
-    this.openHotelPopup();
-    
+    // this.openHotelPopup();
+    console.log('id' , id);
   }
 
   // public findHotelById(id: number) {
