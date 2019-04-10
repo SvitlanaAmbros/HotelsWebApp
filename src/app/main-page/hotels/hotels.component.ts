@@ -31,11 +31,6 @@ export class HotelsComponent implements OnInit {
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.days);
       console.log('Received hotels', this.hotelsBaseInfo);
     });
-
-    this.hotelInfoService.getCurrentHotelInfo(1).then(hotelInfo => {
-      this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.days);
-      console.log("CURRENT", this.currentHotelInfo);
-    });
     
     this.initPopup();
 
@@ -44,14 +39,12 @@ export class HotelsComponent implements OnInit {
 
   public showHotelDetail(hotelId) {
     console.log('id' , hotelId);
-    
-    // this.hotelInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
-    //   this.currentHotelInfo = new CurrentHotelInfo(hotelInfo);
-    //   console.log("CURRENT", this.currentHotelInfo);
-    // });
-
-
-    this.openHotelPopup();
+ 
+    this.hotelInfoService.getCurrentHotelInfo(1).then(hotelInfo => {
+      this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.days);
+      console.log("CURRENT", this.currentHotelInfo);
+      this.openHotelPopup();
+    });
 
   }
 

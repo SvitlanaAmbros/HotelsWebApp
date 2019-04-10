@@ -40,6 +40,8 @@ label {
 
     &__search {
         padding: 5px 0 0px;
+        padding: 30px 0;
+        border: 2px dashed #ffc107;
         // background: #ffffff;
 
         
@@ -47,9 +49,8 @@ label {
             display: flex;
             justify-content: space-around;
             align-items: flex-end;
-            padding: 30px 0;
-            // margin: 0 20px;
-            border: 2px dashed #ffc107;
+            margin: 10px;
+            
             // border-color: ;
             // background: #f2f2f2;
 
@@ -112,6 +113,10 @@ label {
         cursor: pointer;
     }
 
+    &__description {
+        display: block;
+    }
+
 
     
 }
@@ -151,14 +156,16 @@ label {
     &__price {
         font-size: 24px;
         font-weight: bold;
-        text-align: center;
         margin: 0;
+    }
+
+    &__main {
         margin: 10px -10px;
         padding: 15px 10px;
         background: $white;
         color: $primary;
+        text-align: center;
     }
-
 
     &__items {
         display: flex;
@@ -187,6 +194,10 @@ label {
     margin: 8px;
     color: $dark-primary;
     font-weight: bold;
+
+    span {
+        color: $black;
+    }
 }
 
 .row {
@@ -215,7 +226,7 @@ label {
     }
 }
 
-.add-info {
+.photos {
     margin: 0 -40px;
     padding: 15px 40px;
 
@@ -228,6 +239,9 @@ label {
     
 }
 
+.add-info {
+    padding: 10px 0 15px;
+}
 
 
 .images-row {
@@ -235,4 +249,8 @@ label {
     width: 100%;
     overflow-x: scroll;
     // justify-content: space-around;
+}
+
+.center {
+    text-align: center;
 }

@@ -4,18 +4,24 @@
       <!-- start search block -->
       <div class="hotels__search">
         <h2>Input search parametres</h2>
-        <form class="hotels__search-row">
-          <div>
-            <label for="city">City</label>
-            <input type="text" id="city" required>
-          </div>
-          <div>
-            <label for="date">Date</label>
-            <input type="text" id="date" required>
-          </div>
-          <div>
-            <label for="days">Days</label>
-            <input type="text" class="days" required>
+        <form>
+          <div class="hotels__search-row">
+            <div>
+              <label for="country" class="hotels__description">Country</label>
+              <input type="text" id="country" required>
+            </div>
+            <div>
+              <label for="city" class="hotels__description">City</label>
+              <input type="text" id="city" required>
+            </div>
+            <div>
+              <label for="date" class="hotels__description">Date</label>
+              <input type="text" id="date" required>
+            </div>
+            <div>
+              <label for="days" class="hotels__description">Days</label>
+              <input type="text" class="days" required>
+            </div> 
           </div>
           <div>
             <button class="hotels__search-btn" type="submit">Search</button>
@@ -44,7 +50,7 @@
 
 <!-- popup -->
 <form-popup
-  
+  *ngIf="hotelPopup.isOpened"
   [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
   [buttonAction]="'Order'"
@@ -58,7 +64,18 @@
           class="short-info__image"
           alt="hotel image">
         <div class="short-info__right">
-          <p class="short-info__price">Total price: {{ currentHotelInfo.price.basePrice * currentHotelInfo.days }} $</p>
+          <div class="short-info__main">
+            <p class="short-info__price">Total price: 
+              {{ currentHotelInfo.price.basePrice * currentHotelInfo.days }} $
+              for {{ currentHotelInfo.days }} days
+            </p>
+          </div>
+         
+          <!-- rate -->
+          <div class="row">
+            <p class="subtitle">Start data:  <span>23.03.2019</span></p>
+          </div>
+
           <!-- room types  -->
           <div class="row">
             <p class="subtitle">Room type</p>
@@ -92,18 +109,26 @@
       <!-- EOF short info row -->
 
       <!-- additional info -->
-      <div class="add-info">
-        <p class="subtitle">More info about hotel:</p>
+      <div class="photos">
+        <p class="subtitle center">Photos</p>
         <div class="images-row">
           <img *ngFor="let image of currentHotelInfo.images"
           [src]="'../../../assets/img/' + image + '.jpg'"
-          class="add-info__image"
+          class="photos__image"
           alt="rooms">
         </div>
       </div>
 
-      <div>
+      <div class="add-info">
+        <p class="subtitle center">More info about hotel</p>
+        <p class="subtitle">Hotel rate:  <span>{{ currentHotelInfo.rate }}</span></p>
+        <p class="subtitle">Official site:  
+          <span><a [href]="currentHotelInfo.site" target="_blank">{{ currentHotelInfo.site }}</a>
+          </span>
+        </p>
+        <p class="subtitle">Hotel rate:  <span>{{ currentHotelInfo.description }}</span></p>
         
+            
       </div>
 
 
