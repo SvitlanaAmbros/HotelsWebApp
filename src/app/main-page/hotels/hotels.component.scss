@@ -119,7 +119,17 @@ label {
 .popup-info {
     &__map {
         width: 50%;
+
+        &-wrap{
+            margin: 10px -40px;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            background: #f2f2f2;
+        }
     }
+
+
 }
 
 .short-info {
@@ -170,16 +180,13 @@ label {
             }
         }
     }
-    
-    
+}
 
-    &__subtitle {
-        margin: 0;
-        margin: 8px;
-        color: $dark-primary;
-        font-weight: bold;
-    }
-
+.subtitle {
+    margin: 0;
+    margin: 8px;
+    color: $dark-primary;
+    font-weight: bold;
 }
 
 .row {
@@ -206,4 +213,26 @@ label {
             display: block;
         }
     }
+}
+
+.add-info {
+    margin: 0 -40px;
+    padding: 15px 40px;
+
+
+    &__image {
+        max-width: 400px;
+        height: 200px;
+        cursor: pointer;
+    }
+    
+}
+
+
+
+.images-row {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    // justify-content: space-around;
 }

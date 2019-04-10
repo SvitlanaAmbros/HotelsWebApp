@@ -44,7 +44,8 @@ button {
 .popup {
     width: 70%;
     min-height: 200px;
-    overflow-y: auto;
+    max-height: 90vh;
+    overflow-y: scroll;
     background-color: white;
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
     position: relative;

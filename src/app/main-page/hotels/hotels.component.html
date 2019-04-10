@@ -44,6 +44,7 @@
 
 <!-- popup -->
 <form-popup
+  
   [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
   [buttonAction]="'Order'"
@@ -53,14 +54,14 @@
     <div class="popup-info">
       <!-- short info row -->
       <div class="short-info">
-        <img [src]="'../../../assets/img/' + currentHotelInfo.images[0] + '.jpg'" 
+        <img [src]="'../../../assets/img/' + currentHotelInfo.mainImg + '.jpg'" 
           class="short-info__image"
           alt="hotel image">
         <div class="short-info__right">
           <p class="short-info__price">Total price: {{ currentHotelInfo.price.basePrice * currentHotelInfo.days }} $</p>
           <!-- room types  -->
           <div class="row">
-            <p class="short-info__subtitle">Room type</p>
+            <p class="subtitle">Room type</p>
             <div class="short-info__items">
               <div class="short-info__item" *ngFor="let room of currentHotelInfo.rooms; let ind = index">
                 <input type="radio" name="room" 
@@ -75,10 +76,9 @@
             </div>
           </div>
           <!-- EOF rooms -->
-
           <!-- dish type -->
-          <div class="row">
-            <p class="short-info__subtitle">Dish type</p>
+          <div>
+            <p class="subtitle">Dish type</p>
             <div class="short-info__items">
               <div class="short-info__item" *ngFor="let type of currentHotelInfo.nutritionTypes; let ind = index">
                 <input type="radio" name="dish" id="dish_{{ind}}" class="short-info__radio" hidden>
@@ -91,14 +91,33 @@
       </div>
       <!-- EOF short info row -->
 
-      <div class="popup-info__map">
-        <google-map
-          [lng]="currentHotelInfo.coordLng"
-          [lat]="currentHotelInfo.coordLat"
-          [title]="currentHotelInfo.title">
-        </google-map>
+      <!-- additional info -->
+      <div class="add-info">
+        <p class="subtitle">More info about hotel:</p>
+        <div class="images-row">
+          <img *ngFor="let image of currentHotelInfo.images"
+          [src]="'../../../assets/img/' + image + '.jpg'"
+          class="add-info__image"
+          alt="rooms">
+        </div>
       </div>
-      
+
+      <div>
+        
+      </div>
+
+
+      <!-- EOF additional info -->
+
+      <div class="popup-info__map-wrap">
+        <div class="popup-info__map">
+          <google-map
+            [lng]="currentHotelInfo.coordLng"
+            [lat]="currentHotelInfo.coordLat"
+            [title]="currentHotelInfo.title">
+          </google-map>
+        </div>
+      </div>
     </div>
   </div>
 </form-popup>
