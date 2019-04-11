@@ -31,16 +31,28 @@
       <!-- EOF search block -->
       <!-- start hotels cards -->
       <div class="hotels__list" *ngIf="!!hotelsBaseInfo">
-        <hotel-card *ngFor="let hotel of hotelsBaseInfo.hotels" 
+        <div class="hotels__element-pages">
+          <p>Elements per page</p>
+          <select [(ngModel)]="countHotelPerPage" (ngModelChange)="updateHotels(0)">
+            <option *ngFor="let option of maxQuantityHotels; let ind = index" 
+              [ngValue]="ind + 1">{{ ind + 1 }}</option>
+          </select>
+        </div>
+        <hotel-card 
+        *ngFor="let hotel of getHotels" 
           [hotel]="hotel"
           (showHotelDetail)="showHotelDetail($event)"></hotel-card>
       </div>
       <!-- EOF hotels cards -->
       <!-- start pagination -->
-      <div class="hotels__pagination">
+      <div class="hotels__pagination" 
+        *ngIf="!!hotelsBaseInfo && countHotelPerPage != hotelsBaseInfo.hotels.length">
           <button
             class="hotels__number-btn"
-            (click)="updateHotels()">
+            *ngFor="let page of pages; let ind = index"
+            (click)="updateHotels(ind)"
+            [ngClass]="currentPage == ind? 'red': ''">
+            {{ ind + 1 }}
            </button>
       </div>
       <!-- EOF pagination -->

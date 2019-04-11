@@ -129,6 +129,47 @@ export class HotelsInfoService {
             'Apartment': 100
           }
         }
+      },
+      {
+        id: 4,
+        title: 'Naama Bay',
+        country: 'Egypt',
+        city: 'Sharm-el-Sheikh',
+        mainImg: 'hotel_1',
+        nutritionTypes: [
+          'OB', 'HB', 'AI'
+        ],
+        rooms: [
+          {
+            type: 'Standart',
+            availableRooms: 2
+          },
+          {
+            type: 'Lux',
+            availableRooms: 4
+          },
+          {
+            type: 'Apartment',
+            availableRooms: 0
+          }
+        ],
+        stars: 5,
+        rate: 7.8,
+        price: {
+          basePrice: 100,
+          nutrition: {
+            'OB': 0,
+            'HB': 10,
+            'FB': 20,
+            'BB': 30,
+            'AI': 50
+          },
+          roomType: {
+            'Standart': 0,
+            'Lux': 50,
+            'Apartment': 100
+          }
+        }
       }
     ]
   }

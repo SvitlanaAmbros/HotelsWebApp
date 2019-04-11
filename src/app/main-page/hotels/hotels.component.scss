@@ -104,12 +104,13 @@ label {
     }
 
     &__number-btn {
+        margin: 0 7px;
         width: 40px;
         height: 35px;
         border: none;
         border-radius: 10px;
         background: white;
-        border: 2px solid black;
+        border: 1px solid $primary;
         cursor: pointer;
     }
 
@@ -117,7 +118,11 @@ label {
         display: block;
     }
 
-
+    &__element-pages {
+        padding-right: 40px;
+        text-align: right;
+        font-weight: bold;
+    }
     
 }
 
@@ -253,4 +258,9 @@ label {
 
 .center {
     text-align: center;
+}
+
+.red {
+    color: $white;
+    background: $primary;
 }

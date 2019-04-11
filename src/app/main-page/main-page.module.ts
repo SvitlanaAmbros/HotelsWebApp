@@ -6,12 +6,14 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelInfoComponent } from './hotel-info/hotel-info.component';
 import { HotelsInfoService } from "./hotels-info.service";
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
     imports: [
         CommonModule,
-        SharedModule
+        SharedModule,
+        FormsModule
     ], 
     declarations: [
         MainPageDetailComponent,
