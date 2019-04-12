@@ -18,7 +18,7 @@ export class HotelsComponent implements OnInit {
   public currentHotelInfo: hotels.CurrentHotelInfo;
 
   public startHotelIndex:number = 0;
-  public countHotelPerPage = 3; 
+  public countHotelPerPage = 1; 
   public endHotelIndex: number = this.countHotelPerPage;
   public currentPage: number = 0;
   
@@ -75,8 +75,12 @@ export class HotelsComponent implements OnInit {
     return new Array(Math.ceil(this.hotelsBaseInfo.hotels.length / this.countHotelPerPage));
   }
 
+  public returnToFirstPage() {
+    this.currentPage = 0;
+    this.updateHotels(0);
+  }
+
   public updateHotels(page) {
-    this.currentPage = page;
     console.log("count hotel per page" + this.countHotelPerPage);
     this.startHotelIndex = page * this.countHotelPerPage;
     if (this.startHotelIndex + this.countHotelPerPage < this.hotelsBaseInfo.hotels.length) {

@@ -33,7 +33,7 @@
       <div class="hotels__list" *ngIf="!!hotelsBaseInfo">
         <div class="hotels__element-pages">
           <p>Elements per page</p>
-          <select [(ngModel)]="countHotelPerPage" (ngModelChange)="updateHotels(0)">
+          <select [(ngModel)]="countHotelPerPage" (ngModelChange)="returnToFirstPage()">
             <option *ngFor="let option of maxQuantityHotels; let ind = index" 
               [ngValue]="ind + 1">{{ ind + 1 }}</option>
           </select>
@@ -47,13 +47,27 @@
       <!-- start pagination -->
       <div class="hotels__pagination" 
         *ngIf="!!hotelsBaseInfo && countHotelPerPage != hotelsBaseInfo.hotels.length">
-          <button
-            class="hotels__number-btn"
-            *ngFor="let page of pages; let ind = index"
-            (click)="updateHotels(ind)"
-            [ngClass]="currentPage == ind? 'red': ''">
-            {{ ind + 1 }}
-           </button>
+          <div *ngFor="let page of pages; let ind = index">
+            <input type="radio"
+              class="hotels__number-btn"
+              id="pages-radio_{{ind}}"
+              [value]="ind"
+              [(ngModel)]="currentPage"
+              hidden
+            >
+            <label for="pages-radio_{{ind}}"
+              (click)="updateHotels(ind)"
+              [ngClass]="(ind == 0 
+                || ind == pages.length - 1 
+                || ind == currentPage
+                || ind == currentPage - 1
+                || ind == currentPage + 1
+                ) ? 'display' : 'hide'"
+                >{{ind + 1}}</label>
+            <div [ngClass]="((ind == 1 || ind == pages.length - 2) 
+              && currentPage - 1 != ind && currentPage + 1 !=ind 
+              && currentPage != ind)? 'display': 'hide'">...</div>
+          </div>  
       </div>
       <!-- EOF pagination -->
     </div>
