@@ -4,7 +4,7 @@
       <!-- start search block -->
       <div class="hotels__search">
         <h2>Input search parametres</h2>
-        <form>
+        <form ngNativeValidate>
           <div class="hotels__search-row">
             <div>
               <label for="country" class="hotels__description">Country</label>
@@ -16,15 +16,18 @@
             </div>
             <div>
               <label for="date" class="hotels__description">Date</label>
-              <input type="text" id="date" required>
+              <input type="date" id="date"
+                name="date" 
+                [(ngModel)]="startDate"
+                min="{{currentDate| date:'yyyy-MM-dd'}}"  required>
             </div>
             <div>
               <label for="days" class="hotels__description">Days</label>
-              <input type="text" class="days" required>
+              <input type="number" class="days" min="1" required>
             </div> 
-          </div>
-          <div>
-            <button class="hotels__search-btn" type="submit">Search</button>
+            <div>
+              <input class="hotels__search-btn" type="submit" value="Search">
+            </div>
           </div>
         </form>
       </div>
@@ -153,8 +156,6 @@
           </span>
         </p>
         <p class="subtitle">Hotel rate:  <span>{{ currentHotelInfo.description }}</span></p>
-        
-            
       </div>
 
 

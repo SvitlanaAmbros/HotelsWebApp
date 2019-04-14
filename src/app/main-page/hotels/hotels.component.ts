@@ -24,19 +24,23 @@ export class HotelsComponent implements OnInit {
   
   public hotelPopup: PopupControls;
 
+  public startDate;
+
+  public currentDate;
+
   constructor(private router: Router, 
     private hotelInfoService: HotelsInfoService,
     private popupControlsService: PopupControlsService) { }
 
   ngOnInit() {
+    this.setCurrentDate();
+
     this.hotelInfoService.getHotels().then((res) => {
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.days);
       console.log('Received hotels', this.hotelsBaseInfo);
     });
     
     this.initPopup();
-
-    // let pagesCount = Math.ceil(this.hotels.length / this.countHotelPerPage);
   }
 
   public showHotelDetail(hotelId) {
@@ -63,17 +67,6 @@ export class HotelsComponent implements OnInit {
     this.currentHotelInfo = undefined;
   }
 
-  // public findHotelById(id: number) {
-    // return this.hotels.filter(item => item.id == id)[0];
-  // }
-    // public updateHotels():void {
-  //   alert();
-  // }
-
-
-  get pages() {
-    return new Array(Math.ceil(this.hotelsBaseInfo.hotels.length / this.countHotelPerPage));
-  }
 
   public returnToFirstPage() {
     this.currentPage = 0;
@@ -104,4 +97,15 @@ export class HotelsComponent implements OnInit {
   get maxQuantityHotels() {
     return new Array(this.hotelsBaseInfo.hotels.length);
   }
+
+  public setCurrentDate() {
+    this.currentDate = new Date();
+    // let date = new Date();
+    // this.currentDate =  date.getFullYear()  + "-" + (date.getMonth()+1) + "-" + date.getDate();
+  }
+
+  get pages() {
+    return new Array(Math.ceil(this.hotelsBaseInfo.hotels.length / this.countHotelPerPage));
+  }
+
 }
