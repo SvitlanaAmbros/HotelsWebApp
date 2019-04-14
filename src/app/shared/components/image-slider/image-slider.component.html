@@ -12,10 +12,17 @@
             (click)="updateImage(ind)"></label>
       </div>
 
-      <div class="slider__image" 
+      <!-- <div class="slider__image" 
         [ngStyle]="{'background':'url(/assets/img/slider_' + currentImgInd + '.jpg) center no-repeat', 
         'background-size': '100% 510px',
         'transition': '.9s'}"
+      ></div> -->
+      <div class="slider__image" 
+        *ngFor="let image of images; let ind = index"
+        [ngStyle]="{'background':'url(/assets/img/slider_' + ind + '.jpg) center no-repeat', 
+        'background-size': '100% 510px',
+        'transition': '.9s'}"
+        [ngClass]="currentImgInd == ind? 'display' : 'hide'"
       ></div>
 
       <input type="button" value="<" class="slider__btn slider__btn_prev" (click)="prevImage()">
