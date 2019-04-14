@@ -7,6 +7,7 @@ import { IdGeneratorService } from "./services/id-generator.service";
 import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.component';
 import { FormPopupComponent } from './components/form-popup/form-popup.component';
 import { PopupControlsService } from "./services/popup-controls.service";
+import { SearchWithTipsComponent } from './components/search-with-tips/search-with-tips.component';
 
 @NgModule({
     declarations: [
@@ -14,7 +15,8 @@ import { PopupControlsService } from "./services/popup-controls.service";
         ExpandingListItemComponent,
         GoogleMapComponent,
         BtnPrimaryComponent,
-        FormPopupComponent
+        FormPopupComponent,
+        SearchWithTipsComponent
     ],
     imports: [
         CommonModule
@@ -28,7 +30,8 @@ import { PopupControlsService } from "./services/popup-controls.service";
         ExpandingListItemComponent,
         BtnPrimaryComponent,
         GoogleMapComponent, 
-        FormPopupComponent
+        FormPopupComponent,
+        SearchWithTipsComponent
     ]
 })
 
