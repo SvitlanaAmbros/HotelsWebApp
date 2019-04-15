@@ -8,10 +8,7 @@ import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 })
 export class SearchWithTipsComponent implements OnInit {
 
-  // public baseList:string[] = ['Egypt', 'Ukraine', 'English', 'Spain', 'Italy', 
-  // 'Georgia', 'Germany', 'France', 'Norway', 'Canada', 'Poland', 'Austria',
-  // 'Turkish', 'Egypt'];
-
+  @Input() valuesTitle: string = 'values';
   @Input() baseList: string[];
   @Output() valueInputed: EventEmitter<string> = new EventEmitter();
 
@@ -27,6 +24,7 @@ export class SearchWithTipsComponent implements OnInit {
 
   //if base list updated
   ngOnChanges() {
+    this.inputedValue = '';
     this.filteredList = [...this.baseList];
   }
 
@@ -44,6 +42,17 @@ export class SearchWithTipsComponent implements OnInit {
   public itemClicked(item: string) {
     this.inputedValue = item;
     this.emitValueInput();
+  }
+
+  public focusOut() {
+    let ind = this.baseList.map(item => item.toLowerCase()).indexOf(this.inputedValue.toLowerCase());
+
+    if(ind != -1) {
+      this.inputedValue = this.baseList[ind];
+      this.emitValueInput();
+    } else {
+      this.inputedValue = '';
+    }
   }
 
   public emitValueInput() {

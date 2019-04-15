@@ -8,28 +8,37 @@
           <div class="hotels__search-row">
             <div>
               <label for="country" class="hotels__description">Country</label>
-              <search-with-tips 
-                [baseList]="countryList"
-                (valueInputed)="changedCountry($event)"></search-with-tips>
-
+              <div>
+                  <search-with-tips 
+                  [baseList]="countryList"
+                  [valuesTitle]="'contries'"
+                  (valueInputed)="changedCountry($event)"></search-with-tips>
+              </div>
             </div>
             <div>
               <label for="city" class="hotels__description">City</label>
-              <search-with-tips
-                [baseList]="cityList"
-                ></search-with-tips>
+              <div>
+                  <search-with-tips
+                  [valuesTitle]="'cities'"
+                  [baseList]="cityList"></search-with-tips>
+              </div>
+              
               <!-- <input type="text" id="city" required> -->
             </div>
             <div>
               <label for="date" class="hotels__description">Date</label>
-              <input type="date" id="date"
+              <div>
+                <input type="date" id="date"
                 name="date" 
                 [(ngModel)]="startDate"
                 min="{{currentDate| date:'yyyy-MM-dd'}}"  required>
+              </div>
             </div>
             <div>
               <label for="days" class="hotels__description">Days</label>
-              <input type="number" class="days" min="1" required>
+              <div>
+                <input type="number" class="days" min="1" maxlength="3" size="3" required>
+              </div>
             </div> 
             <div>
               <input class="hotels__search-btn" type="submit" value="Search">
