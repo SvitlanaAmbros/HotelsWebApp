@@ -21,7 +21,8 @@
               <div>
                 <search-with-tips
                   [valuesTitle]="'cities'"
-                  [baseList]="cityList">
+                  [baseList]="cityList"
+                  (valueInputed)="changedCity($event)">
                 </search-with-tips>
               </div>
               
@@ -32,18 +33,23 @@
               <div>
                 <input type="date" id="date"
                 name="date" 
-                [(ngModel)]="startDate"
+                [(ngModel)]="searchParams.date"
                 min="{{currentDate| date:'yyyy-MM-dd'}}"  required>
               </div>
             </div>
             <div>
               <label for="days" class="hotels__description">Days</label>
               <div>
-                <input type="number" class="days" min="1" maxlength="3" size="3" required>
+                <input type="number" 
+                name="days"
+                class="days" 
+                min="1" maxlength="3" size="3" 
+                [(ngModel)]="searchParams.days"
+                required>
               </div>
             </div> 
             <div>
-              <input class="hotels__search-btn" type="submit" value="Search">
+              <input class="hotels__search-btn" type="submit" value="Search" (click)="searchHotels()">
             </div>
           </div>
         </form>

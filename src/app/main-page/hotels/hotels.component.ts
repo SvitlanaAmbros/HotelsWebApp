@@ -27,6 +27,13 @@ export class HotelsComponent implements OnInit {
   public startDate;
   public currentDate;
 
+  public searchParams: hotels.hotelsSearchParams = {
+    country: 'Ukraine',
+    city: 'Kiev',
+    date: new Date(),
+    days: 4
+  };
+
   public countryCityInfo = {
     'Egypt': ['Hurgada', 'Sharm-el-sheikh', 'Kair'],
     'Spain': [], 
@@ -127,11 +134,24 @@ export class HotelsComponent implements OnInit {
   }
 
   public changedCountry(country: string) {
+    this.searchParams.country = country;
+
     if (!!this.countryCityInfo[country]) {
       this.cityList = this.countryCityInfo[country];
     } else {
       // this.cityList = [];
     }
+  }
+
+  public changedCity(city: string) {
+    this.searchParams.city = city;
+  }
+
+  public searchHotels() {
+    console.log(this.searchParams);
+
+    // this
+
   }
 
 

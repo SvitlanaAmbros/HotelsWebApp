@@ -73,6 +73,14 @@ export module hotels {
         description: string;
     }
 
+    export interface hotelsSearchParams {
+        country: string;
+        city: string;
+        date: Date;
+        days: number;
+    }
+
+
     //db types
     export module db {
         // list hotels
