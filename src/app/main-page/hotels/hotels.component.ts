@@ -5,6 +5,7 @@ import { hotels } from '../types/hotels';
 import { HotelsBaseInfo } from '../models/hotels-base-info';
 import { PopupControls, PopupControlsService } from '../../shared/services/popup-controls.service';
 import { CurrentHotelInfo } from '../models/current-hotel-info';
+import { FilterService } from '../filter.service';
 
 @Component({
   selector: 'hotels',
@@ -35,7 +36,7 @@ export class HotelsComponent implements OnInit {
   };
 
   public countryCityInfo = {
-    'Egypt': ['Hurgada', 'Sharm-el-sheikh', 'Kair'],
+    'Egypt': ['Hurgada', 'Sharm-el-Sheikh', 'Kair'],
     'Spain': [], 
     'Italy': ['Rome', 'Venecia', 'Florencia'], 
     'Georgia': [], 
@@ -49,7 +50,9 @@ export class HotelsComponent implements OnInit {
 
   constructor(private router: Router, 
     private hotelInfoService: HotelsInfoService,
-    private popupControlsService: PopupControlsService) { }
+    private popupControlsService: PopupControlsService,
+    private filterService: FilterService
+    ) { }
 
   ngOnInit() {
     this.setCurrentDate();
@@ -150,6 +153,7 @@ export class HotelsComponent implements OnInit {
   public searchHotels() {
     console.log(this.searchParams);
 
+    this.hotelsBaseInfo.hotels = this.filterService.filter(this.hotelsBaseInfo.hotels, this.searchParams);
     // this
 
   }

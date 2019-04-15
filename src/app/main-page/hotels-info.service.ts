@@ -52,7 +52,7 @@ export class HotelsInfoService {
         id: 2,
         title: 'Sunrise Diamond Beach resort',
         country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
+        city: 'Hurgada',
         mainImg: 'hotel_2',
         nutritionTypes: [
           'OB', 'HB', 'AI'
@@ -134,7 +134,7 @@ export class HotelsInfoService {
         id: 4,
         title: 'Naama Bay',
         country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
+        city: 'Kair',
         mainImg: 'hotel_1',
         nutritionTypes: [
           'OB', 'HB', 'AI'

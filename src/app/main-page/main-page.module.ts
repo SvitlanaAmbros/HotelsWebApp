@@ -7,6 +7,7 @@ import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelInfoComponent } from './hotel-info/hotel-info.component';
 import { HotelsInfoService } from "./hotels-info.service";
 import { FormsModule } from "@angular/forms";
+import { FilterService } from "./filter.service";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from "@angular/forms";
         HotelInfoComponent
     ],
     providers: [
-        HotelsInfoService
+        HotelsInfoService,
+        FilterService
     ]
 })
 
