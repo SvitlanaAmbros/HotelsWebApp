@@ -51,8 +51,8 @@ export class SearchWithTipsComponent implements OnInit {
       this.inputedValue = this.baseList[ind];
       this.emitValueInput();
     } else {
-      this.inputedValue = '';
-      this.emitValueInput();
+      // this.inputedValue = '';
+      // this.emitValueInput();
     }
   }
 

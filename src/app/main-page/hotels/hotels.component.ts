@@ -130,7 +130,7 @@ export class HotelsComponent implements OnInit {
     if (!!this.countryCityInfo[country]) {
       this.cityList = this.countryCityInfo[country];
     } else {
-      this.cityList = [];
+      // this.cityList = [];
     }
   }
 
