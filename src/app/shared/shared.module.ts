@@ -8,6 +8,7 @@ import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.compon
 import { FormPopupComponent } from './components/form-popup/form-popup.component';
 import { PopupControlsService } from "./services/popup-controls.service";
 import { SearchWithTipsComponent } from './components/search-with-tips/search-with-tips.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { SearchWithTipsComponent } from './components/search-with-tips/search-wi
         SearchWithTipsComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule
     ],
     providers: [
         IdGeneratorService,

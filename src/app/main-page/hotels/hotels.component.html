@@ -8,11 +8,17 @@
           <div class="hotels__search-row">
             <div>
               <label for="country" class="hotels__description">Country</label>
-              <input type="text" id="country" required>
+              <search-with-tips 
+                [baseList]="countryList"
+                (valueInputed)="changedCountry($event)"></search-with-tips>
+
             </div>
             <div>
               <label for="city" class="hotels__description">City</label>
-              <input type="text" id="city" required>
+              <search-with-tips
+                [baseList]="cityList"
+                ></search-with-tips>
+              <!-- <input type="text" id="city" required> -->
             </div>
             <div>
               <label for="date" class="hotels__description">Date</label>

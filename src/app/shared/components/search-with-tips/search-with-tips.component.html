@@ -1,3 +1,21 @@
-<p>
-  search-with-tips works!
-</p>
+<div class="search">
+  <input type="text" 
+    class="search__input" 
+    [(ngModel)]="inputedValue" 
+    (ngModelChange)="changedInput()"
+    (focusout)="emitValueInput()"
+    required>
+  <div class="list-wrap" >
+    <div class="list">
+      <div class="list__item" 
+        *ngFor="let item of filteredList"
+        (mousedown)="itemClicked(item)">
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <datalist id="list" class="list">
+  <option *ngFor="let item of filteredList"  class="list__item" 
+  value="{{item}}">
+</datalist> -->

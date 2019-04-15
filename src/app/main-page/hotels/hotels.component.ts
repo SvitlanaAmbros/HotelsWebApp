@@ -25,8 +25,20 @@ export class HotelsComponent implements OnInit {
   public hotelPopup: PopupControls;
 
   public startDate;
-
   public currentDate;
+
+  public countryCityInfo = {
+    'Egypt': ['Hurgada', 'Sharm-el-sheikh', 'Kair'],
+    'Spain': [], 
+    'Italy': ['Rome', 'Venecia', 'Florencia'], 
+    'Georgia': [], 
+    'Germany': [], 
+    'France':['Nice', 'Paris'], 
+    'Norway':[]
+  };
+
+  public countryList: string[] = [];
+  public cityList: string[] = [];
 
   constructor(private router: Router, 
     private hotelInfoService: HotelsInfoService,
@@ -34,6 +46,7 @@ export class HotelsComponent implements OnInit {
 
   ngOnInit() {
     this.setCurrentDate();
+    this.countryList = Object.keys(this.countryCityInfo);
 
     this.hotelInfoService.getHotels().then((res) => {
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.days);
@@ -107,5 +120,14 @@ export class HotelsComponent implements OnInit {
   get pages() {
     return new Array(Math.ceil(this.hotelsBaseInfo.hotels.length / this.countHotelPerPage));
   }
+
+  public changedCountry(country: string) {
+    this.cityList = this.countryCityInfo[country];
+    console.log(this.cityList);
+  }
+
+  // get getCityList() {
+  //   return this.cityList;
+  // }
 
 }
