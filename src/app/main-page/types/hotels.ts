@@ -23,8 +23,14 @@ export module hotels {
     }
 
     export interface Room {
-        type: string;
-        availableRooms: number;
+        type: RoomType;
+        roomsCount: number;
+        bookedRooms: BookedRoom[];
+    }
+
+    export interface BookedRoom {
+        date: string;
+        count: number;
     }
 
     export interface Price {
@@ -51,8 +57,8 @@ export module hotels {
     export type NutritionType = 'OB' | 'BB' | 'HB' | 'FB' | 'AI';
     export const NUTRITION_TYPES: NutritionType[] = ['OB', 'BB', 'HB', 'FB','AI'];
 
-    export type RoomType = 'Standart' | 'Lux' | 'Apartment';
-    export const ROOM_TYPES: RoomType[] = ['Standart', 'Lux',  'Apartment'];
+    export type RoomType = 'Standard' | 'Lux' | 'Apartment';
+    export const ROOM_TYPES: RoomType[] = ['Standard', 'Lux',  'Apartment'];
 
     export interface CurrentHotelInfo {
         id: number;
@@ -104,8 +110,11 @@ export module hotels {
 
         export interface Room {
             type: RoomType;
-            availableRooms: number;
+            roomsCount: number;
+            bookedRooms: BookedRoom[];
         }
+
+        
 
         // expanded hotel info for hotel popup
         export interface CurrentHotelInfo {
