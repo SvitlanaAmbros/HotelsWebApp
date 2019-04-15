@@ -9,18 +9,20 @@
             <div>
               <label for="country" class="hotels__description">Country</label>
               <div>
-                  <search-with-tips 
+                <search-with-tips 
                   [baseList]="countryList"
                   [valuesTitle]="'contries'"
-                  (valueInputed)="changedCountry($event)"></search-with-tips>
+                  (valueInputed)="changedCountry($event)">
+                </search-with-tips>
               </div>
             </div>
             <div>
               <label for="city" class="hotels__description">City</label>
               <div>
-                  <search-with-tips
+                <search-with-tips
                   [valuesTitle]="'cities'"
-                  [baseList]="cityList"></search-with-tips>
+                  [baseList]="cityList">
+                </search-with-tips>
               </div>
               
               <!-- <input type="text" id="city" required> -->

@@ -67,6 +67,8 @@ export class HotelsComponent implements OnInit {
 
   }
 
+
+  // popup functions
   public initPopup():void {
     this.hotelPopup = this.popupControlsService.create();
   }
@@ -79,8 +81,9 @@ export class HotelsComponent implements OnInit {
     this.hotelPopup.close();
     this.currentHotelInfo = undefined;
   }
+  //eof popup functions
 
-
+  // pagination functions
   public returnToFirstPage() {
     this.currentPage = 0;
     this.updateHotels(0);
@@ -111,23 +114,26 @@ export class HotelsComponent implements OnInit {
     return new Array(this.hotelsBaseInfo.hotels.length);
   }
 
-  public setCurrentDate() {
-    this.currentDate = new Date();
-    // let date = new Date();
-    // this.currentDate =  date.getFullYear()  + "-" + (date.getMonth()+1) + "-" + date.getDate();
-  }
-
   get pages() {
     return new Array(Math.ceil(this.hotelsBaseInfo.hotels.length / this.countHotelPerPage));
   }
+  //eof pagination functions
 
-  public changedCountry(country: string) {
-    this.cityList = this.countryCityInfo[country];
-    console.log(this.cityList);
+
+  //search row
+  // update calendar date
+  public setCurrentDate() {
+    this.currentDate = new Date();
   }
 
-  // get getCityList() {
-  //   return this.cityList;
-  // }
+  public changedCountry(country: string) {
+    if (!!this.countryCityInfo[country]) {
+      this.cityList = this.countryCityInfo[country];
+    } else {
+      this.cityList = [];
+    }
+  }
+
+
 
 }

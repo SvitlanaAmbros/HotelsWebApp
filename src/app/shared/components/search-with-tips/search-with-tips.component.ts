@@ -30,7 +30,7 @@ export class SearchWithTipsComponent implements OnInit {
 
   public changedInput() {
     if (this.inputedValue.length == 0) {
-      this.filteredList = [...this.baseList];
+      this.filteredList = [...this.baseList];;
     } else {
       this.filteredList = this.baseList.filter((item:string) => 
                 item.toLowerCase()
@@ -52,6 +52,7 @@ export class SearchWithTipsComponent implements OnInit {
       this.emitValueInput();
     } else {
       this.inputedValue = '';
+      this.emitValueInput();
     }
   }
 
