@@ -16,7 +16,7 @@ export class FilterService {
 
     let resArray = this.filterByCountry(array, searchParams.country);
     resArray = this.filterByCity(resArray, searchParams.city);
-    resArray = this.filterByDateAndDays(resArray, searchParams.date, searchParams.days);
+    resArray = this.filterByDateAndDays(resArray, searchParams);
 
     return resArray;
 
