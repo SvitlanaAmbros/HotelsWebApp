@@ -26,14 +26,13 @@ export class HotelsComponent implements OnInit {
   
   public hotelPopup: PopupControls;
 
-  public startDate;
   public currentDate;
 
   public searchParams: hotels.hotelsSearchParams = {
     country: 'Ukraine',
     city: 'Kiev',
     date: new Date(),
-    days: 4
+    days: 1
   };
 
   public countryCityInfo = {
@@ -49,8 +48,7 @@ export class HotelsComponent implements OnInit {
   public countryList: string[] = [];
   public cityList: string[] = [];
 
-  constructor(private router: Router, 
-    private hotelInfoService: HotelsInfoService,
+  constructor(private hotelInfoService: HotelsInfoService,
     private popupControlsService: PopupControlsService,
     private filterService: FilterService
     ) { }

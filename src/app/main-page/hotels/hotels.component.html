@@ -52,6 +52,22 @@
               <input class="hotels__search-btn" type="submit" value="Search" (click)="searchHotels()">
             </div>
           </div>
+          <div class="hotels__add-search">
+            <div class="hotels__add-search-col">
+              <label for="days" class="hotels__description">Sort by price:</label>
+              <div class="hotels__sort">
+                <input type="radio" id="sort_1" name="sort" checked hidden>
+                <label for="sort_1"><i class="fa fa-times"></i></label>
+                <input type="radio" id="sort_2" name="sort" hidden>
+                <label for="sort_2"><i class="fa fa-arrow-up"></i></label>
+                <input type="radio" id="sort_3" name="sort" hidden>
+                <label for="sort_3"><i class="fa fa-arrow-down"></i></label>
+              </div>
+            </div>
+            <div>
+              <label for="days" class="hotels__description">Filter :</label>
+            </div>
+          </div>
         </form>
       </div>
       <!-- EOF search block -->

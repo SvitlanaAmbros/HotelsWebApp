@@ -115,6 +115,39 @@ label {
         text-align: right;
         font-weight: bold;
     }
+
+    &__add-search {
+        display: flex;
+        justify-content: space-between;
+        // align-items: flex-end;
+        margin: 25px 10px 15px;
+
+        &-col {
+            width: 50%;
+            text-align: center;
+        }
+    } 
+
+    &__sort {
+        padding: 10px 0 0;
+
+        label {
+            display: inline-block;
+            width: 40px;
+            font-size: 20px;
+            height: 40px;
+            line-height: 40px;
+            background: $light-grey;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked {
+            + label {
+                background: $accent;
+            }
+        }
+    }
     
 }
 
