@@ -56,7 +56,7 @@
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->
-      <div class="hotels__list" *ngIf="!!hotelsBaseInfo">
+      <div class="hotels__list" *ngIf="!!hotelsBaseInfo && getHotels.length > 0">
         <div class="hotels__element-pages">
           <p>Elements per page</p>
           <select [(ngModel)]="countHotelPerPage" (ngModelChange)="returnToFirstPage()">
@@ -65,11 +65,24 @@
           </select>
         </div>
         <hotel-card 
-        *ngFor="let hotel of getHotels" 
+          *ngFor="let hotel of getHotels" 
           [hotel]="hotel"
           (showHotelDetail)="showHotelDetail($event)"></hotel-card>
       </div>
       <!-- EOF hotels cards -->
+
+      <!-- start no such hotels -->
+      <div class="hotels__no-hotels" *ngIf="getHotels.length == 0">
+        <p>Such hotels are not found</p>
+      </div>
+      <!-- EOF no such hotels -->
+
+      <!-- start no such hotels -->
+      <div class="hotels__no-hotels" *ngIf="!hotelsBaseInfo">
+        <p>No connection</p>
+      </div>
+      <!-- EOF no such hotels -->
+
       <!-- start pagination -->
       <div class="hotels__pagination" 
         *ngIf="!!hotelsBaseInfo && countHotelPerPage != hotelsBaseInfo.hotels.length">

@@ -414,16 +414,24 @@ export class HotelsInfoService {
     ],
     rooms: [
       {
-        type: 'Standart',
-        availableRooms: 1
+        type: 'Standard',
+        roomsCount: 8,
+        bookedRooms: [
+            {
+              date: '2019-04-13',
+              count: 2
+            }
+        ]
       },
       {
         type: 'Lux',
-        availableRooms: 4
-      },
-      {
-        type: 'Apartment',
-        availableRooms: 0
+        roomsCount: 8,
+        bookedRooms: [
+            {
+              date: '2019-04-13',
+              count: 2
+            }
+        ]
       }
     ],
     stars: 5,
@@ -438,7 +446,7 @@ export class HotelsInfoService {
         'AI': 50
       },
       roomType: {
-        'Standart': 0,
+        'Standard': 0,
         'Lux': 50,
         'Apartment': 100
       }

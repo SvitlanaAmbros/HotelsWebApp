@@ -14,6 +14,7 @@ import { FilterService } from '../filter.service';
 })
 export class HotelsComponent implements OnInit {
 
+  public serverHotelsBaseInfo: hotels.HotelsBaseInfo;
   public hotelsBaseInfo: hotels.HotelsBaseInfo;
   public days: number = 1;
   public currentHotelInfo: hotels.CurrentHotelInfo;
@@ -59,6 +60,7 @@ export class HotelsComponent implements OnInit {
     this.countryList = Object.keys(this.countryCityInfo);
 
     this.hotelInfoService.getHotels().then((res) => {
+      this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.days);
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.days);
       console.log('Received hotels', this.hotelsBaseInfo);
     });
@@ -114,9 +116,12 @@ export class HotelsComponent implements OnInit {
   get getHotels() {
     let hotels = [];
 
-    for(let i = this.startHotelIndex; i < this.endHotelIndex; i++) {
-      hotels.push(this.hotelsBaseInfo.hotels[i]);
+    if (this.hotelsBaseInfo.hotels.length > 0) {
+      for(let i = this.startHotelIndex; i < this.endHotelIndex; i++) {
+        hotels.push(this.hotelsBaseInfo.hotels[i]);
+      }
     }
+    
     return hotels;
   }
 
@@ -153,7 +158,8 @@ export class HotelsComponent implements OnInit {
   public searchHotels() {
     console.log(this.searchParams);
 
-    this.hotelsBaseInfo.hotels = this.filterService.filter(this.hotelsBaseInfo.hotels, this.searchParams);
+    this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
+              this.searchParams);
     // this
 
   }

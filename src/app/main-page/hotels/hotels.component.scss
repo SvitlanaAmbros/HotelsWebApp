@@ -72,6 +72,14 @@ label {
         padding: 0 0 30px;
     }
 
+    &__no-hotels {
+        margin: 10px 0 40px;
+        padding: 40px 10px;
+        border: 2px solid $primary;
+        font-weight: bold;
+        text-align: center;
+    }
+
     &__pagination {
         display: flex;
         justify-content: center;
