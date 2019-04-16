@@ -169,21 +169,16 @@ export class HotelsInfoService {
             roomsCount: 8,
             bookedRooms: [
                 {
-                  date: '2019-04-13',
+                  date: '2019-05-17',
                   count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
+                },
                 {
-                  date: '2019-04-13',
-                  count: 2
+                  date: '2019-05-18',
+                  count: 8
                 }
             ]
           }
+          
         ],
         stars: 5,
         rate: 7.8,
@@ -207,7 +202,7 @@ export class HotelsInfoService {
         id: 5,
         title: 'Naama Bay',
         country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
+        city: 'Kair',
         mainImg: 'hotel_1',
         nutritionTypes: [
           'OB', 'HB', 'AI'
@@ -218,17 +213,15 @@ export class HotelsInfoService {
             roomsCount: 8,
             bookedRooms: [
                 {
-                  date: '2019-04-13',
+                  date: '2019-05-19',
                   count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
+                },
                 {
-                  date: '2019-04-13',
+                  date: '2019-05-18',
+                  count: 8
+                },
+                {
+                  date: '2019-05-20',
                   count: 2
                 }
             ]
@@ -415,16 +408,6 @@ export class HotelsInfoService {
     rooms: [
       {
         type: 'Standard',
-        roomsCount: 8,
-        bookedRooms: [
-            {
-              date: '2019-04-13',
-              count: 2
-            }
-        ]
-      },
-      {
-        type: 'Lux',
         roomsCount: 8,
         bookedRooms: [
             {

@@ -116,7 +116,7 @@ export class HotelsComponent implements OnInit {
   get getHotels() {
     let hotels = [];
 
-    if (this.hotelsBaseInfo.hotels.length > 0) {
+    if (!!this.hotelsBaseInfo && this.hotelsBaseInfo.hotels.length > 0) {
       for(let i = this.startHotelIndex; i < this.endHotelIndex; i++) {
         hotels.push(this.hotelsBaseInfo.hotels[i]);
       }

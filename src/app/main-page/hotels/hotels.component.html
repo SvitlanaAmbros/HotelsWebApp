@@ -56,7 +56,7 @@
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->
-      <div class="hotels__list" *ngIf="!!hotelsBaseInfo && getHotels.length > 0">
+      <div class="hotels__list" *ngIf="!!hotelsBaseInfo && !!getHotels">
         <div class="hotels__element-pages">
           <p>Elements per page</p>
           <select [(ngModel)]="countHotelPerPage" (ngModelChange)="returnToFirstPage()">
