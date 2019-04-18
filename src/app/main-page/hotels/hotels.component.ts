@@ -17,7 +17,6 @@ export class HotelsComponent implements OnInit {
 
   public serverHotelsBaseInfo: hotels.HotelsBaseInfo;
   public hotelsBaseInfo: hotels.HotelsBaseInfo;
-  public days: number = 1;
   public currentHotelInfo: hotels.CurrentHotelInfo;
 
   // public sortTypes = [
@@ -51,7 +50,7 @@ export class HotelsComponent implements OnInit {
     country: 'Ukraine',
     city: 'Kiev',
     date: new Date(),
-    days: 1,
+    days: 5,
     sortType: 'None'
   };
 
@@ -79,8 +78,8 @@ export class HotelsComponent implements OnInit {
     this.countryList = Object.keys(this.countryCityInfo);
 
     this.hotelInfoService.getHotels().then((res) => {
-      this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.days);
-      this.hotelsBaseInfo = new HotelsBaseInfo(res, this.days);
+      this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
+      this.hotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       console.log('Received hotels', this.hotelsBaseInfo);
     });
     
@@ -91,7 +90,7 @@ export class HotelsComponent implements OnInit {
     console.log('id' , hotelId);
  
     this.hotelInfoService.getCurrentHotelInfo(1).then(hotelInfo => {
-      this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.days);
+      this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days);
       console.log("CURRENT", this.currentHotelInfo);
       this.openHotelPopup();
     });
@@ -176,7 +175,7 @@ export class HotelsComponent implements OnInit {
 
   public searchHotels() {
     console.log(this.searchParams);
-
+    this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
   }

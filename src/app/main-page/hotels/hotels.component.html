@@ -4,7 +4,7 @@
       <!-- start search block -->
       <div class="hotels__search">
         <h2>Input search parametres</h2>
-        <form ngNativeValidate>
+        <form ngNativeValidate (ngSubmit)="searchHotels()">
           <div class="hotels__search-row">
             <div>
               <label for="country" class="hotels__description">Country</label>
@@ -32,25 +32,25 @@
               <label for="date" class="hotels__description">Date</label>
               <div>
                 <input type="date" id="date"
-                name="date" 
-                [(ngModel)]="searchParams.date"
-                min="{{currentDate| date:'yyyy-MM-dd'}}"  required>
+                  name="date" 
+                  [(ngModel)]="searchParams.date"
+                  min="{{currentDate| date:'yyyy-MM-dd'}}"  required>
               </div>
             </div>
             <div>
               <label for="days" class="hotels__description">Days</label>
               <div>
                 <input type="number" 
-                name="days"
-                class="days" 
-                min="1" maxlength="3" size="3" 
-                [(ngModel)]="searchParams.days"
-                required>
+                  name="days"
+                  class="days" 
+                  min="1" maxlength="3" size="3" 
+                  [(ngModel)]="searchParams.days"
+                  required>
               </div>
             </div> 
             <div>
               <input class="hotels__search-btn" type="submit" value="Search" 
-                (click)="searchHotels()">
+                >
             </div>
           </div>
           <!-- <div class="hotels__add-search">
@@ -200,10 +200,10 @@
             <div class="short-info__items">
               <div class="short-info__item" *ngFor="let room of currentHotelInfo.rooms; let ind = index">
                 <input type="radio" name="room" 
-                id="room_{{ind}}" 
-                class="short-info__radio" 
-                [disabled]="room.availableRooms == 0"
-                hidden>
+                  id="room_{{ind}}" 
+                  class="short-info__radio" 
+                  [disabled]="room.availableRooms == 0"
+                  hidden>
                 <label for="room_{{ind}}" 
                   [ngClass]="room.availableRooms == 0? 'disabled' : ''">{{room.type}}</label>
                 <div *ngIf="room.availableRooms == 0" class="disabled-message">No available places in such type</div>

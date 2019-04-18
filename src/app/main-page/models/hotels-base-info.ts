@@ -10,4 +10,9 @@ export class HotelsBaseInfo implements hotels.HotelsBaseInfo {
         console.log('Hotels ui', this.hotels);
     }
 
+    public updateDaysCount(dbHotels: hotels.HotelsBaseInfo, days: number) {
+        console.log("hotels class", days);
+        dbHotels.hotels.map((item: hotels.HotelBaseInfo) => item.setDays(days));
+    }
+
 }

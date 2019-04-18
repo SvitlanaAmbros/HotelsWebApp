@@ -5,6 +5,7 @@ export module hotels {
     // UI types
     export interface HotelsBaseInfo {
         hotels: HotelBaseInfo[];
+        updateDaysCount(dbHotels: hotels.HotelsBaseInfo, days: number): void
     }
 
     // hotel info
@@ -20,6 +21,7 @@ export module hotels {
         rate: number; 
         minPricePerDay: number;
         days?: number; 
+        setDays(days: number): void;
     }
 
     export interface Room {
