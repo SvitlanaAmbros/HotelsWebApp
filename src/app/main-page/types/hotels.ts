@@ -60,6 +60,9 @@ export module hotels {
     export type RoomType = 'Standard' | 'Lux' | 'Apartment';
     export const ROOM_TYPES: RoomType[] = ['Standard', 'Lux',  'Apartment'];
 
+    export type SortType = 'None' | 'Asc' |'Desc';
+    export const SORT_TYPES:SortType[] = ['None', 'Asc', 'Desc'];
+
     export interface CurrentHotelInfo {
         id: number;
         title: string;
@@ -84,6 +87,7 @@ export module hotels {
         city: string;
         date: Date;
         days: number;
+        sortType: SortType;
     }
 
 

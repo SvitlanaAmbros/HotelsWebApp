@@ -8,6 +8,7 @@ import { HotelInfoComponent } from './hotel-info/hotel-info.component';
 import { HotelsInfoService } from "./hotels-info.service";
 import { FormsModule } from "@angular/forms";
 import { FilterService } from "./filter.service";
+import { SortService } from "./sort.service";
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FilterService } from "./filter.service";
     ],
     providers: [
         HotelsInfoService,
-        FilterService
+        FilterService,
+        SortService
     ]
 })
 

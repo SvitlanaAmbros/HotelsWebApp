@@ -41,7 +41,7 @@ export class HotelsInfoService {
         stars: 5,
         rate: 7.8,
         price: {
-          basePrice: 100,
+          basePrice: 125,
           nutrition: {
             'OB': 0,
             'HB': 10,
@@ -56,55 +56,55 @@ export class HotelsInfoService {
           }
         }
       },
-      {
-        id: 2,
-        title: 'Sunrise Diamond Beach resort',
-        country: 'Egypt',
-        city: 'Hurgada',
-        mainImg: 'hotel_2',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 8.2,
-        price: {
-          basePrice: 160,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
+      // {
+      //   id: 2,
+      //   title: 'Sunrise Diamond Beach resort',
+      //   country: 'Egypt',
+      //   city: 'Hurgada',
+      //   mainImg: 'hotel_2',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     },
+      //     {
+      //       type: 'Lux',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     }
+      //   ],
+      //   stars: 5,
+      //   rate: 8.2,
+      //   price: {
+      //     basePrice: 160,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // },
       {
         id: 3,
         title: 'Coral Sea Sensatory',
@@ -154,244 +154,244 @@ export class HotelsInfoService {
           }
         }
       },
-      {
-        id: 4,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Kair',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-17',
-                  count: 2
-                },
-                {
-                  date: '2019-05-18',
-                  count: 8
-                }
-            ]
-          }
+      // {
+      //   id: 4,
+      //   title: 'Naama Bay',
+      //   country: 'Egypt',
+      //   city: 'Kair',
+      //   mainImg: 'hotel_1',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-05-17',
+      //             count: 2
+      //           },
+      //           {
+      //             date: '2019-05-18',
+      //             count: 8
+      //           }
+      //       ]
+      //     }
           
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 100,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
-      {
-        id: 5,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Kair',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-19',
-                  count: 2
-                },
-                {
-                  date: '2019-05-18',
-                  count: 8
-                },
-                {
-                  date: '2019-05-20',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 100,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
-      {
-        id: 6,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 100,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
-      {
-        id: 7,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 100,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
-      {
-        id: 8,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'OB', 'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-04-13',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 100,
-          nutrition: {
-            'OB': 0,
-            'HB': 10,
-            'FB': 20,
-            'BB': 30,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      }
+      //   ],
+      //   stars: 5,
+      //   rate: 7.8,
+      //   price: {
+      //     basePrice: 140,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 5,
+      //   title: 'Naama Bay',
+      //   country: 'Egypt',
+      //   city: 'Kair',
+      //   mainImg: 'hotel_1',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-05-19',
+      //             count: 2
+      //           },
+      //           {
+      //             date: '2019-05-18',
+      //             count: 8
+      //           },
+      //           {
+      //             date: '2019-05-20',
+      //             count: 2
+      //           }
+      //       ]
+      //     }
+      //   ],
+      //   stars: 5,
+      //   rate: 7.8,
+      //   price: {
+      //     basePrice: 180,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 6,
+      //   title: 'Naama Bay',
+      //   country: 'Egypt',
+      //   city: 'Sharm-el-Sheikh',
+      //   mainImg: 'hotel_1',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     },
+      //     {
+      //       type: 'Lux',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     }
+      //   ],
+      //   stars: 5,
+      //   rate: 7.8,
+      //   price: {
+      //     basePrice: 110,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 7,
+      //   title: 'Naama Bay',
+      //   country: 'Egypt',
+      //   city: 'Sharm-el-Sheikh',
+      //   mainImg: 'hotel_1',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     },
+      //     {
+      //       type: 'Lux',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     }
+      //   ],
+      //   stars: 5,
+      //   rate: 7.8,
+      //   price: {
+      //     basePrice: 100,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // },
+      // {
+      //   id: 8,
+      //   title: 'Naama Bay',
+      //   country: 'Egypt',
+      //   city: 'Sharm-el-Sheikh',
+      //   mainImg: 'hotel_1',
+      //   nutritionTypes: [
+      //     'OB', 'HB', 'AI'
+      //   ],
+      //   rooms: [
+      //     {
+      //       type: 'Standard',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     },
+      //     {
+      //       type: 'Lux',
+      //       roomsCount: 8,
+      //       bookedRooms: [
+      //           {
+      //             date: '2019-04-13',
+      //             count: 2
+      //           }
+      //       ]
+      //     }
+      //   ],
+      //   stars: 5,
+      //   rate: 7.8,
+      //   price: {
+      //     basePrice: 100,
+      //     nutrition: {
+      //       'OB': 0,
+      //       'HB': 10,
+      //       'FB': 20,
+      //       'BB': 30,
+      //       'AI': 50
+      //     },
+      //     roomType: {
+      //       'Standard': 0,
+      //       'Lux': 50,
+      //       'Apartment': 100
+      //     }
+      //   }
+      // }
     ]
   }
 

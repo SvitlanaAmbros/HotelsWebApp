@@ -19,6 +19,22 @@ export class HotelsComponent implements OnInit {
   public days: number = 1;
   public currentHotelInfo: hotels.CurrentHotelInfo;
 
+  // public sortTypes = [
+  //   {
+  //     type: 'None',
+  //     icon: 'fa-times'
+  //   }, 
+  //   {
+  //     type: 'Asc',
+  //     icon: 'fa-arrow-up'
+  //   },
+  //   {
+  //      type:'Desc',
+  //      icon: 'fa-arrow-down'
+  //   }
+  // ];
+
+  // public sort
   public startHotelIndex:number = 0;
   public countHotelPerPage = 1; 
   public endHotelIndex: number = this.countHotelPerPage;
@@ -28,11 +44,14 @@ export class HotelsComponent implements OnInit {
 
   public currentDate;
 
+  public sortTypes = hotels.SORT_TYPES;
+
   public searchParams: hotels.hotelsSearchParams = {
     country: 'Ukraine',
     city: 'Kiev',
     date: new Date(),
-    days: 1
+    days: 1,
+    sortType: 'None'
   };
 
   public countryCityInfo = {

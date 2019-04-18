@@ -52,34 +52,67 @@
               <input class="hotels__search-btn" type="submit" value="Search" (click)="searchHotels()">
             </div>
           </div>
-          <div class="hotels__add-search">
-            <div class="hotels__add-search-col">
-              <label for="days" class="hotels__description">Sort by price:</label>
-              <div class="hotels__sort">
-                <input type="radio" id="sort_1" name="sort" checked hidden>
-                <label for="sort_1"><i class="fa fa-times"></i></label>
-                <input type="radio" id="sort_2" name="sort" hidden>
-                <label for="sort_2"><i class="fa fa-arrow-up"></i></label>
-                <input type="radio" id="sort_3" name="sort" hidden>
-                <label for="sort_3"><i class="fa fa-arrow-down"></i></label>
-              </div>
-            </div>
+          <!-- <div class="hotels__add-search">
             <div>
               <label for="days" class="hotels__description">Filter :</label>
             </div>
-          </div>
+          </div> -->
         </form>
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->
       <div class="hotels__list" *ngIf="!!hotelsBaseInfo && !!getHotels">
-        <div class="hotels__element-pages">
-          <p>Elements per page</p>
-          <select [(ngModel)]="countHotelPerPage" (ngModelChange)="returnToFirstPage()">
-            <option *ngFor="let option of maxQuantityHotels; let ind = index" 
-              [ngValue]="ind + 1">{{ ind + 1 }}</option>
-          </select>
+        
+        <div class="hotels__update-view">
+          <div class="hotels__add-search">
+            <label for="days" class="hotels__description">Sort by price:</label>
+            <div class="hotels__sort">
+              <!-- <div 
+                *ngFor="let sort of sortTypes; let ind = index">
+                <input type="radio" 
+                  id="sort_{{ind}}" 
+                  name="sort" 
+                  [(ngModel)]="searchParams.sort"
+                  [value]="sort.type"
+                  checked hidden>
+                <label for="sort_{{ind}}" class="hotels__sort-icon"
+                  [ngClass]="sortTypes == 'Asc' ? 'asc' : ''
+                              "> -->
+                  <!-- <i class="fa fa-times"></i> -->
+                  <!-- sortTypes == 'Desc' ? 'desc' : '' -->
+                <!-- </label> -->
+              <!-- </div> -->
+              <input type="radio" id="sort_1" name="sort" 
+                [(ngModel)]="searchParams.sortType" 
+                [value]="sortTypes[0]"
+                hidden>
+              <label for="sort_1" class="icon"><i class="fa fa-times"></i></label>
+              <input type="radio" id="sort_2" name="sort"  
+                [(ngModel)]="searchParams.sortType" 
+                [value]="sortTypes[1]"
+                hidden>
+              <label for="sort_2" class="icon"><i class="fa fa-arrow-up"></i></label>
+              <input type="radio" id="sort_3" name="sort" 
+                [(ngModel)]="searchParams.sortType" 
+                [value]="sortTypes[2]"
+                hidden>
+              <label for="sort_3" class="icon"><i class="fa fa-arrow-down"></i></label>
+
+              {{searchParams.sort}}
+            </div>
+          </div>
+
+          <div class="hotels__element-pages">
+            <label>Elements per page</label>
+            <div>
+              <select [(ngModel)]="countHotelPerPage" (ngModelChange)="returnToFirstPage()">
+                <option *ngFor="let option of maxQuantityHotels; let ind = index" 
+                  [ngValue]="ind + 1">{{ ind + 1 }}</option>
+              </select>
+            </div>
+          </div>
         </div>
+
         <hotel-card 
           *ngFor="let hotel of getHotels" 
           [hotel]="hotel"

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { hotels } from './types/hotels';
-import { HotelBaseInfo } from './models/hotel-base-info';
+import { SortService } from './sort.service';
 
 @Injectable()
 export class FilterService {
 
   public functions: any[] = [];
 
-  constructor() { 
+  constructor(public sortService: SortService) { 
   }
 
   public filter(array: hotels.HotelBaseInfo[], 
@@ -18,7 +18,13 @@ export class FilterService {
     resArray = this.filterByCity(resArray, searchParams.city);
     resArray = this.filterByDateAndDays(resArray, searchParams);
 
-    return resArray;
+    if (searchParams.sortType == 'Asc') {
+      resArray = this.sortService.ascSort(resArray);
+    } else if (searchParams.sortType == 'Desc') {
+      resArray = this.sortService.descSort(resArray);
+    }
+
+    return resArray; 
 
 }
   private filterByCountry(hotels: hotels.HotelBaseInfo[], country: string): hotels.HotelBaseInfo[]{
