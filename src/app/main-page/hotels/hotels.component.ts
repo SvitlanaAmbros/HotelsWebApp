@@ -6,6 +6,7 @@ import { HotelsBaseInfo } from '../models/hotels-base-info';
 import { PopupControls, PopupControlsService } from '../../shared/services/popup-controls.service';
 import { CurrentHotelInfo } from '../models/current-hotel-info';
 import { FilterService } from '../filter.service';
+import { SortService } from '../sort.service';
 
 @Component({
   selector: 'hotels',
@@ -69,7 +70,8 @@ export class HotelsComponent implements OnInit {
 
   constructor(private hotelInfoService: HotelsInfoService,
     private popupControlsService: PopupControlsService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private sortService: SortService
     ) { }
 
   ngOnInit() {
@@ -177,10 +179,23 @@ export class HotelsComponent implements OnInit {
 
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
-    // this
-
   }
 
+  public sort() {
+    switch(this.searchParams.sortType){
+      case 'None':
+        this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
+              this.searchParams);
+          break;
+      case 'Asc': 
+        this.hotelsBaseInfo.hotels = this.sortService.ascSort(this.hotelsBaseInfo.hotels);
+        break;
+
+      case 'Desc':
+        this.hotelsBaseInfo.hotels = this.sortService.descSort(this.hotelsBaseInfo.hotels); 
+        break;
+    }
+  }
 
 
 }

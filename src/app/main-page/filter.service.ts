@@ -7,7 +7,7 @@ export class FilterService {
 
   public functions: any[] = [];
 
-  constructor(public sortService: SortService) { 
+  constructor() { 
   }
 
   public filter(array: hotels.HotelBaseInfo[], 
@@ -18,11 +18,11 @@ export class FilterService {
     resArray = this.filterByCity(resArray, searchParams.city);
     resArray = this.filterByDateAndDays(resArray, searchParams);
 
-    if (searchParams.sortType == 'Asc') {
-      resArray = this.sortService.ascSort(resArray);
-    } else if (searchParams.sortType == 'Desc') {
-      resArray = this.sortService.descSort(resArray);
-    }
+    // if (searchParams.sortType == 'Asc') {
+    //   resArray = this.sortService.ascSort(resArray);
+    // } else if (searchParams.sortType == 'Desc') {
+    //   resArray = this.sortService.descSort(resArray);
+    // }
 
     return resArray; 
 

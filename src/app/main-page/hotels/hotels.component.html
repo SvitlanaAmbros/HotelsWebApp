@@ -49,7 +49,8 @@
               </div>
             </div> 
             <div>
-              <input class="hotels__search-btn" type="submit" value="Search" (click)="searchHotels()">
+              <input class="hotels__search-btn" type="submit" value="Search" 
+                (click)="searchHotels()">
             </div>
           </div>
           <!-- <div class="hotels__add-search">
@@ -85,16 +86,19 @@
               <input type="radio" id="sort_1" name="sort" 
                 [(ngModel)]="searchParams.sortType" 
                 [value]="sortTypes[0]"
+                (ngModelChange)="sort($event)"
                 hidden>
               <label for="sort_1" class="icon"><i class="fa fa-times"></i></label>
               <input type="radio" id="sort_2" name="sort"  
                 [(ngModel)]="searchParams.sortType" 
                 [value]="sortTypes[1]"
+                (ngModelChange)="sort($event)"
                 hidden>
               <label for="sort_2" class="icon"><i class="fa fa-arrow-up"></i></label>
               <input type="radio" id="sort_3" name="sort" 
                 [(ngModel)]="searchParams.sortType" 
                 [value]="sortTypes[2]"
+                (ngModelChange)="sort($event)"
                 hidden>
               <label for="sort_3" class="icon"><i class="fa fa-arrow-down"></i></label>
 
