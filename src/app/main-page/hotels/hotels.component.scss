@@ -25,7 +25,7 @@ label {
 
     &__search {
         padding: 5px 0 0px;
-        padding: 30px 0;
+        padding: 30px 0 20px;
         border: 2px dashed #ffc107;
 
         &-row {
@@ -154,24 +154,6 @@ label {
                 background: $accent;
             }
         }
-
-        // &-icon{
-        //     &:before {
-        //         font-family: FontAwesome;
-        //         content: '\f00d';
-        //         &.asc {
-        //             // font-family: FontAwesome;
-        //             // content: '\f062';
-        //             background: red;
-        //         }
-        
-        //         &.desc {
-        //             font-family: FontAwesome;
-        //             content: '\f063';
-        //             // background: blue;
-        //         }
-        //     }    
-        // }
     }
 
     &__update-view {
@@ -181,10 +163,24 @@ label {
     }
 
     &__filter-btn {
+        margin: 20px 0;
         border: none;
         font-weight: bold;
         text-decoration: underline;
         background: $white;
+        cursor: pointer;
+    }
+
+    &__filter-stars {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        // align-items: center;
+    }
+
+    &__filter-row {
+        padding: 0 10px;
+        text-align: center;
     }
     
 }
@@ -320,4 +316,17 @@ label {
     margin:0 5px;
 } 
 
+.stars {
+    & + label:before {
+        font-family: FontAwesome;
+        content: '\f005';
+        color: $grey;
+    }
 
+
+    &:checked{
+        & + label:before {
+            color: $accent;
+        }
+    }
+}

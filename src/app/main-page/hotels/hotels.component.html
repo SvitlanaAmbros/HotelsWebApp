@@ -61,13 +61,33 @@
             </div>
           </div> -->
         </form>
-        <div class="hotels__search-row">
-            <button *ngIf="!isOpenAddFilter" class="hotels__filter-btn" (click)="showAdditionalFilters()">Show more filters</button>
-            <button *ngIf="isOpenAddFilter" class="hotels__filter-btn" (click)="showAdditionalFilters()">Hide filters</button>
+        <div class="hotels__filter-row">
+          <div>
+            <button *ngIf="!isOpenAddFilter" 
+              class="hotels__filter-btn" 
+              (click)="showAdditionalFilters()">Show more filters</button>
+            <button *ngIf="isOpenAddFilter" 
+              class="hotels__filter-btn" 
+              (click)="showAdditionalFilters()">Hide filters</button>
           </div>
+          
+        <!-- </div> -->
           <div *ngIf="isOpenAddFilter">
+            <div class="hotels__filter-stars">
+              <label>Hotel category:</label>
+              <div *ngFor="let star of stars; let ind = index">
+                <input type="radio" id="stars_{{ind}}" 
+                  name="stars" 
+                  class="stars" 
+                  [(ngModel)]="searchParams.stars"
+                  [value]="star"
+                  hidden>
+                <label for="stars_{{ind}}">{{star}}</label>
+              </div>
+            </div>
             
           </div>
+        </div>
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->

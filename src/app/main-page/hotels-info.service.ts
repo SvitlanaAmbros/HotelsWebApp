@@ -95,7 +95,7 @@ export class HotelsInfoService {
             ]
           }
         ],
-        stars: 5,
+        stars: 4,
         rate: 8.2,
         price: {
           basePrice: 160,
@@ -323,7 +323,7 @@ export class HotelsInfoService {
             ]
           }
         ],
-        stars: 5,
+        stars: 3,
         rate: 7.8,
         price: {
           basePrice: 100,

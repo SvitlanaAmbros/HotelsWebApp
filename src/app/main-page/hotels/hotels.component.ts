@@ -42,6 +42,7 @@ export class HotelsComponent implements OnInit {
   
   public hotelPopup: PopupControls;
   public isOpenAddFilter: boolean = false;
+  public stars:hotels.Stars[] = hotels.HOTEL__STARS;
 
   public currentDate;
 

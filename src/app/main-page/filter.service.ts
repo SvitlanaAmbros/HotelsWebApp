@@ -18,6 +18,9 @@ export class FilterService {
     resArray = this.filterByCity(resArray, searchParams.city);
     resArray = this.filterByDateAndDays(resArray, searchParams);
 
+    if (!!searchParams.stars) {
+      resArray = this.filterByStars(resArray, searchParams.stars);
+    }
     // if (searchParams.sortType == 'Asc') {
     //   resArray = this.sortService.ascSort(resArray);
     // } else if (searchParams.sortType == 'Desc') {
@@ -73,6 +76,10 @@ export class FilterService {
     }
 
     return roomIsFound;
+  }
+
+  private filterByStars(hotels: hotels.HotelBaseInfo[], stars: hotels.Stars):hotels.HotelBaseInfo[] {
+    return hotels.filter(item =>item.stars == stars);
   }
 
 }

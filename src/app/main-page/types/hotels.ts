@@ -102,6 +102,7 @@ export module hotels {
         date: Date;
         days: number;
         sortType: SortType;
+        stars?: Stars;
     }
 
     export interface NutritionTypePrice {
