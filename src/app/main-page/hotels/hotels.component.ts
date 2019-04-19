@@ -41,6 +41,7 @@ export class HotelsComponent implements OnInit {
   public currentPage: number = 0;
   
   public hotelPopup: PopupControls;
+  public isOpenAddFilter: boolean = false;
 
   public currentDate;
 
@@ -195,6 +196,10 @@ export class HotelsComponent implements OnInit {
         this.hotelsBaseInfo.hotels = this.sortService.descSort(this.hotelsBaseInfo.hotels); 
         break;
     }
+  }
+
+  public showAdditionalFilters() {
+    this.isOpenAddFilter = !this.isOpenAddFilter;
   }
 
 

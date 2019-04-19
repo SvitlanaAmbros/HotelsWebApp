@@ -179,6 +179,13 @@ label {
         justify-content: space-between;
         padding: 10px 40px;
     }
+
+    &__filter-btn {
+        border: none;
+        font-weight: bold;
+        text-decoration: underline;
+        background: $white;
+    }
     
 }
 

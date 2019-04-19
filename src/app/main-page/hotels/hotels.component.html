@@ -51,16 +51,23 @@
               </div>
             </div> 
             <div>
-              <input class="hotels__search-btn" type="submit" value="Search" 
-                >
+              <input class="hotels__search-btn" type="submit" value="Search">
             </div>
           </div>
+          
           <!-- <div class="hotels__add-search">
             <div>
               <label for="days" class="hotels__description">Filter :</label>
             </div>
           </div> -->
         </form>
+        <div class="hotels__search-row">
+            <button *ngIf="!isOpenAddFilter" class="hotels__filter-btn" (click)="showAdditionalFilters()">Show more filters</button>
+            <button *ngIf="isOpenAddFilter" class="hotels__filter-btn" (click)="showAdditionalFilters()">Hide filters</button>
+          </div>
+          <div *ngIf="isOpenAddFilter">
+            
+          </div>
       </div>
       <!-- EOF search block -->
       <!-- start hotels cards -->
