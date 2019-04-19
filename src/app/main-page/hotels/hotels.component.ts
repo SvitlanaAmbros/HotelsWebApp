@@ -47,8 +47,8 @@ export class HotelsComponent implements OnInit {
   public sortTypes = hotels.SORT_TYPES;
 
   public searchParams: hotels.hotelsSearchParams = {
-    country: 'Ukraine',
-    city: 'Kiev',
+    country: '',
+    city: '',
     date: new Date(),
     days: 5,
     sortType: 'None'

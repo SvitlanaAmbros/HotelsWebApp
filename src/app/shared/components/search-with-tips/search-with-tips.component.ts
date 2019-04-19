@@ -10,6 +10,7 @@ export class SearchWithTipsComponent implements OnInit {
 
   @Input() valuesTitle: string = 'values';
   @Input() baseList: string[];
+  @Input() inputPlaceholder:string = 'Enter value';
   @Output() valueInputed: EventEmitter<string> = new EventEmitter();
 
   public filteredList:string[]=[];

@@ -20,6 +20,7 @@ export module hotels {
         stars: Stars; 
         rate: number; 
         minPricePerDay: number;
+        price: Price;
         days?: number; 
         setDays(days: number): void;
     }

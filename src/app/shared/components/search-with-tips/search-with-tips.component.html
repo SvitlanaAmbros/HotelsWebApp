@@ -4,6 +4,7 @@
     [(ngModel)]="inputedValue" 
     (ngModelChange)="changedInput()"
     (focusout)="focusOut()"
+    placeholder="{{inputPlaceholder}}"
     required>
   <div class="list-wrap" > 
     <div class="list" *ngIf="filteredList.length > 0">

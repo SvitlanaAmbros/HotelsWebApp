@@ -12,6 +12,7 @@
                 <search-with-tips 
                   [baseList]="countryList"
                   [valuesTitle]="'contries'"
+                  [inputPlaceholder]="'Enter country'"
                   (valueInputed)="changedCountry($event)">
                 </search-with-tips>
               </div>
@@ -22,6 +23,7 @@
                 <search-with-tips
                   [valuesTitle]="'cities'"
                   [baseList]="cityList"
+                  [inputPlaceholder]="'Enter city'"
                   (valueInputed)="changedCity($event)">
                 </search-with-tips>
               </div>

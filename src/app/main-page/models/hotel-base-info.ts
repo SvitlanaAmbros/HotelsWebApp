@@ -11,6 +11,7 @@ export class HotelBaseInfo implements hotels.HotelBaseInfo {
     stars: hotels.Stars; 
     rate: number; 
     minPricePerDay: number;
+    // price: hotels.Price;
     days?: number; 
 
     constructor(dbHotelBaseInfo: hotels.db.HotelBaseInfo, days:number) {
@@ -29,6 +30,7 @@ export class HotelBaseInfo implements hotels.HotelBaseInfo {
         this.stars = dbHotelBaseInfo.stars;
         this.rate = dbHotelBaseInfo.rate;
         this.minPricePerDay = this.getMinPricePerDay(dbHotelBaseInfo.price);
+        this.price = dbHotelBaseInfo.price;
     }
 
     private getNutritionTypes(dbNutritionTypes: hotels.NutritionType[]):hotels.NutritionType[] {
@@ -45,6 +47,5 @@ export class HotelBaseInfo implements hotels.HotelBaseInfo {
 
     public setDays(days: number):void {
         this.days = days;
-        console.log("hotel set day", this.days);
     }
 }
