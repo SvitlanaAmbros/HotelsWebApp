@@ -24,9 +24,16 @@ export module hotels {
         days?: number; 
         setDays(days: number): void;
     }
-
+    
     export interface Room {
         type: RoomType;
+        roomsCount: number;
+        bookedRooms: BookedRoom[];
+    }
+
+    export interface RoomInfo {
+        type: RoomType;
+        priceForType: number;
         roomsCount: number;
         bookedRooms: BookedRoom[];
     }
@@ -53,12 +60,11 @@ export module hotels {
         [type in RoomType]: number;
     };
 
-
     export type Stars = 1| 2 | 3 | 4 | 5;
     export const HOTEL__STARS: Stars[] = [1, 2, 3, 4, 5];
 
-    export type NutritionType = 'OB' | 'BB' | 'HB' | 'FB' | 'AI';
-    export const NUTRITION_TYPES: NutritionType[] = ['OB', 'BB', 'HB', 'FB','AI'];
+    export type NutritionType = 'BB' | 'HB' | 'AI';
+    export const NUTRITION_TYPES: NutritionType[] = [ 'BB', 'HB','AI'];
 
     export type RoomType = 'Standard' | 'Lux' | 'Apartment';
     export const ROOM_TYPES: RoomType[] = ['Standard', 'Lux',  'Apartment'];
@@ -73,10 +79,14 @@ export module hotels {
         city: string;
         mainImg: string;
         nutritionTypes: NutritionType[];
-        rooms: Room[];
+        rooms: RoomInfo[];
         stars: Stars;
         rate: number;
+        startDate: Date;
+        basePrice: number;
         price: Price;
+        priceForRoomType: number;
+        priceForNutritionType: number;
         days: number;
         images: string[];
         coordLng: number;
@@ -115,13 +125,7 @@ export module hotels {
             price: Price;
         }
 
-        export interface Room {
-            type: RoomType;
-            roomsCount: number;
-            bookedRooms: BookedRoom[];
-        }
 
-        
 
         // expanded hotel info for hotel popup
         export interface CurrentHotelInfo {

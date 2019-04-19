@@ -14,7 +14,7 @@ export class HotelsInfoService {
         city: 'Sharm-el-Sheikh',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -22,7 +22,7 @@ export class HotelsInfoService {
             roomsCount: 8,
             bookedRooms: [
                 {
-                  date: '2019-04-13',
+                  date: '2019-05-13',
                   count: 2
                 }
             ]
@@ -32,8 +32,18 @@ export class HotelsInfoService {
             roomsCount: 8,
             bookedRooms: [
                 {
-                  date: '2019-04-13',
-                  count: 2
+                  date: '2019-05-13',
+                  count: 8
+                }
+            ]
+          },
+          {
+            type: 'Apartment',
+            roomsCount: 8,
+            bookedRooms: [
+                {
+                  date: '2019-05-13',
+                  count: 3
                 }
             ]
           }
@@ -43,10 +53,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 125,
           nutrition: {
-            'OB': 0,
+            'BB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
             'AI': 50
           },
           roomType: {
@@ -63,7 +71,7 @@ export class HotelsInfoService {
         city: 'Hurgada',
         mainImg: 'hotel_2',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -92,10 +100,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 160,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -112,7 +118,7 @@ export class HotelsInfoService {
         city: 'Sharm-el-Sheikh',
         mainImg: 'hotel_3',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -141,10 +147,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 150,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -161,7 +165,7 @@ export class HotelsInfoService {
         city: 'Kair',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -185,10 +189,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 140,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -205,7 +207,7 @@ export class HotelsInfoService {
         city: 'Kair',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -232,10 +234,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 180,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -252,7 +252,7 @@ export class HotelsInfoService {
         city: 'Sharm-el-Sheikh',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -281,10 +281,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 110,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -301,7 +299,7 @@ export class HotelsInfoService {
         city: 'Sharm-el-Sheikh',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'HB', 'AI'
         ],
         rooms: [
           {
@@ -330,10 +328,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 100,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -350,7 +346,7 @@ export class HotelsInfoService {
         city: 'Sharm-el-Sheikh',
         mainImg: 'hotel_1',
         nutritionTypes: [
-          'OB', 'HB', 'AI'
+          'BB', 'HB', 'AI'
         ],
         rooms: [
           {
@@ -379,10 +375,8 @@ export class HotelsInfoService {
         price: {
           basePrice: 100,
           nutrition: {
-            'OB': 0,
             'HB': 10,
-            'FB': 20,
-            'BB': 30,
+            'BB': 0,
             'AI': 50
           },
           roomType: {
@@ -403,16 +397,36 @@ export class HotelsInfoService {
     city: 'Sharm-el-Sheikh',
     mainImg: 'hotel_1',
     nutritionTypes: [
-      'OB', 'HB', 'AI'
+      'HB', 'AI'
     ],
     rooms: [
       {
         type: 'Standard',
+        roomsCount: 0,
+        bookedRooms: [
+            {
+              date: '2019-05-13',
+              count: 2
+            }
+        ]
+      },
+      {
+        type: 'Lux',
         roomsCount: 8,
         bookedRooms: [
             {
-              date: '2019-04-13',
-              count: 2
+              date: '2019-05-13',
+              count: 8
+            }
+        ]
+      },
+      {
+        type: 'Apartment',
+        roomsCount: 8,
+        bookedRooms: [
+            {
+              date: '2019-05-13',
+              count: 3
             }
         ]
       }
@@ -420,18 +434,16 @@ export class HotelsInfoService {
     stars: 5,
     rate: 7.8,
     price: {
-      basePrice: 100,
+      basePrice: 125,
       nutrition: {
-        'OB': 0,
-        'HB': 10,
-        'FB': 20,
-        'BB': 30,
+        'BB': 0,
+        'HB': 20,
         'AI': 50
       },
       roomType: {
         'Standard': 0,
         'Lux': 50,
-        'Apartment': 100
+        'Apartment': 80
       }
     },
     images: [

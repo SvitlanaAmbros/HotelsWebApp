@@ -11,7 +11,7 @@ export class HotelBaseInfo implements hotels.HotelBaseInfo {
     stars: hotels.Stars; 
     rate: number; 
     minPricePerDay: number;
-    // price: hotels.Price;
+    price: hotels.Price;
     days?: number; 
 
     constructor(dbHotelBaseInfo: hotels.db.HotelBaseInfo, days:number) {
