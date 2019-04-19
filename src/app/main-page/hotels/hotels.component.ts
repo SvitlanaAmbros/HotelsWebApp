@@ -178,6 +178,8 @@ export class HotelsComponent implements OnInit {
 
   public searchHotels() {
     console.log(this.searchParams);
+    this.countHotelPerPage = 1; 
+    this.returnToFirstPage();
     this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
