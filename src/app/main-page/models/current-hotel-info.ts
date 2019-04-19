@@ -1,4 +1,5 @@
 import { hotels } from "../types/hotels";
+import { RoomInfo } from "./room-info";
 
 export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
     id: number;
@@ -23,9 +24,9 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
     description: string;
 
     constructor(dbCurrentHotel: hotels.db.CurrentHotelInfo, days: number, date: Date) {
-        this.setInfoFromDbObj(dbCurrentHotel);
         this.days = days;
         this.startDate = date;
+        this.setInfoFromDbObj(dbCurrentHotel);
     }
 
     private setInfoFromDbObj(dbCurrentHotel: hotels.db.CurrentHotelInfo):void {
@@ -34,8 +35,7 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         this.country = dbCurrentHotel.country;
         this.city = dbCurrentHotel.city;
         this.mainImg = dbCurrentHotel.mainImg;
-        this.nutrition = this.getNutritionTypes(dbCurrentHotel);
-        console.log('@', this.nutrition);
+        this.nutrition = this.getNutritionInfo(dbCurrentHotel);
         this.rooms = this.getRooms(dbCurrentHotel);
         this.stars = dbCurrentHotel.stars;
         this.rate = dbCurrentHotel.rate;
@@ -50,9 +50,8 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         this.basePrice = dbCurrentHotel.price.basePrice;
     }
 
-    private getNutritionTypes(dbCurrentHotel: hotels.db.CurrentHotelInfo):hotels.NutritionTypePrice[] {
+    private getNutritionInfo(dbCurrentHotel: hotels.db.CurrentHotelInfo):hotels.NutritionTypePrice[] {
         return dbCurrentHotel.nutritionTypes.map((item : hotels.NutritionType) => {
-            console.log(item, 'price ', dbCurrentHotel.price.nutrition);
             return {
                 type: item,
                 price: dbCurrentHotel.price.nutrition[item]
@@ -62,12 +61,13 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
 
     private getRooms(dbCurrentHotel: hotels.db.CurrentHotelInfo): hotels.RoomInfo[] {
         return dbCurrentHotel.rooms.map((item: hotels.Room) => {
-                return {
-                    type: item.type,
-                    roomsCount: item.roomsCount,
-                    priceForType: dbCurrentHotel.price.roomType[item.type],
-                    bookedRooms: item.bookedRooms
-                }
+            // return {
+            //     type: item.type,
+            //     roomsCount: item.roomsCount,
+            //     priceForType: dbCurrentHotel.price.roomType[item.type],
+            //     bookedRooms: item.bookedRooms
+            // }
+            return new RoomInfo(dbCurrentHotel, item, this.startDate, this.days);
         });
     }
 

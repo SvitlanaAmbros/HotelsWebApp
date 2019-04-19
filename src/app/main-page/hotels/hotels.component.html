@@ -208,13 +208,13 @@
                 <input type="radio" name="room" 
                   id="room_{{ind}}" 
                   class="short-info__radio" 
-                  [disabled]="room.roomsCount == 0"
+                  [disabled]="!room.hasEmptyRooms"
                   [(ngModel)]="currentHotelInfo.priceForRoomType"
                   [value]="room.priceForType"
                   hidden>
                 <label for="room_{{ind}}" 
-                  [ngClass]="room.roomsCount == 0? 'disabled' : ''">{{ room.type }}</label>
-                <div *ngIf="room.roomsCount == 0" class="disabled-message">No available places in such type</div>
+                  [ngClass]="!room.hasEmptyRooms ? 'disabled' : ''">{{ room.type }}</label>
+                <div *ngIf="!room.hasEmptyRooms" class="disabled-message">No available places in such type</div>
               </div>
             </div>
           </div>
@@ -259,7 +259,7 @@
         </p>
         <p class="subtitle">Hotel rate:  <span>{{ currentHotelInfo.description }}</span></p>
       </div>
-      
+
       <!-- EOF additional info -->
 
       <div class="popup-info__map-wrap">

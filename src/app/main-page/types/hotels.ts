@@ -36,6 +36,7 @@ export module hotels {
         priceForType: number;
         roomsCount: number;
         bookedRooms: BookedRoom[];
+        hasEmptyRooms: boolean;
     }
 
     export interface BookedRoom {

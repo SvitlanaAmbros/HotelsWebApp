@@ -402,7 +402,7 @@ export class HotelsInfoService {
     rooms: [
       {
         type: 'Standard',
-        roomsCount: 0,
+        roomsCount: 8,
         bookedRooms: [
             {
               date: '2019-05-13',
