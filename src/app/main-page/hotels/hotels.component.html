@@ -213,7 +213,7 @@
                   [value]="room.priceForType"
                   hidden>
                 <label for="room_{{ind}}" 
-                  [ngClass]="room.roomsCount == 0? 'disabled' : ''">{{room.type}}</label>
+                  [ngClass]="room.roomsCount == 0? 'disabled' : ''">{{ room.type }}</label>
                 <div *ngIf="room.roomsCount == 0" class="disabled-message">No available places in such type</div>
               </div>
             </div>
@@ -223,9 +223,14 @@
           <div>
             <p class="subtitle">Dish type</p>
             <div class="short-info__items">
-              <div class="short-info__item" *ngFor="let type of currentHotelInfo.nutritionTypes; let ind = index">
-                <input type="radio" name="dish" id="dish_{{ind}}" class="short-info__radio" hidden>
-                <label for="dish_{{ind}}">{{type}}</label>
+              <div class="short-info__item" *ngFor="let nutrition of currentHotelInfo.nutrition; let ind = index">
+                <input type="radio" name="dish" 
+                  id="dish_{{ind}}" 
+                  class="short-info__radio"
+                  [(ngModel)]="currentHotelInfo.priceForNutritionType"
+                  [value]="nutrition.price"
+                  hidden>
+                <label for="dish_{{ind}}">{{ nutrition.type }}</label>
               </div>
             </div>
           </div>
@@ -254,8 +259,7 @@
         </p>
         <p class="subtitle">Hotel rate:  <span>{{ currentHotelInfo.description }}</span></p>
       </div>
-
-
+      
       <!-- EOF additional info -->
 
       <div class="popup-info__map-wrap">

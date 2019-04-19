@@ -6,7 +6,7 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
     country: string;
     city: string;
     mainImg: string;
-    nutritionTypes: hotels.NutritionType[];
+    nutrition: hotels.NutritionTypePrice[];
     rooms: hotels.RoomInfo[];
     stars: hotels.Stars;
     rate: number;
@@ -34,9 +34,9 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         this.country = dbCurrentHotel.country;
         this.city = dbCurrentHotel.city;
         this.mainImg = dbCurrentHotel.mainImg;
-        this.nutritionTypes = this.getNutritionTypes(dbCurrentHotel.nutritionTypes);
+        this.nutrition = this.getNutritionTypes(dbCurrentHotel);
+        console.log('@', this.nutrition);
         this.rooms = this.getRooms(dbCurrentHotel);
-        console.log('!!!!!!', this.rooms);
         this.stars = dbCurrentHotel.stars;
         this.rate = dbCurrentHotel.rate;
         this.images = dbCurrentHotel.images;
@@ -50,19 +50,25 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         this.basePrice = dbCurrentHotel.price.basePrice;
     }
 
-    private getNutritionTypes(dbNutritionTypes: hotels.NutritionType[]):hotels.NutritionType[] {
-        return dbNutritionTypes;
+    private getNutritionTypes(dbCurrentHotel: hotels.db.CurrentHotelInfo):hotels.NutritionTypePrice[] {
+        return dbCurrentHotel.nutritionTypes.map((item : hotels.NutritionType) => {
+            console.log(item, 'price ', dbCurrentHotel.price.nutrition);
+            return {
+                type: item,
+                price: dbCurrentHotel.price.nutrition[item]
+            }
+        });
     }
 
     private getRooms(dbCurrentHotel: hotels.db.CurrentHotelInfo): hotels.RoomInfo[] {
-        return this.rooms =  dbCurrentHotel.rooms.map((item:hotels.Room) => {
+        return dbCurrentHotel.rooms.map((item: hotels.Room) => {
                 return {
                     type: item.type,
                     roomsCount: item.roomsCount,
                     priceForType: dbCurrentHotel.price.roomType[item.type],
                     bookedRooms: item.bookedRooms
                 }
-            });
+        });
     }
 
     private getSite(dbCurrentHotel: hotels.db.CurrentHotelInfo):string {

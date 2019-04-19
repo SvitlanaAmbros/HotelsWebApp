@@ -78,7 +78,7 @@ export module hotels {
         country: string;
         city: string;
         mainImg: string;
-        nutritionTypes: NutritionType[];
+        nutrition: NutritionTypePrice[];
         rooms: RoomInfo[];
         stars: Stars;
         rate: number;
@@ -101,6 +101,11 @@ export module hotels {
         date: Date;
         days: number;
         sortType: SortType;
+    }
+
+    export interface NutritionTypePrice {
+        type: NutritionType;
+        price: number;
     }
 
 

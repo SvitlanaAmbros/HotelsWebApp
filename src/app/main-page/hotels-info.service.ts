@@ -397,7 +397,7 @@ export class HotelsInfoService {
     city: 'Sharm-el-Sheikh',
     mainImg: 'hotel_1',
     nutritionTypes: [
-      'HB', 'AI'
+      'BB', 'HB', 'AI'
     ],
     rooms: [
       {
