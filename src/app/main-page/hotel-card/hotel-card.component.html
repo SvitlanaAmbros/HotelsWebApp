@@ -6,7 +6,7 @@
   </div>
   <div class="hotel-info">
     <div class="mark">
-      <label class="mark__price">{{ hotel.minPricePerDay * hotel.days }}$</label>
+      <label class="mark__price">{{ (hotel.minPricePerDay + hotel.priceForRoomType) * hotel.days }}$</label>
     </div>
     <h3>{{ hotel.title }} {{hotel.stars}}</h3>
     <div class="hotel-row">

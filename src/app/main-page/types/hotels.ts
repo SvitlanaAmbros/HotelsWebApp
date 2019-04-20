@@ -24,6 +24,7 @@ export module hotels {
         price: Price;
         days?: number; 
         setDays(days: number): void;
+        setPriceForRoomType(price: number):void
     }
     
     export interface Room {

@@ -70,6 +70,8 @@ export class FilterService {
         console.log('!!!!!22', room.type == searchParams.roomType);
         if(room.type == searchParams.roomType && this.checkRoomOnDateAndDays(room, searchParams)){
           res = true;
+          item.setPriceForRoomType(item.price.roomType[room.type]);
+          console.log('price for room', item.priceForRoomType);
         }
       }
 

@@ -33,7 +33,7 @@ export class HotelsInfoService {
             bookedRooms: [
                 {
                   date: '2019-05-13',
-                  count: 8
+                  count: 2
                 }
             ]
           },
@@ -43,7 +43,7 @@ export class HotelsInfoService {
             bookedRooms: [
                 {
                   date: '2019-05-13',
-                  count: 8
+                  count: 3
                 }
             ]
           }
