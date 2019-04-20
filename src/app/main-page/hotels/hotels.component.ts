@@ -43,6 +43,7 @@ export class HotelsComponent implements OnInit {
   public hotelPopup: PopupControls;
   public isOpenAddFilter: boolean = false;
   public stars:hotels.Stars[] = hotels.HOTEL__STARS;
+  public roomTypes: hotels.RoomTypeFilter[] = hotels.ROOM_TYPES_FOR_FILTER;
 
   public currentDate;
 
@@ -53,7 +54,8 @@ export class HotelsComponent implements OnInit {
     city: '',
     date: new Date(),
     days: 5,
-    sortType: 'None'
+    sortType: 'None',
+    roomType: 'All'
   };
 
   public countryCityInfo = {
@@ -178,8 +180,8 @@ export class HotelsComponent implements OnInit {
 
   public searchHotels() {
     console.log(this.searchParams);
-    this.countHotelPerPage = 1; 
-    this.returnToFirstPage();
+    // this.countHotelPerPage = 1; 
+    // this.returnToFirstPage();
     this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);

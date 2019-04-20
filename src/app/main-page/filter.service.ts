@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { hotels } from './types/hotels';
 import { SortService } from './sort.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class FilterService {
@@ -20,6 +21,10 @@ export class FilterService {
 
     if (!!searchParams.stars) {
       resArray = this.filterByStars(resArray, searchParams.stars);
+    }
+
+    if (!!searchParams.roomType && searchParams.roomType != 'All') {
+      resArray = this.filterByRoomType(resArray, searchParams);
     }
     // if (searchParams.sortType == 'Asc') {
     //   resArray = this.sortService.ascSort(resArray);
@@ -53,6 +58,25 @@ export class FilterService {
     });
   }
 
+  private filterByStars(hotels: hotels.HotelBaseInfo[], stars: hotels.Stars):hotels.HotelBaseInfo[] {
+    return hotels.filter(item =>item.stars == stars);
+  }
+
+  private filterByRoomType(hotels: hotels.HotelBaseInfo[], 
+          searchParams: hotels.hotelsSearchParams):hotels.HotelBaseInfo[] {
+    return hotels.filter(item => {
+      let res = false;
+      for(let room of item.rooms) {
+        console.log('!!!!!22', room.type == searchParams.roomType);
+        if(room.type == searchParams.roomType && this.checkRoomOnDateAndDays(room, searchParams)){
+          res = true;
+        }
+      }
+
+      return res;
+    });
+  }
+
   private checkRoomOnDateAndDays(roomTypeInfo: hotels.Room, searchParams: hotels.hotelsSearchParams) {
     //check free rooms
     let roomIsFound = true;
@@ -78,8 +102,6 @@ export class FilterService {
     return roomIsFound;
   }
 
-  private filterByStars(hotels: hotels.HotelBaseInfo[], stars: hotels.Stars):hotels.HotelBaseInfo[] {
-    return hotels.filter(item =>item.stars == stars);
-  }
+
 
 }
