@@ -76,4 +76,9 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
             return dbCurrentHotel.site;
         }
     }
+
+    public setPriceForRoomType(roomType):void {
+        this.priceForRoomType = this.price.roomType[roomType];
+        console.log('price', this.price.roomType[roomType], 'roomType', roomType);
+    }
 }

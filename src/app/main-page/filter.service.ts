@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { hotels } from './types/hotels';
-import { SortService } from './sort.service';
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class FilterService {
@@ -67,11 +65,9 @@ export class FilterService {
     return hotels.filter(item => {
       let res = false;
       for(let room of item.rooms) {
-        console.log('!!!!!22', room.type == searchParams.roomType);
         if(room.type == searchParams.roomType && this.checkRoomOnDateAndDays(room, searchParams)){
           res = true;
           item.setPriceForRoomType(item.price.roomType[room.type]);
-          console.log('price for room', item.priceForRoomType);
         }
       }
 

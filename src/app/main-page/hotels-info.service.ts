@@ -484,4 +484,18 @@ export class HotelsInfoService {
     });
   }
 
+  public getCountryCityInfo(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.URL}info`)
+        .subscribe((res) => {
+          console.log('Current hotel info', res);
+          resolve(res);
+        }, (err) => {
+          reject('Can`t get current hotel info');
+        });
+    });
+  }
+
+
+
 }

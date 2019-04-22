@@ -99,6 +99,7 @@ export module hotels {
         coordLat: number;
         site?: string;
         description: string;
+        setPriceForRoomType(price):void
     }
 
     export interface hotelsSearchParams {
@@ -167,8 +168,6 @@ export module hotels {
         export interface HotelServices {
             
         }
-
-
 
     }  
 }

@@ -45,7 +45,8 @@ export class HotelsComponent implements OnInit {
   public stars:hotels.Stars[] = hotels.HOTEL__STARS;
   public roomTypes: hotels.RoomTypeFilter[] = hotels.ROOM_TYPES_FOR_FILTER;
 
-  public currentDate;
+  public currentDate = new Date();
+  public defDate = new Date();
 
   public sortTypes = hotels.SORT_TYPES;
 
@@ -58,15 +59,16 @@ export class HotelsComponent implements OnInit {
     roomType: 'All'
   };
 
-  public countryCityInfo = {
-    'Egypt': ['Hurgada', 'Sharm-el-Sheikh', 'Kair'],
-    'Spain': [], 
-    'Italy': ['Rome', 'Venecia', 'Florencia'], 
-    'Georgia': [], 
-    'Germany': [], 
-    'France':['Nice', 'Paris'], 
-    'Norway':[]
-  };
+  public countryCityInfo;
+  // public countryCityInfo = {
+  //   'Egypt': ['Hurgada', 'Sharm-el-Sheikh', 'Kair'],
+  //   'Spain': [], 
+  //   'Italy': ['Rome', 'Venecia', 'Florencia'], 
+  //   'Georgia': [], 
+  //   'Germany': [], 
+  //   'France':['Nice', 'Paris'], 
+  //   'Norway':[]
+  // };
 
   public countryList: string[] = [];
   public cityList: string[] = [];
@@ -79,12 +81,17 @@ export class HotelsComponent implements OnInit {
 
   ngOnInit() {
     this.setCurrentDate();
-    this.countryList = Object.keys(this.countryCityInfo);
+    // this.countryList = Object.keys(this.countryCityInfo);
 
     this.hotelInfoService.getHotels().then((res) => {
       this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       console.log('Received hotels', this.hotelsBaseInfo);
+    });
+
+    this.hotelInfoService.getCountryCityInfo().then((res) => {
+      this.countryCityInfo = res;
+      this.countryList = Object.keys(this.countryCityInfo);
     });
     
     this.initPopup();
@@ -96,6 +103,10 @@ export class HotelsComponent implements OnInit {
     this.hotelInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
       this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days, 
         this.searchParams.date);
+      if (!!this.searchParams.roomType && this.searchParams.roomType != 'All') {
+        this.currentHotelInfo.setPriceForRoomType(this.searchParams.roomType);
+        
+      }
       console.log("CURRENT", this.currentHotelInfo);
       this.openHotelPopup();
     });
@@ -161,7 +172,8 @@ export class HotelsComponent implements OnInit {
   //search row
   // update calendar date
   public setCurrentDate() {
-    this.currentDate = new Date();
+    this.defDate.setDate(this.currentDate.getDate() + 1);
+    this.searchParams.date = this.defDate;
   }
 
   public changedCountry(country: string) {
