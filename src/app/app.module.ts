@@ -14,6 +14,8 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll';
 import { ScrollToModule } from 'ng2-scroll-to-el';
 import { MainPageModule } from './main-page/main-page.module';
 import { TouristsModule } from './tourists/tourists.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { TouristsModule } from './tourists/tourists.module';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AngularFontAwesomeModule,
     Ng2PageScrollModule,
     ScrollToModule.forRoot(),

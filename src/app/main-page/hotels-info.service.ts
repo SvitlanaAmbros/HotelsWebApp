@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { hotels } from './types/hotels';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class HotelsInfoService {
+  private URL: string = 'http://localhost:8080/';
 
   private data: hotels.db.HotelsBaseInfo = {
     hotels: 
@@ -466,11 +468,18 @@ export class HotelsInfoService {
   }
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public getHotels(): Promise<hotels.db.HotelsBaseInfo> {
-    return new Promise((res, rej) => {
-      res(this.data);
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.URL}hotels`)
+        .subscribe((res: hotels.db.HotelsBaseInfo) => {
+          console.log('Hotels from server', res);
+          resolve(res);
+        }, (err) => {
+          reject('Can`t get hotels info');
+        });
+      ;
     });
   }
 
