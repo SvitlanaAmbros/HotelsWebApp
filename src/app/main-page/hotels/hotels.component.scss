@@ -171,16 +171,35 @@ label {
         cursor: pointer;
     }
 
-    &__filter-stars {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
-        // align-items: center;
+    &__filter{
+            &-stars {
+                width: 40%;
+                display: flex;
+                justify-content: space-around;
+            // align-items: center;
+            }
+
+            &-roomtype {
+                width: 30%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;
+
+                & label {
+                    margin-right: 10px;
+                }
+            }
+
     }
 
     &__filter-row {
         padding: 0 10px;
         text-align: center;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
     }
     
 }
@@ -317,10 +336,14 @@ label {
 } 
 
 .stars {
-    & + label:before {
-        font-family: FontAwesome;
-        content: '\f005';
-        color: $grey;
+    & + label{
+        cursor: pointer;
+
+        &:before {
+            font-family: FontAwesome;
+            content: '\f005';
+            color: $grey;
+        }
     }
 
 

@@ -20,9 +20,11 @@ export module hotels {
         stars: Stars; 
         rate: number; 
         minPricePerDay: number;
+        priceForRoomType?: number;
         price: Price;
         days?: number; 
         setDays(days: number): void;
+        setPriceForRoomType(price: number):void
     }
     
     export interface Room {
@@ -70,6 +72,9 @@ export module hotels {
     export type RoomType = 'Standard' | 'Lux' | 'Apartment';
     export const ROOM_TYPES: RoomType[] = ['Standard', 'Lux',  'Apartment'];
 
+    export type RoomTypeFilter = 'Standard' | 'Lux' | 'Apartment' | 'All';
+    export const ROOM_TYPES_FOR_FILTER: RoomTypeFilter[] = ['All', 'Standard', 'Lux',  'Apartment'];
+
     export type SortType = 'None' | 'Asc' |'Desc';
     export const SORT_TYPES:SortType[] = ['None', 'Asc', 'Desc'];
 
@@ -103,6 +108,7 @@ export module hotels {
         days: number;
         sortType: SortType;
         stars?: Stars;
+        roomType?: RoomTypeFilter;
     }
 
     export interface NutritionTypePrice {
