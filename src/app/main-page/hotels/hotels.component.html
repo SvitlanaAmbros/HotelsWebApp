@@ -200,6 +200,7 @@
   [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
   [buttonAction]="'Order'"
+  (onAction)="orderHotel()"
   (onClose)="closeHotelPopup()">
 
   <div class="content">

@@ -496,6 +496,18 @@ export class HotelsInfoService {
     });
   }
 
+  public orderHotelRoom(bookingRequest: hotels.db.BookingRequest) {
+    console.log('BOOKING', bookingRequest);
+    return new Promise((resolve, reject) => {
+      this.http.post(`${this.URL}book`, bookingRequest)
+        .subscribe(res => {
+          resolve('Succesfull order. Our manager will keep in touch with you!');
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
 
 
 }

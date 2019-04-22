@@ -117,6 +117,12 @@ export module hotels {
         price: number;
     }
 
+    export interface BookingRequest {
+        hotelId: number;
+        roomType: RoomType;
+        date: string;
+        getDbObject(): hotels.db.BookingRequest;
+    }
 
     //db types
     export module db {
@@ -157,16 +163,17 @@ export module hotels {
             coord: Coord;
             site?: string;
             description: string;
-            services?: HotelServices;
         }
 
         export interface Coord {
             lng: number;
             lat: number;
         }
-
-        export interface HotelServices {
-            
+        
+        export interface BookingRequest {
+            hotelId: number;
+            roomType: RoomType;
+            date: string;
         }
 
     }  

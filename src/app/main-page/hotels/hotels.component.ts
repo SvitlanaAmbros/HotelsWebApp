@@ -7,6 +7,8 @@ import { PopupControls, PopupControlsService } from '../../shared/services/popup
 import { CurrentHotelInfo } from '../models/current-hotel-info';
 import { FilterService } from '../filter.service';
 import { SortService } from '../sort.service';
+import { BookingRequest } from '../models/booking-request';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'hotels',
@@ -73,7 +75,7 @@ export class HotelsComponent implements OnInit {
   public countryList: string[] = [];
   public cityList: string[] = [];
 
-  constructor(private hotelInfoService: HotelsInfoService,
+  constructor(private hotelsInfoService: HotelsInfoService,
     private popupControlsService: PopupControlsService,
     private filterService: FilterService,
     private sortService: SortService
@@ -83,13 +85,13 @@ export class HotelsComponent implements OnInit {
     this.setCurrentDate();
     // this.countryList = Object.keys(this.countryCityInfo);
 
-    this.hotelInfoService.getHotels().then((res) => {
+    this.hotelsInfoService.getHotels().then((res) => {
       this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       console.log('Received hotels', this.hotelsBaseInfo);
     });
 
-    this.hotelInfoService.getCountryCityInfo().then((res) => {
+    this.hotelsInfoService.getCountryCityInfo().then((res) => {
       this.countryCityInfo = res;
       this.countryList = Object.keys(this.countryCityInfo);
     });
@@ -100,7 +102,7 @@ export class HotelsComponent implements OnInit {
   public showHotelDetail(hotelId) {
     console.log('id' , hotelId);
  
-    this.hotelInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
+    this.hotelsInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
       this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days, 
         this.searchParams.date);
       if (!!this.searchParams.roomType && this.searchParams.roomType != 'All') {
@@ -219,5 +221,17 @@ export class HotelsComponent implements OnInit {
     this.isOpenAddFilter = !this.isOpenAddFilter;
   }
 
+  public orderHotel() {
+    let booking = new BookingRequest(this.currentHotelInfo.id, 'Lux', 
+            this.getStringFromDate(this.currentHotelInfo.startDate));
+    this.hotelsInfoService.orderHotelRoom(booking.getDbObject()).then(res => {
+      console.log(res);
+    });
+  }
+
+  public getStringFromDate(date: Date):string {
+    var datePipe = new DatePipe('en-US');
+    return  datePipe.transform(date, 'yyyy-MM-dd');
+  }
 
 }
