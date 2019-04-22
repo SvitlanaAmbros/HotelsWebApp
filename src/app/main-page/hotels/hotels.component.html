@@ -208,7 +208,7 @@
     <div class="popup-info">
       <!-- short info row -->
       <div class="short-info">
-        <img [src]="'../../../assets/img/' + currentHotelInfo.mainImg + '.jpg'" 
+        <img [src]="'../../../assets/img' + currentHotelInfo.mainImg" 
           class="short-info__image"
           alt="hotel image">
         <div class="short-info__right">
@@ -271,7 +271,7 @@
         <p class="subtitle center">Photos</p>
         <div class="images-row">
           <img *ngFor="let image of currentHotelInfo.images"
-          [src]="'../../../assets/img/' + image + '.jpg'"
+          [src]="'../../../assets/img' + image"
           class="photos__image"
           alt="rooms">
         </div>

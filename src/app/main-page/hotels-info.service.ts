@@ -479,14 +479,19 @@ export class HotelsInfoService {
         }, (err) => {
           reject('Can`t get hotels info');
         });
-      ;
     });
   }
 
   public getCurrentHotelInfo(hotelId: number): Promise<hotels.db.CurrentHotelInfo> {
-    return new Promise((res, rej) => {
-      res(this.hotel);
-    }); 
+    return new Promise((resolve, reject) => {
+      this.http.get(`${this.URL}hotels/${hotelId}`)
+        .subscribe((res: hotels.db.CurrentHotelInfo) => {
+          console.log('Current hotel info', res);
+          resolve(res);
+        }, (err) => {
+          reject('Can`t get current hotel info');
+        });
+    });
   }
 
 }
