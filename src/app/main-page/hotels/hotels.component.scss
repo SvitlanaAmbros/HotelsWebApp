@@ -65,7 +65,6 @@ label {
                 background: $dark-orange;
             }
         }
-
     }
 
     &__list {
@@ -354,6 +353,53 @@ label {
     }
 }
 
-// @media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
+    .hotels{
+        
+        &__search {
+            &-row {
+                display: block;
+                margin: auto;
+            }
 
-// }
+            &-btn {
+                margin: 10px 0;
+            }
+
+            &-tips {
+                // width: 200px;
+                // z-index: 10000;
+                // margin: auto;
+                display: flex;
+                justify-content: center;
+            }
+    
+        }
+
+        &__row {
+            display: block;
+        }
+
+        &__filter{
+            &-stars {
+                margin: auto;
+            }
+
+            &-roomtype {
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) { 
+    .hotels {
+        &__update-view {
+            display: block;
+        }
+
+        &__element-pages {
+            margin-top: 20px;
+        }
+    }
+}

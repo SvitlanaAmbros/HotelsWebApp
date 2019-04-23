@@ -2,7 +2,7 @@
 
 
 .search {
-    // width: 100px;
+    width: 155px;
     position: relative;
     
     &__input {
@@ -23,11 +23,12 @@
     // width: 100%;
 
     &-wrap {
-        width: 100%;
+        width: 155px;
         height: 100px;
         border-radius: 7px;
         border: 2px solid $dark-grey;
         background: $white;
+        z-index: 10000;
         overflow-y: scroll;
         position: absolute;
         left: 0;

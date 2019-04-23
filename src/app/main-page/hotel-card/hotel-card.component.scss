@@ -24,7 +24,7 @@ h3 {
         box-shadow: 5px 5px 18px $dark-grey;
     }
 
-    &-image {
+    &__image {
         width: 400px;
         height: 300px;
         // background: url('../../../assets/img/hotel.jpg');
@@ -32,7 +32,7 @@ h3 {
     }
 
     &-info {
-        margin: -10px 0 0 35px;
+        margin: -10px 35px 0 35px;
 
         &__icon {
             height: 40px;
@@ -90,4 +90,59 @@ h3 {
         font-weight: bold;
         padding-right: 10px;
     }
+}
+
+@media screen and (max-width: 875px) {
+    .hotel {
+        h3 {
+            text-align: start;
+        }
+        // display: block;
+    }
+}
+
+@media screen and (max-width: 758px) { 
+    .hotel {
+        display: block;
+        padding: 10px 0;
+
+        &__image {
+            margin: auto;
+        }
+
+        &-info {
+            margin-top: 20px;
+            // text-align: center;
+
+            &__btn {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 478px) { 
+    .hotel {
+        &__image {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .hotel {
+        &-info {
+            margin: 20px 5px 0 5px;
+
+            .mark {
+                margin-top: -50px;
+            }
+        }
+
+        h3 {
+            margin-top: 70px;
+            text-align: center;
+        }
+    }
+
 }
