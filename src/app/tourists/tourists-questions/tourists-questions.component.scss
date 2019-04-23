@@ -9,14 +9,12 @@ h2 {
     display: flex;
     align-items: center;
     height: 500px;
-    // position: relative;
 
     &-wrap {
         margin: auto;
         margin-top: -20px;
         width: 100%;
         min-height: 500px;
-        // background: rgba($color: $grey, $alpha: 0.9);
         background: url('../../../assets/img/luggage.jpg')center center;
         background-size: auto 700px;
 
@@ -31,8 +29,6 @@ h2 {
         border-color: $accent;
         overflow-y: scroll;
         overflow-x: hidden;
-        // position: absolute;
-        // top: 200px;
 
         &__list {
             margin-top: 30px;
@@ -44,23 +40,9 @@ h2 {
 @media screen and (max-width: 768px) {
     .questions { 
         &-card {
-            // text-align: center;
-        }
-
-        &-card {
             padding: 20px 20px 30px;
         }
     }
      
 }
 
-// @media screen and (max-width: 768px) { 
-//     expanding-list-item {
-//         input[type="checkbox"]  {
-//             & + label {
-//                 display: block;
-//                 margin: auto;
-//             }
-//         }
-//     }
-// }

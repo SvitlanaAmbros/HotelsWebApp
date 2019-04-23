@@ -9,7 +9,7 @@ export class TouristsQuestionsComponent implements OnInit {
 
   public questionsAnswers = [
     {
-      title: "How long you should wait for confirmation from the hotel?",
+      title: "Confirmation from the hotel",
       sublist: [
         {
           subtitle: "Why don't they confirm the tour for a long time?",
@@ -21,7 +21,7 @@ export class TouristsQuestionsComponent implements OnInit {
       ]
     }, 
     {
-      title: "Where, when and how do I get a package of documents for the trip?",
+      title: "Documents for the trip",
       sublist: [
         {
           subtitle: `The entire package of travel documents is issued 
@@ -40,7 +40,7 @@ export class TouristsQuestionsComponent implements OnInit {
       ]
     },
     {
-      title: "What time should I arrive at the airport on the day of departure?",
+      title: "Time arriving at the airport",
       sublist: [
         {
           subtitle: `Time of arriving depend on tour operator and 
@@ -57,7 +57,7 @@ export class TouristsQuestionsComponent implements OnInit {
       ]
     },
     {
-      title: "I'm going with a child, what documents will I need when I depart?",
+      title: "Documents for children",
       sublist: [
         {
           subtitle: "Original birth certificate",

@@ -30,21 +30,27 @@ h2 {
 .choose-us {
     // margin-top: -20px;
     padding: 60px 0;
-    background:  url('../../../assets/img/travel.jpg')center center;
+    background:  url('../../../assets/img/travel.jpg')center center no-repeat;
+    // background-size: auto 100%;
+    // background-size: 100% auto;
 }
 
 .advantages {
     margin-top: 30px;
 
     &-row {
+        // display: flex;
+        // justify-content: space-around;
+        // align-items: center;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
     }
 
     &__card {
         margin: 10px;
         padding-right: 15px;
+        width: 400px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -79,5 +85,14 @@ h2 {
     }
     &__info {
         width: 70%;
+    }
+}
+
+@media screen and (max-width: 892px) {
+    .choose-us {
+        padding: 60px 0;
+        background:  url('../../../assets/img/travel.jpg')center center no-repeat;
+        background-size: auto 100%;
+        // background-size: 100% auto;
     }
 }

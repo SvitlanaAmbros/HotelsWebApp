@@ -100,8 +100,6 @@ export class HotelsComponent implements OnInit {
   }
 
   public showHotelDetail(hotelId) {
-    console.log('id' , hotelId);
- 
     this.hotelsInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
       this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days, 
         this.searchParams.date);

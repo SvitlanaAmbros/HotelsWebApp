@@ -194,9 +194,8 @@
 </div>
 
 <!-- popup -->
-<!--  -->
 <form-popup
-*ngIf="hotelPopup.isOpened"
+  *ngIf="hotelPopup.isOpened"
   [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
   [buttonAction]="'Order'"
