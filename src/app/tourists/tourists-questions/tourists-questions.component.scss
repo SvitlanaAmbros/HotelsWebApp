@@ -40,3 +40,27 @@ h2 {
     }
 }
 
+
+@media screen and (max-width: 768px) {
+    .questions { 
+        &-card {
+            // text-align: center;
+        }
+
+        &-card {
+            padding: 20px 20px 30px;
+        }
+    }
+     
+}
+
+// @media screen and (max-width: 768px) { 
+//     expanding-list-item {
+//         input[type="checkbox"]  {
+//             & + label {
+//                 display: block;
+//                 margin: auto;
+//             }
+//         }
+//     }
+// }

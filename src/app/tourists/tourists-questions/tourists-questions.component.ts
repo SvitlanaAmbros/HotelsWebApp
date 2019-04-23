@@ -9,7 +9,7 @@ export class TouristsQuestionsComponent implements OnInit {
 
   public questionsAnswers = [
     {
-      title: "How long to wait for confirmation from the hotel?",
+      title: "How long you should wait for confirmation from the hotel?",
       sublist: [
         {
           subtitle: "Why don't they confirm the tour for a long time?",

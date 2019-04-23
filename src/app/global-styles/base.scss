@@ -57,3 +57,10 @@ input:focus {
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 960px) {
+    
+    .container {
+        width: 100%;
+    }
+}
