@@ -9,13 +9,12 @@ p {
     color: $accent;
 }
 
-
 .card {
 
     &-wrap {
-        // width: 500px;
         margin-bottom: 50px;
         border: 1px solid $grey;
+        -webkit-box-shadow: 5px 5px 18px $dark-grey;
         box-shadow: 5px 5px 18px $dark-grey;
     }
 
@@ -23,13 +22,7 @@ p {
         text-align: center;
 
         &__adress:before {
-            // padding: 0 5px;
             content: "\f015";
-            // font-family: FontAwesome;
-            // font-size: 22px;
-            // font-weight: 900;
-            // color: $accent;
-            // content: "\f095";
         }
 
         &__times:before {
