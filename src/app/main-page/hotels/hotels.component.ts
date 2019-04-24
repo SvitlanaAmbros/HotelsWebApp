@@ -8,6 +8,7 @@ import { CurrentHotelInfo } from '../models/current-hotel-info';
 import { FilterService } from '../filter.service';
 import { SortService } from '../sort.service';
 import { BookingRequest } from '../models/booking-request';
+import { c } from '@angular/core/src/render3';
 
 @Component({
   selector: 'hotels',
@@ -23,6 +24,7 @@ export class HotelsComponent implements OnInit {
   // public sort
   public startHotelIndex:number = 0;
   public countHotelPerPage = 1; 
+  public maxCountHotelPerPage = 3;
   public endHotelIndex: number = this.countHotelPerPage;
   public currentPage: number = 0;
   
@@ -155,7 +157,7 @@ export class HotelsComponent implements OnInit {
   }
 
   get maxQuantityHotels() {
-    return new Array(this.hotelsBaseInfo.hotels.length);
+    return new Array(this.maxCountHotelPerPage);
   }
 
   get pages() {
@@ -188,9 +190,22 @@ export class HotelsComponent implements OnInit {
   public searchHotels() {
     console.log(this.searchParams);
     this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
+ 
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
-    
+    this.searchParams.sortType = 'None';
+    // console.log('!!!!!!!!!', this.hotelsBaseInfo.hotels.length);
+    this.updateCountElementsPerPage(this.hotelsBaseInfo.hotels);
+    // this.countHotelPerPage = this.hotelsBaseInfo.hotels.length;
+    this.returnToFirstPage();
+  }
+
+  public updateCountElementsPerPage(array) {
+    if (array.length < this.maxCountHotelPerPage) {
+      this.countHotelPerPage = array.length;
+    } else {
+      this.countHotelPerPage = this.maxCountHotelPerPage;
+    }
   }
 
   public sort() {
