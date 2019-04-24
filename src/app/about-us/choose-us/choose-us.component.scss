@@ -32,11 +32,8 @@ h2 {
 }
 
 .choose-us {
-    // margin-top: -20px;
     padding: 60px 0;
-    background:  url('../../../assets/img/travel.jpg')center center no-repeat;
-    // background-size: auto 100%;
-    // background-size: 100% auto;
+    background:  url('../../../assets/img/travel.jpg')center center ;
 }
 
 .advantages {
@@ -102,8 +99,7 @@ h2 {
 @media screen and (max-width: 892px) {
     .choose-us {
         padding: 60px 0;
-        background:  url('../../../assets/img/travel.jpg')center center no-repeat;
+        background:  url('../../../assets/img/travel.jpg')center center;
         background-size: auto 100%;
-        // background-size: 100% auto;
     }
 }
