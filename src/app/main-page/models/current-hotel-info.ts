@@ -1,5 +1,6 @@
 import { hotels } from "../types/hotels";
 import { RoomInfo } from "./room-info";
+import { forEach } from "@angular/router/src/utils/collection";
 
 export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
     id: number;
@@ -45,7 +46,7 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         this.site = this.getSite(dbCurrentHotel);
         this.description = dbCurrentHotel.description;
         this.price = dbCurrentHotel.price;
-        this.priceForRoomType = 0;
+        this.priceForRoomType;
         this.priceForNutritionType = 0;
         this.basePrice = dbCurrentHotel.price.basePrice;
     }
@@ -77,8 +78,17 @@ export class CurrentHotelInfo implements hotels.CurrentHotelInfo {
         }
     }
 
-    public setPriceForRoomType(roomType):void {
-        this.priceForRoomType = this.price.roomType[roomType];
-        console.log('price', this.price.roomType[roomType], 'roomType', roomType);
+    public setPriceForRoomType(roomType: hotels.RoomTypeFilter):void {
+        if (roomType == 'All') {
+            for (let room of this.rooms) {
+                if (room.hasEmptyRooms) {
+                    // console.log();
+                    this.priceForRoomType = this.price.roomType[room.type];
+                    break;
+                }
+            }
+        } else {
+            this.priceForRoomType = this.price.roomType[roomType];
+        }
     }
 }

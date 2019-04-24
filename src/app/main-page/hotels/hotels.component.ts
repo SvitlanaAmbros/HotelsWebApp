@@ -25,6 +25,7 @@ export class HotelsComponent implements OnInit {
   public startHotelIndex:number = 0;
   public countHotelPerPage = 1; 
   public maxCountHotelPerPage = 3;
+  public maxCountHotelsInSelect;
   public endHotelIndex: number = this.countHotelPerPage;
   public currentPage: number = 0;
   
@@ -74,6 +75,7 @@ export class HotelsComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    this.maxCountHotelsInSelect = this.maxCountHotelPerPage;
     this.setCurrentDate();
     this.getCountryCityInfo(); 
     this.getAllHotels();
@@ -100,7 +102,7 @@ export class HotelsComponent implements OnInit {
     this.hotelsInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
       this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days, 
         this.searchParams.date);
-      if (!!this.searchParams.roomType && this.searchParams.roomType != 'All') {
+      if (!!this.searchParams.roomType) {
         this.currentHotelInfo.setPriceForRoomType(this.searchParams.roomType);
       }
       console.log("CURRENT", this.currentHotelInfo);
@@ -108,7 +110,6 @@ export class HotelsComponent implements OnInit {
     });
 
   }
-
 
   // popup functions
   public initPopups():void {
@@ -133,7 +134,6 @@ export class HotelsComponent implements OnInit {
   }
 
   public updateHotels(page) {
-    console.log("count hotel per page" + this.countHotelPerPage);
     this.startHotelIndex = page * this.countHotelPerPage;
     if (this.startHotelIndex + this.countHotelPerPage < this.hotelsBaseInfo.hotels.length) {
       this.endHotelIndex = this.startHotelIndex + this.countHotelPerPage;
@@ -141,7 +141,6 @@ export class HotelsComponent implements OnInit {
       this.endHotelIndex = this.hotelsBaseInfo.hotels.length;
     }
     
-    console.log("start", this.startHotelIndex, "end", this.endHotelIndex);
   }
 
   get getHotels() {
@@ -157,7 +156,7 @@ export class HotelsComponent implements OnInit {
   }
 
   get maxQuantityHotels() {
-    return new Array(this.maxCountHotelPerPage);
+    return new Array(this.maxCountHotelsInSelect);
   }
 
   get pages() {
@@ -194,17 +193,17 @@ export class HotelsComponent implements OnInit {
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
     this.searchParams.sortType = 'None';
-    // console.log('!!!!!!!!!', this.hotelsBaseInfo.hotels.length);
     this.updateCountElementsPerPage(this.hotelsBaseInfo.hotels);
-    // this.countHotelPerPage = this.hotelsBaseInfo.hotels.length;
     this.returnToFirstPage();
   }
 
   public updateCountElementsPerPage(array) {
     if (array.length < this.maxCountHotelPerPage) {
       this.countHotelPerPage = array.length;
+      this.maxCountHotelsInSelect = array.length;
     } else {
       this.countHotelPerPage = this.maxCountHotelPerPage;
+      this.maxCountHotelsInSelect = this.maxCountHotelPerPage;
     }
   }
 
@@ -236,7 +235,6 @@ export class HotelsComponent implements OnInit {
       this.hotelPopup.close();
       this.resultPopup.open();
       this.getAllHotels();
-      // this.searchHotels();
     });
   }
 
