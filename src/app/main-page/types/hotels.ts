@@ -121,7 +121,14 @@ export module hotels {
         hotelId: number;
         roomType: RoomType;
         date: string;
+        days?: number;
+        userInfo?: UserInfo;
         getDbObject(): hotels.db.BookingRequest;
+    }
+
+    export interface UserInfo {
+        name?: string;
+        phone?: string;
     }
 
     //db types
@@ -174,6 +181,9 @@ export module hotels {
             hotelId: number;
             roomType: RoomType;
             date: string;
+            days?: number;
+            name?: string;
+            phone?: string;
         }
 
     }  

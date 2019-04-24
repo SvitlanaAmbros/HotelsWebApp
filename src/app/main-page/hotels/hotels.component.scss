@@ -353,6 +353,45 @@ label {
     }
 }
 
+.user {
+    &-row {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 5px 16px;
+    min-width: 115px;
+
+    &_action {
+        background: $accent;
+        color: #fff;
+        border: none;
+        height: 35px;
+
+        &:hover {
+            background: $dark-orange;
+        }
+
+        &:disabled {
+            background: $grey;
+        }
+    }
+}
+
+.success-result {
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 840px) {
     .hotels{
         

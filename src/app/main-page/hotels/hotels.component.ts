@@ -8,7 +8,6 @@ import { CurrentHotelInfo } from '../models/current-hotel-info';
 import { FilterService } from '../filter.service';
 import { SortService } from '../sort.service';
 import { BookingRequest } from '../models/booking-request';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'hotels',
@@ -21,21 +20,6 @@ export class HotelsComponent implements OnInit {
   public hotelsBaseInfo: hotels.HotelsBaseInfo;
   public currentHotelInfo: hotels.CurrentHotelInfo;
 
-  // public sortTypes = [
-  //   {
-  //     type: 'None',
-  //     icon: 'fa-times'
-  //   }, 
-  //   {
-  //     type: 'Asc',
-  //     icon: 'fa-arrow-up'
-  //   },
-  //   {
-  //      type:'Desc',
-  //      icon: 'fa-arrow-down'
-  //   }
-  // ];
-
   // public sort
   public startHotelIndex:number = 0;
   public countHotelPerPage = 1; 
@@ -43,6 +27,7 @@ export class HotelsComponent implements OnInit {
   public currentPage: number = 0;
   
   public hotelPopup: PopupControls;
+  public resultPopup: PopupControls;
   public isOpenAddFilter: boolean = false;
   public stars:hotels.Stars[] = hotels.HOTEL__STARS;
   public roomTypes: hotels.RoomTypeFilter[] = hotels.ROOM_TYPES_FOR_FILTER;
@@ -60,6 +45,11 @@ export class HotelsComponent implements OnInit {
     sortType: 'None',
     roomType: 'All'
   };
+
+  public userInfo: hotels.UserInfo ={
+    name: '',
+    phone: '',
+  }
 
   public countryCityInfo;
   // public countryCityInfo = {
@@ -83,20 +73,25 @@ export class HotelsComponent implements OnInit {
 
   ngOnInit() {
     this.setCurrentDate();
-    // this.countryList = Object.keys(this.countryCityInfo);
+    this.getCountryCityInfo(); 
+    this.getAllHotels();
+    this.initPopups();
+  }
 
+  public getAllHotels() {
     this.hotelsInfoService.getHotels().then((res) => {
       this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       console.log('Received hotels', this.hotelsBaseInfo);
+      this.searchHotels();
     });
+  }
 
+  public getCountryCityInfo() {
     this.hotelsInfoService.getCountryCityInfo().then((res) => {
       this.countryCityInfo = res;
       this.countryList = Object.keys(this.countryCityInfo);
     });
-    
-    this.initPopup();
   }
 
   public showHotelDetail(hotelId) {
@@ -105,26 +100,26 @@ export class HotelsComponent implements OnInit {
         this.searchParams.date);
       if (!!this.searchParams.roomType && this.searchParams.roomType != 'All') {
         this.currentHotelInfo.setPriceForRoomType(this.searchParams.roomType);
-        
       }
       console.log("CURRENT", this.currentHotelInfo);
-      this.openHotelPopup();
+      this.openPopup(this.hotelPopup);
     });
 
   }
 
 
   // popup functions
-  public initPopup():void {
+  public initPopups():void {
     this.hotelPopup = this.popupControlsService.create();
+    this.resultPopup = this.popupControlsService.create();
   }
 
-  public openHotelPopup():void {
-    this.hotelPopup.open();
+  public openPopup(popup: PopupControls):void {
+    popup.open();
   }
 
-  public closeHotelPopup():void {
-    this.hotelPopup.close();
+  public closePopup(popup: PopupControls):void {
+   popup.close();
     this.currentHotelInfo = undefined;
   }
   //eof popup functions
@@ -192,11 +187,10 @@ export class HotelsComponent implements OnInit {
 
   public searchHotels() {
     console.log(this.searchParams);
-    // this.countHotelPerPage = 1; 
-    // this.returnToFirstPage();
     this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
               this.searchParams);
+    
   }
 
   public sort() {
@@ -220,16 +214,17 @@ export class HotelsComponent implements OnInit {
   }
 
   public orderHotel() {
-    let booking = new BookingRequest(this.currentHotelInfo.id, 'Lux', 
-            this.getStringFromDate(this.currentHotelInfo.startDate));
+    let booking = new BookingRequest(this.currentHotelInfo, this.userInfo)
+
     this.hotelsInfoService.orderHotelRoom(booking.getDbObject()).then(res => {
       console.log(res);
+      this.hotelPopup.close();
+      this.resultPopup.open();
+      this.getAllHotels();
+      // this.searchHotels();
     });
   }
 
-  public getStringFromDate(date: Date):string {
-    var datePipe = new DatePipe('en-US');
-    return  datePipe.transform(date, 'yyyy-MM-dd');
-  }
+
 
 }

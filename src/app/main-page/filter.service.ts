@@ -12,9 +12,15 @@ export class FilterService {
   public filter(array: hotels.HotelBaseInfo[], 
           searchParams: hotels.hotelsSearchParams): hotels.HotelBaseInfo[] {
     // let filterArray = new FilterArray();
+    let resArray;
+    if (!!searchParams.country && searchParams.country != '') {
+      resArray = this.filterByCountry(array, searchParams.country);
+    }
 
-    let resArray = this.filterByCountry(array, searchParams.country);
-    resArray = this.filterByCity(resArray, searchParams.city);
+    if (!!searchParams.city && searchParams.city != '') {
+      resArray = this.filterByCity(resArray, searchParams.city);
+    }
+    
     resArray = this.filterByDateAndDays(resArray, searchParams);
 
     if (!!searchParams.stars) {

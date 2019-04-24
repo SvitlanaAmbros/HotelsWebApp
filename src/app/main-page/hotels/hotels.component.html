@@ -97,21 +97,6 @@
           <div class="hotels__add-search">
             <label for="days" class="hotels__description">Sort by price:</label>
             <div class="hotels__sort">
-              <!-- <div 
-                *ngFor="let sort of sortTypes; let ind = index">
-                <input type="radio" 
-                  id="sort_{{ind}}" 
-                  name="sort" 
-                  [(ngModel)]="searchParams.sort"
-                  [value]="sort.type"
-                  checked hidden>
-                <label for="sort_{{ind}}" class="hotels__sort-icon"
-                  [ngClass]="sortTypes == 'Asc' ? 'asc' : ''
-                              "> -->
-                  <!-- <i class="fa fa-times"></i> -->
-                  <!-- sortTypes == 'Desc' ? 'desc' : '' -->
-                <!-- </label> -->
-              <!-- </div> -->
               <input type="radio" id="sort_1" name="sort" 
                 [(ngModel)]="searchParams.sortType" 
                 [value]="sortTypes[0]"
@@ -157,12 +142,6 @@
       </div>
       <!-- EOF no such hotels -->
 
-      <!-- start no such hotels -->
-      <!-- <div class="hotels__no-hotels" *ngIf="!hotelsBaseInfo">
-        <p>No connection</p>
-      </div> -->
-      <!-- EOF no such hotels -->
-
       <!-- start pagination -->
       <div class="hotels__pagination" 
         *ngIf="!!hotelsBaseInfo && countHotelPerPage != hotelsBaseInfo.hotels.length">
@@ -194,13 +173,12 @@
 </div>
 
 <!-- popup -->
+<!--    [buttonAction]="'Order'"  (onAction)="orderHotel()"-->
 <form-popup
   *ngIf="hotelPopup.isOpened"
   [header]="currentHotelInfo.title + ' ' + currentHotelInfo.stars"
   [buttonCancel]="'Cancel'"
-  [buttonAction]="'Order'"
-  (onAction)="orderHotel()"
-  (onClose)="closeHotelPopup()">
+  (onClose)="closePopup(hotelPopup)">
 
   <div class="content">
     <div class="popup-info">
@@ -296,7 +274,30 @@
           </google-map>
         </div>
       </div>
+
+      <div class="user">
+        <form ngNativeValidate (ngSubmit)="orderHotel()">
+          <div class="user-row">
+              <!-- <input type="text" placeholder="Your name" pattern="[A-Za-z]{3,5}" required> -->
+              <!-- <input type="text" placeholder="Your phone" pattern="[0-9]{10}" required> -->
+              <input type="submit" value="Order" class="button button_action">
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </form-popup>
 <!-- EOF popup -->
+
+<!-- succesful order -->
+<form-popup
+    *ngIf="resultPopup.isOpened"
+    [buttonAction]="'Ok'"
+    (onAction)="closePopup(resultPopup)">
+    
+  <div class="content">
+    <div class="success-result">
+      Your order succesfully send
+    </div>
+  </div>
+</form-popup>
