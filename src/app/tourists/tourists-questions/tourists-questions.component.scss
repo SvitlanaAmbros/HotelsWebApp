@@ -6,8 +6,12 @@ h2 {
 
 .questions {
     padding: 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 500px;
 
     &-wrap {

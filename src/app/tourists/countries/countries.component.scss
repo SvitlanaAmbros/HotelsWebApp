@@ -7,7 +7,8 @@ h2 {
 .countries {
     padding: 60px 10px;
     background: $white;
-    box-shadow: 5px 5px 18px $dark-grey;
+    -webkit-box-shadow: 5px 5px 18px $dark-grey;
+            box-shadow: 5px 5px 18px $dark-grey;
 
     &-wrap {
         padding: 20px 0;
@@ -15,9 +16,13 @@ h2 {
     }
 
     &-row {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         
         // justify-content: space-around;
         // align-items: center;

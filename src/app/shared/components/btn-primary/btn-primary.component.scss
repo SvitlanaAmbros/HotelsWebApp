@@ -10,7 +10,8 @@
     border-radius: 7px;
     color: $white;
     background: $accent;
-    box-shadow: 2px 2px 5px $dark-grey;
+    -webkit-box-shadow: 2px 2px 5px $dark-grey;
+        box-shadow: 2px 2px 5px $dark-grey;
     cursor: pointer;
 
     &:before {

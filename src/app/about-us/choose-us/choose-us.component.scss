@@ -9,8 +9,12 @@ h2 {
         margin-top: -18px;
         width: 100%;
         height: 500px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         background: url('../../../assets/img/choose-us-background.jpg');
     }
 
@@ -39,26 +43,33 @@ h2 {
     margin-top: 30px;
 
     &-row {
-        // display: flex;
-        // justify-content: space-around;
-        // align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
     }
 
     &__card {
         margin: 10px;
         padding-right: 15px;
         width: 400px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         background: rgba(255, 255, 255, 0.7);
         border-radius: 65px;
         border: 1px solid $accent;
-        box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
-        // cursor: pointer;
+        -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
 
         &:hover {
             margin: 9px;

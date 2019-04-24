@@ -12,6 +12,8 @@ h3 {
 }
 
 .hotel {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     // justify-content: space-around;
     margin: 20px auto;
@@ -21,7 +23,8 @@ h3 {
     border: 2px solid $primary;
 
     &:hover {
-        box-shadow: 5px 5px 18px $dark-grey;
+        -webkit-box-shadow: 5px 5px 18px $dark-grey;
+                box-shadow: 5px 5px 18px $dark-grey;
     }
 
     &__image {
@@ -47,17 +50,15 @@ h3 {
     }
 
     &-row {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        // justify-content: space-between;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         font-size: 14px;
          
     }
-
-
-    // &-card {
-    //     width: 500px;
-    // }
 }
 
 .bold {
@@ -73,9 +74,15 @@ h3 {
 }
 
 .mark {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     position: absolute;
     right: 0;
     width: 115px;

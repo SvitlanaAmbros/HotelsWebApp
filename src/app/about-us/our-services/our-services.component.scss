@@ -14,7 +14,8 @@ h2 {
     background: $white;
     border-style: dashed;
     border-color: $accent;
-    box-shadow: 5px 5px 18px $dark-grey;
+    -webkit-box-shadow: 5px 5px 18px $dark-grey;
+            box-shadow: 5px 5px 18px $dark-grey;
 
     cursor: pointer;
     &-wrap {
@@ -23,88 +24,7 @@ h2 {
     }
 
     &-list {
-        margin-top: 40px;
-
-        // &__item {
-        //     margin: 20px 0;
-
-        //     &-title {
-        //         // display: flex;
-        //         // align-items: center;
-        //         font-weight: bold;
-        //         vertical-align: top;
-        //         margin-top: 7px;
-        //         display: inline-block;
-        //         // margin-top: -10px;
-        //     }
-        // }  
+        margin-top: 40px; 
     }
-
-    // &-sublist {
-    //      list-style-type: none;
-
-    //     &__item{
-    //         font-size: 18px;
-    //         margin: 10px 0;
-
-    //         &:before {
-    //             content: " ";
-    //             display: inline-block;
-    //             background: $accent;
-    //             border-radius: 50%;
-    //             width: 5px;
-    //             height: 5px;
-    //             margin: 0 5px;
-    //             border: 5px solid $primary;
-    //         }
-    //     }
-    // }
     
 }
-
-// input[type="checkbox"]  {
-//     & ~ label {
-//         -webkit-user-select: none;  
-//         -moz-user-select: none;     
-//         -ms-user-select: none;    
-//         user-select: none;   
-//         cursor: pointer;
-//     }
-
-//     & + label {
-//         display: inline-block;
-//         margin: 0 4px;
-//         height: 30px;
-//         width: 30px;
-//         border-radius: 50%;
-//         border: none;
-//         background: url('../../../assets/img/plus.png')center center no-repeat;
-//         background-color: $dark-primary;
-//         background-size: 15px 15px;
-//     }
-
-//     & ~ .services-sublist {
-//         display: none;
-//     }
-// }
-
-
-// input[type="checkbox"]:checked {
-//     + label {
-//         background: url('../../../assets/img/minus.png')center center no-repeat;
-//         background-color: $dark-primary;
-//         background-size: 15px 15px;
-//         cursor: pointer;
-//     }
-
-//     & ~ .services-sublist {
-//         display: block;
-//     } 
-// }
-
-// input[type="button"]{
-//     outline:none;
-//  }
-//  input[type="button"]::-moz-focus-inner {
-//     border: 0;
-//  }
