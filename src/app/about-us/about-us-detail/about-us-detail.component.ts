@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router, NavigationEnd } from '@angular/router';
-import { ScrollToService } from 'ng2-scroll-to-el';
+import { Router, NavigationEnd } from '@angular/router';
+import { ScrollService } from '../../shared/services/scroll.service';
 
 @Component({
   selector: 'app-about-us-detail',
@@ -12,7 +12,7 @@ export class AboutUsDetailComponent implements OnInit {
   @ViewChild('choose') chooseUs: ElementRef;
   @ViewChild('services') services: ElementRef;
 
-  constructor(private router: Router, private scrollService: ScrollToService) {
+  constructor(private router: Router, private scrollService: ScrollService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         let routerUrl = this.router.routerState.snapshot.url.split('/');
@@ -20,11 +20,11 @@ export class AboutUsDetailComponent implements OnInit {
 
         switch (url) {
           case 'choose-us': {
-            this.scrollToHome(this.chooseUs.nativeElement);
+            this.scrollService.scrollToElement(this.chooseUs.nativeElement);
             break;
           }
           case 'services': {
-            this.scrollToHome(this.services.nativeElement);
+            this.scrollService.scrollToElement(this.services.nativeElement);
             break;
           }
         }
@@ -34,9 +34,4 @@ export class AboutUsDetailComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  scrollToHome(element) {
-    this.scrollService.scrollTo(element, 700, 0);
-  }
-
 }

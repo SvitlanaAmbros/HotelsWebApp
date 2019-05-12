@@ -9,6 +9,7 @@ import { FormPopupComponent } from './components/form-popup/form-popup.component
 import { PopupControlsService } from "./services/popup-controls.service";
 import { SearchWithTipsComponent } from './components/search-with-tips/search-with-tips.component';
 import { FormsModule } from "@angular/forms";
+import { ScrollService } from "./services/scroll.service";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from "@angular/forms";
     ],
     providers: [
         IdGeneratorService,
-        PopupControlsService
+        PopupControlsService,
+        ScrollService
     ],
     exports: [
         ImageSliderComponent,
