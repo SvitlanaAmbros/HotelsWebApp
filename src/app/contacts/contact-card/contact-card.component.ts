@@ -10,7 +10,9 @@ export class ContactCardComponent implements OnInit {
   @Input() contact: {
     lat: number,
     lng: number,
-    title: string
+    title: string,
+    address: string,
+    phone: string
   };
 
   constructor() { }

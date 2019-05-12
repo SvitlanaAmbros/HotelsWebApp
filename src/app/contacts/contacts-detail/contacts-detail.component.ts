@@ -11,12 +11,16 @@ export class ContactsDetailComponent implements OnInit {
     {
       lat: 50.449237,
       lng: 30.466378,
-      title: 'KPI'
+      title: 'KPI',
+      address: 'Kiev, Polytechnic street 11',
+      phone: '0 899 555 444'
     },
     {
       lat: 50.445379,
       lng: 30.519109,
-      title: 'Khreshchatyk'
+      title: 'Khreshchatyk',
+      address: 'Kiev, Bogdan Khmelnitsky street 6',
+      phone: '0 888 333 444'
     }
   ];
 
