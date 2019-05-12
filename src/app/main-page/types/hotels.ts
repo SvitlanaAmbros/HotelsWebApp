@@ -152,8 +152,6 @@ export module hotels {
             price: Price;
         }
 
-
-
         // expanded hotel info for hotel popup
         export interface CurrentHotelInfo {
             id: number;
@@ -181,10 +179,9 @@ export module hotels {
             hotelId: number;
             roomType: RoomType;
             date: string;
-            days?: number;
+            days: number;
             name?: string;
             phone?: string;
         }
-
     }  
 }

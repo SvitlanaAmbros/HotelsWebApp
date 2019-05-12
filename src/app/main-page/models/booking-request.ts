@@ -33,6 +33,7 @@ export class BookingRequest implements hotels.BookingRequest {
             hotelId: this.hotelId,
             roomType: this.roomType,
             date: this.date,
+            days: this.days
         }
     }
 }

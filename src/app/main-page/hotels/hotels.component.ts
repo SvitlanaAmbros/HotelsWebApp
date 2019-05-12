@@ -16,12 +16,10 @@ import { c } from '@angular/core/src/render3';
   styleUrls: ['./hotels.component.scss']
 })
 export class HotelsComponent implements OnInit {
-
   public serverHotelsBaseInfo: hotels.HotelsBaseInfo;
   public hotelsBaseInfo: hotels.HotelsBaseInfo;
   public currentHotelInfo: hotels.CurrentHotelInfo;
 
-  // public sort
   public startHotelIndex:number = 0;
   public countHotelPerPage = 1; 
   public maxCountHotelPerPage = 3;
@@ -31,6 +29,7 @@ export class HotelsComponent implements OnInit {
   
   public hotelPopup: PopupControls;
   public resultPopup: PopupControls;
+  
   public isOpenAddFilter: boolean = false;
   public stars:hotels.Stars[] = hotels.HOTEL__STARS;
   public roomTypes: hotels.RoomTypeFilter[] = hotels.ROOM_TYPES_FOR_FILTER;
@@ -67,6 +66,7 @@ export class HotelsComponent implements OnInit {
 
   public countryList: string[] = [];
   public cityList: string[] = [];
+  public orderResult: string;
 
   constructor(private hotelsInfoService: HotelsInfoService,
     private popupControlsService: PopupControlsService,
@@ -164,7 +164,6 @@ export class HotelsComponent implements OnInit {
   }
   //eof pagination functions
 
-
   //search row
   // update calendar date
   public setCurrentDate() {
@@ -177,9 +176,7 @@ export class HotelsComponent implements OnInit {
 
     if (!!this.countryCityInfo[country]) {
       this.cityList = this.countryCityInfo[country];
-    } else {
-      // this.cityList = [];
-    }
+    } 
   }
 
   public changedCity(city: string) {
@@ -230,14 +227,19 @@ export class HotelsComponent implements OnInit {
   public orderHotel() {
     let booking = new BookingRequest(this.currentHotelInfo, this.userInfo)
 
-    this.hotelsInfoService.orderHotelRoom(booking.getDbObject()).then(res => {
-      console.log(res);
+    this.hotelsInfoService.orderHotelRoom(booking.getDbObject())
+    .then(res => {
       this.hotelPopup.close();
+      this.orderResult = 'Your order succesfully send';
+      this.resultPopup.open();
+      this.getAllHotels();
+    })
+    .catch(err => {
+      this.hotelPopup.close();
+      this.orderResult = 'Something goes wrong';
       this.resultPopup.open();
       this.getAllHotels();
     });
   }
-
-
 
 }

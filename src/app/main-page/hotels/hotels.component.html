@@ -277,7 +277,7 @@
       <div class="user">
         <form ngNativeValidate (ngSubmit)="orderHotel()">
           <div class="user-row">
-              <input type="text" placeholder="Your name" pattern="[A-Za-z]{3,5}" required>
+              <input type="text" placeholder="Your name" pattern="[A-Za-z]{3,10}" required>
               <input type="text" placeholder="Your phone" pattern="[0-9]{10}" required>
               <input type="submit" value="Order" class="button button_action">
           </div>
@@ -295,7 +295,7 @@
     (onAction)="closePopup(resultPopup)">
     
   <div class="content">
-    <div class="success-result">
+    <div class="result">
       Your order succesfully send
     </div>
   </div>
