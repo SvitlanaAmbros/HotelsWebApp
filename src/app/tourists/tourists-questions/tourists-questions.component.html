@@ -3,13 +3,9 @@
     <div class="questions">
       <div class="questions-card">
         <h2>Information for tourists</h2>
-        <!-- <div class="questions-card__list">
-          
-        </div> -->
         <expanding-list-item *ngFor="let item of questionsAnswers; let id = index"
           [listItem]="item"
           [id]="id">
-      
         </expanding-list-item>
       </div>
     </div>

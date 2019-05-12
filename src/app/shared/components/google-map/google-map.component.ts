@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IdGeneratorService } from '../services/id-generator.service';
+import { IdGeneratorService } from '../../services/id-generator.service';
 
 declare const google: any;
 
