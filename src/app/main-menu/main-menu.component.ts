@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'main-menu',
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class MainMenuComponent implements OnInit {
 
+  public checkedMenuItem:string[];
   public menuList = [
     {
       title: 'Main',
@@ -47,15 +48,21 @@ export class MainMenuComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        let routerUrl = this.router.routerState.snapshot.url.split('/');
+        this.checkedMenuItem = routerUrl.filter(item => item !='');
+        // routerUrl[routerUrl.length - 1];
+      }
+    });
+  }
 
   ngOnInit() {
-
+    
   }
 
   public menuSelected(menuLink: string): void {
     this.router.navigateByUrl(menuLink);
   }
-
-
 }
