@@ -4,9 +4,6 @@ import { MainPageDetailComponent } from './main-page/main-page-detail/main-page-
 import { AboutUsDetailComponent } from './about-us/about-us-detail/about-us-detail.component';
 import { TouristsDetailComponent } from './tourists/tourists-detail/tourists-detail.component';
 import { ContactsDetailComponent } from './contacts/contacts-detail/contacts-detail.component';
-import { ChooseUsComponent } from './about-us/choose-us/choose-us.component';
-import { OurServicesComponent } from './about-us/our-services/our-services.component';
-import { HotelInfoComponent } from './main-page/hotel-info/hotel-info.component';
 
 const routes: Routes = [
     {
@@ -23,10 +20,6 @@ const routes: Routes = [
             //     component: HotelInfoComponent
             // }
         ]
-    },
-    {
-        path: 'main-page/hotel/:id',
-        component: HotelInfoComponent
     },
     {
         path: 'about-us',
