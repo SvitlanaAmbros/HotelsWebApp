@@ -53,7 +53,7 @@ export class SearchWithTipsComponent implements OnInit {
       this.emitValueInput();
     } else {
       // this.inputedValue = '';
-      // this.emitValueInput();
+      this.emitValueInput();
     }
   }
 
