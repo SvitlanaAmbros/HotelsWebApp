@@ -6,113 +6,113 @@ import { HttpClient } from '@angular/common/http';
 export class HotelsInfoService {
   private URL: string = 'http://localhost:8080/';
 
-  private data: hotels.db.HotelsBaseInfo = {
-    hotels: 
-    [
-      {
-        id: 1,
-        title: 'Naama Bay',
-        country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
-        mainImg: 'hotel_1',
-        nutritionTypes: [
-          'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Apartment',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-13',
-                  count: 3
-                }
-            ]
-          }
-        ],
-        stars: 5,
-        rate: 7.8,
-        price: {
-          basePrice: 125,
-          nutrition: {
-            'BB': 0,
-            'HB': 10,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
-      {
-        id: 2,
-        title: 'Sunrise Diamond Beach resort',
-        country: 'Egypt',
-        city: 'Sharm-el-Sheikh',
-        mainImg: 'hotel_2',
-        nutritionTypes: [
-          'HB', 'AI'
-        ],
-        rooms: [
-          {
-            type: 'Standard',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-13',
-                  count: 2
-                }
-            ]
-          },
-          {
-            type: 'Lux',
-            roomsCount: 8,
-            bookedRooms: [
-                {
-                  date: '2019-05-13',
-                  count: 2
-                }
-            ]
-          }
-        ],
-        stars: 4,
-        rate: 8.2,
-        price: {
-          basePrice: 160,
-          nutrition: {
-            'HB': 10,
-            'BB': 0,
-            'AI': 50
-          },
-          roomType: {
-            'Standard': 0,
-            'Lux': 50,
-            'Apartment': 100
-          }
-        }
-      },
+  // private data: hotels.db.HotelsBaseInfo = {
+    // hotels: 
+    // [
+    //   {
+    //     id: 1,
+    //     title: 'Naama Bay',
+    //     country: 'Egypt',
+    //     city: 'Sharm-el-Sheikh',
+    //     mainImg: 'hotel_1',
+    //     nutritionTypes: [
+    //       'HB', 'AI'
+    //     ],
+    //     rooms: [
+    //       {
+    //         type: 'Standard',
+    //         roomsCount: 8,
+    //         bookedRooms: [
+    //             {
+    //               date: '2019-05-13',
+    //               count: 2
+    //             }
+    //         ]
+    //       },
+    //       {
+    //         type: 'Lux',
+    //         roomsCount: 8,
+    //         bookedRooms: [
+    //             {
+    //               date: '2019-05-13',
+    //               count: 2
+    //             }
+    //         ]
+    //       },
+    //       {
+    //         type: 'Apartment',
+    //         roomsCount: 8,
+    //         bookedRooms: [
+    //             {
+    //               date: '2019-05-13',
+    //               count: 3
+    //             }
+    //         ]
+    //       }
+    //     ],
+    //     stars: 5,
+    //     rate: 7.8,
+    //     price: {
+    //       basePrice: 125,
+    //       nutrition: {
+    //         'BB': 0,
+    //         'HB': 10,
+    //         'AI': 50
+    //       },
+    //       roomType: {
+    //         'Standard': 0,
+    //         'Lux': 50,
+    //         'Apartment': 100
+    //       }
+    //     }
+    //   },
+    //   {
+    //     id: 2,
+    //     title: 'Sunrise Diamond Beach resort',
+    //     country: 'Egypt',
+    //     city: 'Sharm-el-Sheikh',
+    //     mainImg: 'hotel_2',
+    //     nutritionTypes: [
+    //       'HB', 'AI'
+    //     ],
+    //     rooms: [
+    //       {
+    //         type: 'Standard',
+    //         roomsCount: 8,
+    //         bookedRooms: [
+    //             {
+    //               date: '2019-05-13',
+    //               count: 2
+    //             }
+    //         ]
+    //       },
+    //       {
+    //         type: 'Lux',
+    //         roomsCount: 8,
+    //         bookedRooms: [
+    //             {
+    //               date: '2019-05-13',
+    //               count: 2
+    //             }
+    //         ]
+    //       }
+    //     ],
+    //     stars: 4,
+    //     rate: 8.2,
+    //     price: {
+    //       basePrice: 160,
+    //       nutrition: {
+    //         'HB': 10,
+    //         'BB': 0,
+    //         'AI': 50
+    //       },
+    //       roomType: {
+    //         'Standard': 0,
+    //         'Lux': 50,
+    //         'Apartment': 100
+    //       }
+    //     }
+    //   },
       // {
       //   id: 3,
       //   title: 'Coral Sea Sensatory',
@@ -378,84 +378,84 @@ export class HotelsInfoService {
       //     }
       //   }
       // }
-    ]
-  }
+    // ]
+  // }
 
-  private hotel: hotels.db.CurrentHotelInfo = 
-  {
-    id: 1,
-    title: 'Naama Bay',
-    country: 'Egypt',
-    city: 'Sharm-el-Sheikh',
-    mainImg: 'hotel_1',
-    nutritionTypes: [
-      'BB', 'HB', 'AI'
-    ],
-    rooms: [
-      // {
-      //   type: 'Standard',
-      //   roomsCount: 8,
-      //   bookedRooms: [
-      //       {
-      //         date: '2019-05-13',
-      //         count: 2
-      //       }
-      //   ]
-      // },
-      {
-        type: 'Lux',
-        roomsCount: 8,
-        bookedRooms: [
-            {
-              date: '2019-05-13',
-              count: 8
-            }
-        ]
-      },
-      {
-        type: 'Apartment',
-        roomsCount: 8,
-        bookedRooms: [
-            {
-              date: '2019-05-13',
-              count: 3
-            }
-        ]
-      }
-    ],
-    stars: 5,
-    rate: 7.8,
-    price: {
-      basePrice: 125,
-      nutrition: {
-        'BB': 0,
-        'HB': 20,
-        'AI': 50
-      },
-      roomType: {
-        'Standard': 0,
-        'Lux': 50,
-        'Apartment': 80
-      }
-    },
-    images: [
-      'room_1',
-      'room_2',
-      'room_3',
-      'room_4'
-    ],
-    coord: {
-      lat: 27.975679,
-      lng: 34.422927
-    },
-    site: 'coralsearesorts.com',
-    description: `The hotel has a beautiful green area, 
-    a convenient sandy entrance to the sea, a large playground. 
-    Recommended for a relaxing family holiday with children. 
-    Opened in 1994, the last renovation was held in 2011.
-     The hotel consists of two 3-storey buildings and one 2-storey 
-     building. 15 km from the airport of Hurghada, 20 km from Hurghada.`
-  }
+  // private hotel: hotels.db.CurrentHotelInfo = 
+  // {
+  //   id: 1,
+  //   title: 'Naama Bay',
+  //   country: 'Egypt',
+  //   city: 'Sharm-el-Sheikh',
+  //   mainImg: 'hotel_1',
+  //   nutritionTypes: [
+  //     'BB', 'HB', 'AI'
+  //   ],
+  //   rooms: [
+  //     // {
+  //     //   type: 'Standard',
+  //     //   roomsCount: 8,
+  //     //   bookedRooms: [
+  //     //       {
+  //     //         date: '2019-05-13',
+  //     //         count: 2
+  //     //       }
+  //     //   ]
+  //     // },
+  //     {
+  //       type: 'Lux',
+  //       roomsCount: 8,
+  //       bookedRooms: [
+  //           {
+  //             date: '2019-05-13',
+  //             count: 8
+  //           }
+  //       ]
+  //     },
+  //     {
+  //       type: 'Apartment',
+  //       roomsCount: 8,
+  //       bookedRooms: [
+  //           {
+  //             date: '2019-05-13',
+  //             count: 3
+  //           }
+  //       ]
+  //     }
+  //   ],
+  //   stars: 5,
+  //   rate: 7.8,
+  //   price: {
+  //     basePrice: 125,
+  //     nutrition: {
+  //       'BB': 0,
+  //       'HB': 20,
+  //       'AI': 50
+  //     },
+  //     roomType: {
+  //       'Standard': 0,
+  //       'Lux': 50,
+  //       'Apartment': 80
+  //     }
+  //   },
+  //   images: [
+  //     'room_1',
+  //     'room_2',
+  //     'room_3',
+  //     'room_4'
+  //   ],
+  //   coord: {
+  //     lat: 27.975679,
+  //     lng: 34.422927
+  //   },
+  //   site: 'coralsearesorts.com',
+  //   description: `The hotel has a beautiful green area, 
+  //   a convenient sandy entrance to the sea, a large playground. 
+  //   Recommended for a relaxing family holiday with children. 
+  //   Opened in 1994, the last renovation was held in 2011.
+  //    The hotel consists of two 3-storey buildings and one 2-storey 
+  //    building. 15 km from the airport of Hurghada, 20 km from Hurghada.`
+  // }
 
 
   constructor(private http: HttpClient) { }
