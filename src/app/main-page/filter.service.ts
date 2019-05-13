@@ -30,11 +30,6 @@ export class FilterService {
     if (!!searchParams.roomType && searchParams.roomType != 'All') {
       resArray = this.filterByRoomType(resArray, searchParams);
     }
-    // if (searchParams.sortType == 'Asc') {
-    //   resArray = this.sortService.ascSort(resArray);
-    // } else if (searchParams.sortType == 'Desc') {
-    //   resArray = this.sortService.descSort(resArray);
-    // }
 
     return resArray; 
 
@@ -105,7 +100,5 @@ export class FilterService {
 
     return roomIsFound;
   }
-
-
 
 }
