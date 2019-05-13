@@ -464,7 +464,7 @@ export class HotelsInfoService {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.URL}hotels`)
         .subscribe((res: hotels.db.HotelsBaseInfo) => {
-          console.log('Hotels from server', res);
+          // console.log('Hotels from server', res);
           resolve(res);
         }, (err) => {
           reject('Can`t get hotels info');
@@ -476,7 +476,7 @@ export class HotelsInfoService {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.URL}hotels/${hotelId}`)
         .subscribe((res: hotels.db.CurrentHotelInfo) => {
-          console.log('Current hotel info', res);
+          // console.log('Current hotel info', res);
           resolve(res);
         }, (err) => {
           reject('Can`t get current hotel info');
@@ -488,7 +488,7 @@ export class HotelsInfoService {
     return new Promise((resolve, reject) => {
       this.http.get(`${this.URL}info`)
         .subscribe((res) => {
-          console.log('Current hotel info', res);
+          // console.log('Current hotel info', res);
           resolve(res);
         }, (err) => {
           reject('Can`t get current hotel info');

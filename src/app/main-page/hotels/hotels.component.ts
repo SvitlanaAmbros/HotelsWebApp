@@ -83,23 +83,32 @@ export class HotelsComponent implements OnInit {
   }
 
   public getAllHotels() {
-    this.hotelsInfoService.getHotels().then((res) => {
+    this.hotelsInfoService.getHotels()
+    .then((res) => {
       this.serverHotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       this.hotelsBaseInfo = new HotelsBaseInfo(res, this.searchParams.days);
       console.log('Received hotels', this.hotelsBaseInfo);
       this.searchHotels();
+    })
+    .catch(err => {
+      console.log(err);
     });
   }
 
   public getCountryCityInfo() {
-    this.hotelsInfoService.getCountryCityInfo().then((res) => {
+    this.hotelsInfoService.getCountryCityInfo()
+    .then((res) => {
       this.countryCityInfo = res;
       this.countryList = Object.keys(this.countryCityInfo);
+    })
+    .catch(err => {
+      console.log(err);
     });
   }
 
   public showHotelDetail(hotelId) {
-    this.hotelsInfoService.getCurrentHotelInfo(hotelId).then(hotelInfo => {
+    this.hotelsInfoService.getCurrentHotelInfo(hotelId)
+    .then(hotelInfo => {
       this.currentHotelInfo = new CurrentHotelInfo(hotelInfo, this.searchParams.days, 
         this.searchParams.date);
       if (!!this.searchParams.roomType) {
@@ -107,6 +116,9 @@ export class HotelsComponent implements OnInit {
       }
       console.log("CURRENT", this.currentHotelInfo);
       this.openPopup(this.hotelPopup);
+    })
+    .catch(err => {
+      console.log(err);
     });
 
   }
@@ -184,7 +196,6 @@ export class HotelsComponent implements OnInit {
   }
 
   public searchHotels() {
-    console.log(this.searchParams);
     this.hotelsBaseInfo.updateDaysCount(this.hotelsBaseInfo, this.searchParams.days);
  
     this.hotelsBaseInfo.hotels = this.filterService.filter(this.serverHotelsBaseInfo.hotels, 
@@ -223,14 +234,15 @@ export class HotelsComponent implements OnInit {
   public showAdditionalFilters() {
     this.isOpenAddFilter = !this.isOpenAddFilter;
   }
-
+  
+  //order hotel
   public orderHotel() {
     let booking = new BookingRequest(this.currentHotelInfo, this.userInfo)
 
     this.hotelsInfoService.orderHotelRoom(booking.getDbObject())
-    .then(res => {
+    .then((res:string) => {
       this.hotelPopup.close();
-      this.orderResult = 'Your order succesfully send';
+      this.orderResult = res;
       this.resultPopup.open();
       this.getAllHotels();
     })
